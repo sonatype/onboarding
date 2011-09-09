@@ -16,9 +16,9 @@
       <import plugin="org.eclipse.core.runtime"/>
       <import feature="org.eclipse.m2e.feature" version="0.13.0" match="equivalent"/>
       <import feature="org.sonatype.m2e.temporary.mojos.feature" version="0.13.0" match="equivalent"/>
-      <import feature="org.eclipse.team.svn" version="0.7.9.I20100917-1700" match="perfect"/>
-      <import feature="org.polarion.eclipse.team.svn.connector" version="2.2.2.I20100917-1700" match="perfect"/>
-      <import feature="org.polarion.eclipse.team.svn.connector.svnkit16" version="2.2.2.I20100917-1700" match="perfect"/>
+      <import feature="org.eclipse.team.svn" version="0.7.9" match="equivalent"/>
+      <import feature="org.polarion.eclipse.team.svn.connector" version="2.2.2" match="equivalent"/>
+      <import feature="org.polarion.eclipse.team.svn.connector.svnkit16" version="2.2.2" match="equivalent"/>
    </requires>
 
    <plugin

@@ -97,4 +97,8 @@ public class NonInteractiveOptionProvider
         return true;
     }
 
+    public boolean isPersistentSSHEnabled()
+    {
+    	return false;
+    }
 }

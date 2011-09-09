@@ -107,10 +107,7 @@
     <repository>
       <id>subversive-weekly</id>
       <layout>p2</layout>
-      <!--
-      <url>http://download.eclipse.org/technology/subversive/0.7/weekly-site/</url>
-       -->
-      <url>file:///var/tmp/subversive/subversive</url>
+      <url>http://download.eclipse.org/technology/subversive/0.7/update-site/</url>
     </repository>
     <repository>
       <id>subversive-connectors</id>
@@ -118,7 +115,7 @@
       <!--
       <url>http://community.polarion.com/projects/subversive/download/eclipse/2.0/weekly-site/</url>
       -->
-      <url>file:///var/tmp/subversive/subversive-connectors</url>
+      <url>http://community.polarion.com/projects/subversive/download/eclipse/2.0/helios-site/</url>
     </repository>
     <repository>
       <id>egit</id>
@@ -171,6 +168,7 @@
     <module>com.sonatype.s2.extractor.galileo</module>
 
     <module>com.sonatype.m2e.subversive</module>
+
     <module>com.sonatype.m2e.egit</module>
     <module>com.sonatype.m2e.cvs</module>
 
