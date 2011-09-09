@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${project.version}.${buildQualifier}</version>
+  <name>Nexus</name>
+  <description>Nexus Repository Manager manages software "artifacts" required for development, deployment, and provisioning. If you develop software, Nexus can help you share those artifacts with other developers and end-users.</description>
+  <installerVersion>1.0.6</installerVersion>
+  <homeUrl>http://www.sonatype.com/products/nexus</homeUrl>
+  <docsUrl>http://www.sonatype.com/products/nexus/documentation</docsUrl>
+  <p2Lineup>
+    <url>${lineup.url}</url>
+  </p2Lineup>
+  <modules>
+    <module>
+      <name>nexus</name>
+      <scm>
+        <url>scm:svn:http://svn.sonatype.org/nexus/tags/nexus-1.5.0/</url>
+      </scm>
+      <buildUrl>https://grid.sonatype.org/ci/job/Nexus/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://grid.sonatype.org/ci</url>
+          <jobs>
+            <job>Nexus</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+    </module>
+  </modules>
+</project>

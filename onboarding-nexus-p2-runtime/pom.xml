@@ -1,0 +1,153 @@
+<!--
+Sonatype Nexus (TM) Professional Version.
+Copyright (c) 2008 Sonatype, Inc. All rights reserved.
+Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions/.
+"Sonatype" and "Sonatype Nexus" are trademarks of Sonatype, Inc. 
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <prerequisites>
+    <maven>3.0</maven>
+  </prerequisites>
+
+  <parent>
+    <groupId>org.sonatype.forge</groupId>
+    <artifactId>forge-parent</artifactId>
+    <version>10</version>
+  </parent>
+
+  <groupId>com.sonatype.components</groupId>
+  <artifactId>nexus-p2</artifactId>
+  <version>1.5.0</version>
+  <packaging>pom</packaging>
+
+  <repositories>
+    <repository>
+      <id>e34</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/eclipse/updates/3.5</url>
+    </repository>
+    <repository>
+      <id>galileo</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/galileo</url>
+    </repository>
+    <repository>
+      <!-- https://issues.sonatype.org/browse/NXCM-1898 -->
+      <id>ecf-32</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/rt/ecf/3.2/3.6/site.p2</url>
+    </repository>
+  </repositories>
+
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.sonatype.nexus</groupId>
+        <artifactId>nexus-webapp-dependencies</artifactId>
+        <version>${nexus.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <properties>
+    <!-- version of tycho plugins used by the build  -->
+    <tycho.version>0.8.0</tycho.version>
+    
+    <!-- version of tycho dependencies referenced by the projects -->
+    <tycho-artifacts.version>0.6.0</tycho-artifacts.version>
+    
+    <s2model.version>1.0.9-SNAPSHOT</s2model.version>
+    <nexus.version>1.8.0</nexus.version>
+  </properties>
+
+  <modules>
+    <module>nexus-p2-facade</module>
+    <module>nexus-p2-runtime</module>
+    <module>com.sonatype.nexus.p2.impl</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.sonatype.s2.models</groupId>
+      <artifactId>com.sonatype.s2.p2lineup.model</artifactId>
+      <version>${s2model.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <pomDependencies>consider</pomDependencies>
+        </configuration>
+      </plugin>
+
+      <!-- Manually run with: /opt/maven/bin/mvn -N -Dtycho.mode=maven  license:format -Dyear=2010 -->
+      <plugin>
+        <groupId>com.google.code.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <version>1.4.0</version>
+        <configuration>
+          <header>${basedir}/header.txt</header>
+          <includes>
+            <include>**/*.java</include>
+            <include>**/pom.xml</include>
+          </includes>
+          <!-- this is important for muti-module project -->
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.5</source>
+            <target>1.5</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    
+  </build>
+  
+  <profiles>
+    <profile>
+      <id>coverage</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-test-environment-maven-plugin</artifactId>
+            <configuration>
+              <testSkip>true</testSkip>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+
+</project>

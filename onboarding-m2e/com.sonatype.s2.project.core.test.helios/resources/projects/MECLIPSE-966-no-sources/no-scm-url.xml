@@ -1,0 +1,8 @@
+<project>
+  <name>project</name>
+  <modules>
+    <module>
+      <name>module</name>
+    </module>
+  </modules>
+</project>

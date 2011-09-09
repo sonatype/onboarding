@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<model xmlns="http://modello.codehaus.org/MODELLO/1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://modello.codehaus.org/MODELLO/1.3.0 http://modello.codehaus.org/xsd/modello-1.3.0.xsd">
+
+  <id>p2Lineup</id>
+
+  <name>P2Lineup</name>
+
+  <description>
+    <![CDATA[
+      <p>Nexus P2 Lineup DTOs used in REST API</p>
+      ]]>
+  </description>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.nexus.p2.rest.model</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class>
+      <name>P2LineupErrorResponse</name>
+      <version>1.0.0+</version>
+      <description>Error message returned when a P2 lineup cannot be added, updated, deleted, etc.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "error-response" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "error-response" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>errors</name>
+          <version>1.0.0+</version>
+          <association>
+            <type>P2LineupError</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <required>true</required>
+          <identifier>true</identifier>
+          <description>List of errors.</description>
+        </field>
+      </fields>
+    </class>
+    
+    <class>
+      <name>P2LineupError</name>
+      <version>1.0.0+</version>
+      <description>Base class for all P2 lineup action errors. It contains a simple error message.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "P2LineupError" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "P2LineupError" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>errorMessage</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+        </field>
+        <field>
+          <name>warning</name>
+          <version>1.0.0+</version>
+          <type>boolean</type>
+          <defaultValue>false</defaultValue>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public P2LineupError()
+    {
+    }
+
+    public P2LineupError( String errorMessage )
+    {
+        this.errorMessage = errorMessage;
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+    
+    <class>
+      <name>P2LineupRepositoryError</name>
+      <superClass>P2LineupError</superClass>
+      <version>1.0.0+</version>
+      <description>Error returned when one repository specified in a P2 lineup cannot be used or resolved.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "P2LineupRepositoryError" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "P2LineupRepositoryError" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>repositoryURL</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public P2LineupRepositoryError()
+    {
+    }
+
+    public P2LineupRepositoryError( String repositoryURL, String errorMessage )
+    {
+        this.repositoryURL = repositoryURL;
+        setErrorMessage( errorMessage );
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+    
+    <class>
+      <name>P2LineupUnresolvedInstallableUnit</name>
+      <superClass>P2LineupError</superClass>
+      <version>1.0.0+</version>
+      <description>Error returned when a P2 installable unit specified in a P2 lineup or a dependency installable unit cannot be resolved.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "P2LineupUnresolvedInstallableUnit" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "P2LineupUnresolvedInstallableUnit" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>installableUnitId</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+        </field>
+        <field>
+          <name>installableUnitVersion</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public P2LineupUnresolvedInstallableUnit()
+    {
+    }
+
+    public P2LineupUnresolvedInstallableUnit( String installableUnitId, String installableUnitVersion, String errorMessage )
+    {
+        this.installableUnitId = installableUnitId;
+        this.installableUnitVersion = installableUnitVersion;
+        setErrorMessage( errorMessage );
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+    
+    <class>
+      <name>P2LineupListResponse</name>
+      <version>1.0.0+</version>
+      <description>P2 Lineup list response.  Returns a summary of all P2 lineups.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "p2-lineups" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "p2-lineups" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>data</name>
+          <version>1.0.0+</version>
+          <association>
+            <type>P2LineupSummaryDto</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <identifier>true</identifier>
+          <required>true</required>
+          <description>List of P2 lineup summaries.</description>
+          <annotations>
+            <annotation>@javax.xml.bind.annotation.XmlElementWrapper( name = "data" )</annotation>
+            <annotation>@javax.xml.bind.annotation.XmlElement( name = "p2-lineup" )</annotation>
+          </annotations>
+        </field>
+      </fields>
+    </class>
+    
+    <class>
+      <name>P2LineupSummaryDto</name>
+      <version>1.0.0+</version>
+      <description>P2 lineup summary.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "p2-lineup" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>        
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "p2-lineup" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>resourceUri</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <description>URI of the P2 lineup.</description>
+        </field>
+        <field>
+          <name>id</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <description>Id of the P2 lineup.</description>
+        </field>
+        <field>
+          <name>groupId</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <description>Group id of the P2 lineup.</description>
+        </field>
+        <field>
+          <name>version</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <description>Version of the P2 lineup.</description>
+        </field>
+        <field>
+          <name>name</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <description>Name of the P2 lineup.</description>
+        </field>
+        <field>
+          <name>description</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <description>Description of the P2 lineup.</description>
+        </field>
+        <field>
+          <name>repositoryUrl</name>
+          <type>String</type>
+          <identifier>true</identifier>
+          <description>Url of the lineup repository (read-only).</description>
+        </field>
+      </fields>
+    </class>
+  </classes>
+</model>

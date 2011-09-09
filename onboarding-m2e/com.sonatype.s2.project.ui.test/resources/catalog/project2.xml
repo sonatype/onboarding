@@ -1,0 +1,26 @@
+<project>
+  <name>Test Project 2</name>
+  <homeUrl>http://home/url2</homeUrl>
+  <docsUrl>http://docs/url2</docsUrl>
+  <security-realms>
+    <security-realm>
+      <id>security.realm</id>
+    </security-realm>
+  </security-realms>
+  <prerequisites>
+    <requiredMemory>2560m</requiredMemory>
+  </prerequisites>
+  <modules>
+    <module>
+      <name>module3</name>
+      <scm>
+        <url>http://scm/module3</url>
+        <security-realm>security.realm</security-realm>
+      </scm>
+      <homeUrl>http://home/module3</homeUrl>
+      <docsUrl>http://docs/module3</docsUrl>
+      <issuesUrl>http://issues/module3</issuesUrl>
+      <buildUrl>http://build/module3</buildUrl>
+    </module>
+  </modules>
+</project>

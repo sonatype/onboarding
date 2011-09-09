@@ -1,0 +1,15 @@
+<project>
+  <name>JGit</name>
+  <description>JGit is an EDL (new-style BSD) licensed, lightweight, pure Java library implementing the Git version control system.</description>
+  <imageUrl>./jgit48.png</imageUrl>
+  <modules>
+    <module>
+      <name>jgit</name>
+      <scm><url>scm:git:git://egit.eclipse.org/jgit.git</url></scm>
+    </module>
+    <module>
+      <name>jgit-simple</name>
+      <scm><url>scm:git:git://github.com/sonatype/jgit-simple.git</url></scm>
+    </module>
+  </modules>
+</project>

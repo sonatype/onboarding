@@ -1,0 +1,19 @@
+<!--
+Sonatype Nexus (TM) Professional Version.
+Copyright (c) 2008 Sonatype, Inc. All rights reserved.
+Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions/.
+"Sonatype" and "Sonatype Nexus" are trademarks of Sonatype, Inc. 
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.sonatype.components</groupId>
+    <artifactId>nexus-p2</artifactId>
+    <version>1.5.0-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>com.sonatype.nexus.p2.installer.feature</artifactId>
+  <packaging>eclipse-feature</packaging>
+</project>

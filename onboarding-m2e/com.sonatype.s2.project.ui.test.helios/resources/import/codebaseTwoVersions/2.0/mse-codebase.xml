@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <groupId>com.sonatype</groupId>
+  <artifactId>codebaseTwoVersions</artifactId>
+  <version>2.0</version>
+  <name>codebaseTwoVersions</name>
+  <installerVersion>1.0.5</installerVersion>
+  <eclipse-installation>
+    <directory>@user.home@/mse/@mse-codebase.name@-@mse-codebase.version@/eclipse</directory>
+  </eclipse-installation>
+  <eclipse-workspace>
+    <directory>@user.home@/mse/@mse-codebase.name@-@mse-codebase.version@/workspace</directory>
+  </eclipse-workspace>
+</project>

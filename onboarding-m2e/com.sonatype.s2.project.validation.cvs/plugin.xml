@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.sonatype.s2.project.validation.cvs.CvsAccessValidator"
+         name="CVS Access Validator"
+         point="com.sonatype.s2.project.validation.IScmAccessValidator">
+      <validator
+             class="com.sonatype.s2.project.validation.cvs.CvsAccessValidator">
+          <description>
+             Validates access to CVS repositories.
+          </description>
+      </validator>
+   </extension>
+   <extension
+         id="com.sonatype.s2.project.validation.cvs.CvsURINormalizer"
+         name="URI Normalizer for CVS URIs/URLs"
+         point="org.maven.ide.eclipse.authentication.URINormalizer">
+      <handler
+            class="com.sonatype.s2.project.validation.cvs.CvsURINormalizer">
+      </handler>
+   </extension>
+</plugin>

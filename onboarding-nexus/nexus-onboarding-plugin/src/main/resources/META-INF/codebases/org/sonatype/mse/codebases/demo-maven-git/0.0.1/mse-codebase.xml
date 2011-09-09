@@ -1,0 +1,41 @@
+<!--
+
+    Copyright (c) 2008-2011 Sonatype, Inc.
+
+    All rights reserved. Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions.
+    Sonatype and Sonatype Nexus are trademarks of Sonatype, Inc. Apache Maven is a trademark of the Apache Foundation.
+    M2Eclipse is a trademark of the Eclipse Foundation. All other trademarks are the property of their respective owners.
+
+-->
+<project>
+  <groupId>org.sonatype.mse.codebases</groupId>
+  <artifactId>demo-maven-git</artifactId>
+  <version>0.0.1</version>
+  <name>Maven</name>
+  <description>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</description>
+  
+  <homeUrl>http://maven.apache.org/</homeUrl>
+  <docsUrl>http://maven.apache.org/project-info.html</docsUrl>
+
+  <security-realms>
+    <security-realm>
+      <id>nexus</id>
+    </security-realm>
+  </security-realms>
+  
+  <p2Lineup>
+    <url>${nexus.baseURL}/content/repositories/nx-p2lineup/org/sonatype/s2/catalogs/demo/maven-git/0.0.1.20100421-1239</url>
+    <security-realm>nexus</security-realm>
+  </p2Lineup>
+
+  <security-realm>nexus</security-realm>
+  
+  <modules>
+    <module>
+      <name>maven-git</name>
+      <scm>
+		<url>scm:git:git://github.com/sonatype/maven-demo.git</url>
+      </scm>
+    </module>
+  </modules>
+</project>

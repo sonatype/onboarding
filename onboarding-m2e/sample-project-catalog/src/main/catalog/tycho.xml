@@ -1,0 +1,13 @@
+<project>
+  <name>Tycho</name>
+  <description>Tycho is a set of Maven plugins and extensions for building Eclipse plugins and OSGI bundles with Maven.</description>
+  <imageUrl>./sonatype48.png</imageUrl>
+  <modules>
+    <module>
+      <name>Tycho</name>
+      <scm><url>scm:git:git://github.com/sonatype/sonatype-tycho.git</url></scm>
+      <homeUrl>http://tycho.sonatype.org/</homeUrl>
+      <issuesUrl>https://issues.sonatype.org/browse/TYCHO</issuesUrl>
+    </module>
+  </modules>
+</project>

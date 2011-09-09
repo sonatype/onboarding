@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.sonatype.s2.project.validation.test
+Bundle-SymbolicName: com.sonatype.s2.project.validation.test
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Require-Bundle: org.eclipse.core.resources;bundle-version="3.5.1";visibility:=reexport,
+ org.eclipse.core.runtime;bundle-version="3.5.0";visibility:=reexport,
+ org.junit;visibility:=reexport,
+ org.maven.ide.eclipse.authentication;visibility:=reexport,
+ com.sonatype.s2.p2lineup.model;bundle-version="1.0.0";visibility:=reexport,
+ com.sonatype.s2.project.core;bundle-version="1.0.3";visibility:=reexport,
+ com.sonatype.s2.project.core.test;bundle-version="1.0.3";visibility:=reexport,
+ com.sonatype.s2.project.model;bundle-version="1.0.0";visibility:=reexport,
+ com.sonatype.s2.project.validation;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.m2e.tests.common;bundle-version="[0.13.0,0.14.0)";visibility:=reexport,
+ com.sonatype.s2.project.validation.api;visibility:=reexport,
+ org.eclipse.m2e.core;bundle-version="[0.13.0,0.14.0)";visibility:=reexport,
+ org.eclipse.m2e.scm;bundle-version="[0.13.0,0.14.0)";visibility:=reexport,
+ com.sonatype.s2.project.validation.svn;bundle-version="1.0.3";visibility:=reexport,
+ com.sonatype.m2e.egit;bundle-version="1.0.3";visibility:=reexport,
+ com.sonatype.s2.project.validation.git;bundle-version="1.0.3";visibility:=reexport,
+ com.sonatype.m2e.subversive;bundle-version="1.0.3";visibility:=reexport
+Export-Package: com.sonatype.s2.project.validator

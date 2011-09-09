@@ -1,0 +1,11 @@
+<project>
+  <name>Project-A</name>
+  <modules>
+    <module>
+      <name>Test</name>
+      <scm>
+        <url>scm:cvs:cvs://:pserver:badhost.void.void:/cvsroot#bad</url>
+      </scm>
+    </module>
+  </modules>
+</project>

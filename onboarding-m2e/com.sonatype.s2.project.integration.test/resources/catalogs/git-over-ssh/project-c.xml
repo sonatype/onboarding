@@ -1,0 +1,15 @@
+<project>
+  <name>Project-C</name>
+  <modules>
+    <module>
+      <name>git-test</name>
+      <scm>
+        <!-- Regular style URL with included username -->
+        <url>scm:git:ssh://anon@localhost:@port.ssh@/@basedir@/resources/scm/git/simple</url>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

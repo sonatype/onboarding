@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p2lineup id="TargetEnvironmentValidatorTest" version="1.0.0">
+  <repositories>
+  	<repository url="http://fake" layout="p2"/>
+  </repositories>
+  <rootInstallableUnits>
+    <unit id="fake" version="0.0.0"/>
+  </rootInstallableUnits>
+  <targetEnvironments>
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86" />
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86_64" />
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86" />
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86_64" />
+    <environment osgi.os="macosx" osgi.ws="cocoa" osgi.arch="x86" />
+    <environment osgi.os="macosx" osgi.ws="cocoa" osgi.arch="x86_64" />
+  </targetEnvironments>
+</p2lineup>

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.sonatype.nexus.p2.installer.ui
+Bundle-SymbolicName: com.sonatype.nexus.p2.installer.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sonatype.nexus.p2.installer.ui.Activator
+Bundle-Vendor: SONATYPE
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.equinox.p2.core,
+ org.eclipse.equinox.p2.ui
+Bundle-RequiredExecutionEnvironment: J2SE-1.5, JavaSE-1.6

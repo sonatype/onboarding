@@ -1,0 +1,23 @@
+<project>
+  <name>Test Project</name>
+  <homeUrl>http://home/url</homeUrl>
+  <docsUrl>http://docs/url</docsUrl>
+  <security-realms>
+    <security-realm>
+      <id>security.realm</id>
+    </security-realm>
+  </security-realms>
+  <modules>
+    <module>
+      <name>module1</name>
+      <scm>
+        <url>http://scm/module1</url>
+        <security-realm>security.realm.this-should-not-be-here</security-realm>
+      </scm>
+      <homeUrl>http://home/module1</homeUrl>
+      <docsUrl>http://docs/module1</docsUrl>
+      <issuesUrl>http://issues/module1</issuesUrl>
+      <buildUrl>http://build/module1</buildUrl>
+    </module>
+  </modules>
+</project>

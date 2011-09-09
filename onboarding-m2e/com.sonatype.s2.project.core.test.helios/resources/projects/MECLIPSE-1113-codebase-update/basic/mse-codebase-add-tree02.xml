@@ -1,0 +1,20 @@
+<project>
+  <groupId>MECLIPSE-1113-basic</groupId>
+  <artifactId>basic-codebase</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>MECLIPSE-1113-basic</name>
+  <modules>
+    <module>
+      <name>tree01</name>
+      <scm>
+        <url>scm:testfile:target/codebases/MECLIPSE-1113-codebase-update/basic/tree01</url>
+      </scm>
+    </module>
+    <module>
+      <name>tree02</name>
+      <scm>
+        <url>scm:testfile:target/codebases/MECLIPSE-1113-codebase-update/basic/tree02</url>
+      </scm>
+    </module>
+  </modules>
+</project>

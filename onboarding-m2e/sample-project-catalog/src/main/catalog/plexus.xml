@@ -1,0 +1,10 @@
+<project>
+  <name>Plexus</name>
+  <description>The Plexus project provides a full software stack for creating and executing software projects. Based on the Plexus container, the applications can utilise component-oriented programming to build modular, reusable components that can easily be assembled and reused.</description>
+  <modules>
+    <module>
+      <name>plexus</name>
+      <scm><url>scm:svn:https://svn.codehaus.org/plexus/plexus-containers/branches/plexus-containers-1.x/</url></scm>
+    </module>
+  </modules>
+</project>

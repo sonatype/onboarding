@@ -1,0 +1,13 @@
+<catalog>
+  <name>Blah</name>
+  <security-realms>
+    <security-realm>
+      <id>test.realm</id>
+    </security-realm>
+  </security-realms>
+  <entry>
+    <name>Foo</name>
+    <descriptorUrl>./descriptor.xml</descriptorUrl>
+    <security-realm>test.realm</security-realm>
+  </entry>
+</catalog>

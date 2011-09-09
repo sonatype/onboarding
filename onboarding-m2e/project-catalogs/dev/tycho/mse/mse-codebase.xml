@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${codebase.version}</version>
+  <name>Tycho</name>
+  <description>Tycho is a set of Maven plugins and extensions for building Eclipse plugins and OSGI bundles with Maven.</description>
+  <installerVersion>1.0.6</installerVersion>
+  <p2Lineup>
+    <url>${lineup.url}</url>
+  </p2Lineup>
+  <modules>
+    <module>
+      <name>tycho</name>
+      <scm>
+        <url>scm:git:ssh://git@github.com/sonatype/sonatype-tycho.git</url>
+      </scm>
+      <homeUrl>http://tycho.sonatype.org/</homeUrl>
+      <issuesUrl>https://issues.sonatype.org/browse/TYCHO</issuesUrl>
+      <buildUrl>https://grid.sonatype.org/ci/view/Tycho/job/tycho/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://grid.sonatype.org/ci</url>
+          <jobs>
+            <job>tycho</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+      <profiles>
+        <profile>bootstrap-1</profile>
+        <profile>bootstrap-2</profile>
+        <profile>its</profile>
+      </profiles>
+    </module>
+    <module>
+      <name>tycho-jnlp</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/plugins/trunk/tycho-jnlp-plugin/</url>
+      </scm>
+    </module>
+  </modules>
+</project>

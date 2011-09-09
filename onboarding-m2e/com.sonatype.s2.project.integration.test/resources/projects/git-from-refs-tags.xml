@@ -1,0 +1,12 @@
+<project>
+  <name>git-from-unique-tag</name>
+  <modules>
+    <module>
+      <name>git-tag-b</name>
+      <scm>
+        <url>scm:git:${basedir}/resources/scm/git/simple</url>
+        <branch>refs/tags/branchortag-b</branch>
+      </scm>
+    </module>
+  </modules>
+</project>

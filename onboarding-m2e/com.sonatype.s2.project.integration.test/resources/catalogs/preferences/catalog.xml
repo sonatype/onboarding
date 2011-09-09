@@ -1,0 +1,19 @@
+<catalog>
+  <name>Test</name>
+  <entry>
+    <name>Project-File</name>
+    <descriptorUrl>./project-file.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Project-HTTP-Missing</name>
+    <descriptorUrl>./project-http-missing.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Project-HTTP</name>
+    <descriptorUrl>./project-http.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Project-HTTPS</name>
+    <descriptorUrl>./project-https.xml</descriptorUrl>
+  </entry>
+</catalog>

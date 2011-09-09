@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+
+    Copyright (c) 2008-2011 Sonatype, Inc.
+
+    All rights reserved. Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions.
+    Sonatype and Sonatype Nexus are trademarks of Sonatype, Inc. Apache Maven is a trademark of the Apache Foundation.
+    M2Eclipse is a trademark of the Eclipse Foundation. All other trademarks are the property of their respective owners.
+
+-->
+<security-configuration>
+  <version>2.0.3</version>
+  <anonymousAccessEnabled>true</anonymousAccessEnabled>
+  <anonymousUsername>anonymous</anonymousUsername>
+  <anonymousPassword>{7G9jJqp17ykHNFQ0Cm+K9hXX/usDQ+TvChEuS9yP5Gw=}</anonymousPassword>
+  <realms>
+    <realm>XmlAuthenticatingRealm</realm>
+    <realm>XmlAuthorizingRealm</realm>
+  </realms>
+</security-configuration>

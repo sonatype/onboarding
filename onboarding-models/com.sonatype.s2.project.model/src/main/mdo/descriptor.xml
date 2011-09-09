@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+
+<model>
+
+  <id>descriptor</id>
+  <name>S2ProjectDescriptor</name>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.s2.project.model.descriptor</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class rootElement="true" xml.tagName="project">
+      <name>Project</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IS2Project</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>groupId</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>artifactId</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>version</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>name</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>description</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>installerVersion</name>
+          <type>String</type>
+          <defaultValue>1.0.4</defaultValue>
+        </field>
+        <field>
+          <name>homeUrl</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>docsUrl</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="security-realm" java.setter="false">
+          <name>notused_securityRealmId</name>
+          <type>String</type>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+        <field xml.tagName="p2Lineup">
+          <name>p2LineupLocation</name>
+          <association java.useInterface="com.sonatype.s2.project.model.IP2LineupLocation">
+            <type>P2LineupLocation</type>
+            <multiplicity>1</multiplicity>
+          </association>
+        </field>
+        <field>
+          <name>modules</name>
+          <association java.useInterface="com.sonatype.s2.project.model.IS2Module">
+            <type>S2Module</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+        <field>
+          <name>requiresMavenSettings</name>
+          <type>boolean</type>
+          <defaultValue>false</defaultValue>
+        </field>
+        <field xml.tagName="maven-settings">
+          <name>mavenSettingsLocation</name>
+          <association java.useInterface="com.sonatype.s2.project.model.IMavenSettingsLocation">
+            <type>MavenSettingsLocation</type>
+            <multiplicity>1</multiplicity>
+          </association>
+        </field>
+        <field xml.tagName="eclipse-preferences">
+          <name>eclipsePreferencesLocation</name>
+          <association java.useInterface="com.sonatype.s2.project.model.IEclipsePreferencesLocation">
+            <type>EclipsePreferencesLocation</type>
+            <multiplicity>1</multiplicity>
+          </association>
+        </field>
+        <field xml.tagName="eclipse-installation">
+          <name>eclipseInstallationLocation</name>
+          <association java.useInterface="com.sonatype.s2.project.model.IEclipseInstallationLocation">
+            <type>EclipseInstallationLocation</type>
+            <multiplicity>1</multiplicity>
+          </association>
+        </field>
+        <field xml.tagName="eclipse-workspace">
+          <name>eclipseWorkspaceLocation</name>
+          <association java.useInterface="com.sonatype.s2.project.model.IEclipseWorkspaceLocation">
+            <type>EclipseWorkspaceLocation</type>
+            <multiplicity>1</multiplicity>
+          </association>
+        </field>
+        <field xml.tagName="security-realms" java.setter="false">
+          <name>notused_securityRealms</name>
+          <association>
+            <type>Notused_SecurityRealm</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+        <field>
+          <name>prerequisites</name>
+          <association java.useInterface="com.sonatype.s2.project.model.IPrerequisites">
+            <type>Prerequisites</type>
+            <multiplicity>1</multiplicity>
+          </association>
+        </field>
+        <field xml.transient="true">
+          <name>descriptorUrl</name>
+          <type>String</type>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public void setNotused_securityRealmId( String notused_securityRealmId )
+    {
+    }
+    
+    public void setNotused_securityRealms( java.util.List<Notused_SecurityRealm> notused_securityRealms )
+    {
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class xml.tagName="module">
+      <name>S2Module</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IS2Module</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>name</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="scm">
+          <name>scmLocation</name>
+          <association java.useInterface="com.sonatype.s2.project.model.IScmLocation">
+            <type>ScmLocation</type>
+            <multiplicity>1</multiplicity>
+          </association>
+        </field>
+        <field>
+          <name>homeUrl</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>docsUrl</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>issuesUrl</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>buildUrl</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>ciServers</name>
+          <association java.useInterface="com.sonatype.s2.project.model.ICIServerLocation">
+            <type>CIServerLocation</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+        
+        <field>
+          <name>profiles</name>
+          <association>
+            <type>String</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+        <field>
+          <name>roots</name>
+          <association xml.tagName="relPath">
+            <type>String</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+        <field>
+          <name>feeds</name>
+          <association xml.tagName="feed">
+            <type>String</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+      </fields>
+    </class>
+
+    <class>
+      <name>MavenSettingsLocation</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IMavenSettingsLocation</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>url</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="security-realm" java.setter="false">
+          <name>notused_securityRealmId</name>
+          <type>String</type>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public void setNotused_securityRealmId( String notused_securityRealmId )
+    {
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class>
+      <name>EclipsePreferencesLocation</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IEclipsePreferencesLocation</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>url</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="security-realm" java.setter="false">
+          <name>notused_securityRealmId</name>
+          <type>String</type>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public void setNotused_securityRealmId( String notused_securityRealmId )
+    {
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class>
+      <name>ScmLocation</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IScmLocation</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>url</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>branch</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="security-realm" java.setter="false">
+          <name>notused_securityRealmId</name>
+          <type>String</type>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public void setNotused_securityRealmId( String notused_securityRealmId )
+    {
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class>
+      <name>P2LineupLocation</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IP2LineupLocation</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>url</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="security-realm" java.setter="false">
+          <name>notused_securityRealmId</name>
+          <type>String</type>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public void setNotused_securityRealmId( String notused_securityRealmId )
+    {
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class>
+      <name>Notused_SecurityRealm</name>
+      <fields>
+        <field>
+          <name>id</name>
+          <type>String</type>
+        </field>
+      </fields>
+      <annotations>
+    	<annotation>@Deprecated</annotation>
+      </annotations>
+    </class>
+
+    <class>
+      <name>Prerequisites</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IPrerequisites</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>requiredMemory</name>
+          <type>String</type>
+        </field>
+      </fields>
+    </class>
+
+    <class>
+      <name>EclipseInstallationLocation</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IEclipseInstallationLocation</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>directory</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>customizable</name>
+          <type>boolean</type>
+          <defaultValue>true</defaultValue>
+        </field>
+      </fields>
+    </class>
+    
+   <class>
+      <name>CIServerLocation</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.ICIServerLocation</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>url</name>
+          <type>String</type>
+        </field>
+      
+        <field>
+          <name>jobs</name>
+          <association xml.tagName="job">
+            <type>String</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+      </fields>
+    </class>    
+
+    <class>
+      <name>EclipseWorkspaceLocation</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IEclipseWorkspaceLocation</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>directory</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>customizable</name>
+          <type>boolean</type>
+          <defaultValue>true</defaultValue>
+        </field>
+      </fields>
+    </class>
+  </classes>
+
+</model>

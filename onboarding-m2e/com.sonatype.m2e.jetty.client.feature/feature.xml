@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.sonatype.m2e.jetty.client.feature"
+      label="%label"
+      version="1.0.7.qualifier"
+      provider-name="%providerName">
+
+   <description url="%descriptionURL">%description</description>
+
+   <copyright url="%copyrightURL">%copyright</copyright>
+
+   <license url="%licenseURL">%license</license>
+
+   <plugin
+         id="org.eclipse.jetty.client"
+         download-size="0"
+         install-size="0"
+         version="7.0.0.v20091005"/>
+
+   <plugin
+         id="org.eclipse.jetty.http"
+         download-size="0"
+         install-size="0"
+         version="7.0.0.v20091005"/>
+
+   <plugin
+         id="org.eclipse.jetty.io"
+         download-size="0"
+         install-size="0"
+         version="7.0.0.v20091005"/>
+
+   <plugin
+         id="org.eclipse.jetty.util"
+         download-size="0"
+         install-size="0"
+         version="7.0.0.v20091005"/>
+
+</feature>

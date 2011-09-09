@@ -1,0 +1,68 @@
+
+  <!--
+    Sonatype Nexus (TM) Professional Version. Copyright (c) 2008 Sonatype, Inc. All rights reserved. Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions/. "Sonatype" and "Sonatype Nexus" are trademarks of Sonatype,
+    Inc.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.sonatype.components</groupId>
+    <artifactId>nexus-p2</artifactId>
+    <version>1.5.0</version>
+  </parent>
+  
+  <!-- make sure to update version in manifest as well !!! -->
+
+  <artifactId>nexus-p2-facade</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-component-annotations</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sonatype.tycho</groupId>
+      <artifactId>tycho-equinox</artifactId>
+      <version>${tycho-artifacts.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>plexus-container-default</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.sonatype.tycho</groupId>
+      <artifactId>tycho-p2-facade</artifactId>
+      <version>${tycho-artifacts.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>plexus-container-default</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sonatype.nexus</groupId>
+      <artifactId>nexus-app</artifactId>
+      <version>${nexus.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.1</version>
+    </dependency>
+
+  </dependencies>
+</project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.sonatype.s2.project</groupId>
+    <artifactId>onboarding-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>sample-project-catalog</artifactId>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.sonatype.maven.plugins</groupId>
+        <artifactId>maven-upload-plugin</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>publish-catalog</id>
+            <goals>
+              <goal>upload-files</goal>
+            </goals>
+            <phase>deploy</phase>
+            <configuration>
+              <repositoryUrl>http://sonatype02.managed.contegix.com:8089/nexus/content/repositories/test-project-catalog</repositoryUrl>
+              <basedir>src/main/catalog</basedir>
+              <includes>
+                <include>*.xml</include>
+              </includes>
+              <excludes>
+                <exclude>catalog.xml</exclude>
+              </excludes>
+            </configuration>
+          </execution>
+          <execution>
+            <id>publish-lineups</id>
+            <goals>
+              <goal>upload-files</goal>
+            </goals>
+            <phase>deploy</phase>
+            <configuration>
+              <repositoryUrl>http://sonatype02.managed.contegix.com:8089/nexus/content/repositories/p2lineups</repositoryUrl>
+              <basedir>src/main/lineups</basedir>
+              <includes>
+                <include>**/p2lineup.xml</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <serverId>sonatype-commercial</serverId>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

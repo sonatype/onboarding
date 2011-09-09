@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="onboarding-site"
+      version="1.0.8.qualifier"
+      provider-name="%providerName" label="%label">
+
+   <copyright url="%copyrightURL">%copyright</copyright>
+
+   <license url="%licenseURL">%license</license>
+
+   <includes id="com.sonatype.s2.project.feature" version="0.0.0"/>
+   <includes id="com.sonatype.s2.project.p2.feature" version="0.0.0"/>
+   <includes id="com.sonatype.s2.project.cvs.feature" version="0.0.0"/>
+   <includes id="com.sonatype.s2.project.git.feature" version="0.0.0"/>
+   <includes id="com.sonatype.s2.project.svn.feature" version="0.0.0"/>
+
+</feature>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Sonatype Studio Installer JNLP" uid="com.sonatype.s2.installer.jnlp" id="com.sonatype.s2.installer.product" application="com.sonatype.s2.installer.application" version="1.0.8.qualifier" useFeatures="true" includeLaunchers="false">
+
+   <configIni use="">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-eclipse.keyring .s2/.keyring</programArgs>
+      <vmArgs>-Dcom.sonatype.mse.installer.installDescriptorURL=http://s2test.sonatype.com/content/repositories/democatalog/org.sonatype.s2.catalogs.demo-maven-0.0.1-install.jnlp</vmArgs>
+   </launcherArgs>
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="com.sonatype.s2.installer.feature" version="1.0.8.qualifier"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.equinox.app" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.frameworkadmin.equinox" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator.manipulator" autoStart="true" startLevel="0" />
+   </configurations>
+
+</product>

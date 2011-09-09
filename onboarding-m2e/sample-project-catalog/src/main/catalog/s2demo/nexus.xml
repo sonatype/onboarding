@@ -1,0 +1,32 @@
+<project>
+  <name>Nexus</name>
+  
+  <homeUrl>http://www.sonatype.com/products/nexus</homeUrl>
+  <docsUrl>http://www.sonatype.com/products/nexus/documentation</docsUrl>
+  
+  <security-realms>
+    <security-realm>
+      <id>s2demo</id>
+    </security-realm>
+    <security-realm>
+      <id>sonatype.org</id>
+    </security-realm>
+  </security-realms>
+  
+  <security-realm>s2demo</security-realm>
+  
+  <p2Lineup>
+    <url>https://s2demo.sonatype.com/content/repositories/demolineups/s2nexus/</url>
+    <security-realm>s2demo</security-realm>
+  </p2Lineup>
+  
+  <modules>
+    <module>
+      <name>nexus</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.org/nexus/trunk</url>
+        <security-realm>sonatype.org</security-realm>
+      </scm>
+    </module>
+  </modules>
+</project>

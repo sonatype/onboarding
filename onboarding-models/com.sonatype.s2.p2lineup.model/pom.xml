@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.sonatype.s2.models</groupId>
+    <artifactId>s2models</artifactId>
+    <version>1.0.9-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>com.sonatype.s2.p2lineup.model</artifactId>
+  <packaging>eclipse-plugin</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.modello</groupId>
+        <artifactId>modello-maven-plugin</artifactId>
+        <version>${modello.version}</version>
+        <executions>
+          <execution>
+            <id>standard</id>
+            <goals>
+              <goal>java</goal>
+              <goal>xpp3-reader</goal>
+              <goal>xpp3-writer</goal>
+            </goals>
+            <configuration>
+              <version>1.0.0</version>
+              <models>
+                <model>src/main/mdo/p2lineup.xml</model>
+              </models>
+            </configuration>
+          </execution>
+            <execution>
+            <id>rest</id>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <version>1.0.0</version>
+              <models>
+                <model>src/main/mdo/p2rest.xml</model>
+              </models>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <useJava5>true</useJava5>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

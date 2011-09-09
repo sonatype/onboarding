@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+	hideDotFiles = dotGitOnly
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = file:///D:\\eclipsedev\\mse1\\w\\s2-aggregator\\onboarding\\com.sonatype.s2.project.integration.test\\resources\\scm\\git\\simple-with-maven-settings
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master

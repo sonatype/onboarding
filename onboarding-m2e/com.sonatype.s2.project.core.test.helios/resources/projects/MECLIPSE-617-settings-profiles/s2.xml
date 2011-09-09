@@ -1,0 +1,17 @@
+<project>
+  <name>MECLIPSE-617-settings-profiles</name>
+  <maven-settings>
+    <url>${baseurl}/resources/projects/MECLIPSE-617-settings-profiles/settings.xml</url>
+  </maven-settings>
+  <modules>
+    <module>
+      <name>MECLIPSE-617-settings-profiles</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-617-settings-profiles</url>
+      </scm>
+      <profiles>
+        <profile>profile-a</profile>
+      </profiles>
+    </module>
+  </modules>
+</project>

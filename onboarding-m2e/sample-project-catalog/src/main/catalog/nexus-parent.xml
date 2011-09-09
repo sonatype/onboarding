@@ -1,0 +1,20 @@
+<!--
+This project is just for manually&quickly testing the Subversion integration. Hence it's not part of the catalog.
+-->
+<project>
+  <name>Nexus Parent</name>
+  <security-realms>
+    <security-realm>
+      <id>sonatype.org</id>
+    </security-realm>
+  </security-realms>
+  <modules>
+    <module>
+      <name>nexus-parent</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.org/nexus/trunk/nexus-parent</url>
+        <security-realm>sonatype.org</security-realm>
+      </scm>
+    </module>
+  </modules>
+</project>

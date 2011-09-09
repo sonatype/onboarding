@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+<model>
+  <id>catalog</id>
+  <name>S2ProjectCatalog</name>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.s2.project.model.catalog</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class rootElement="true" xml.tagName="catalog">
+      <name>ProjectCatalog</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IS2ProjectCatalog</interface>
+      </interfaces>
+      <fields>
+        <field xml.transient="true">
+          <name>url</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>name</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="security-realm" java.setter="false">
+          <name>notused_securityRealmId</name>
+          <type>String</type>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+        <field>
+          <name>entries</name>
+          <association xml.itemsStyle="flat" java.useInterface="com.sonatype.s2.project.model.IS2ProjectCatalogEntry">
+            <type>ProjectCatalogEntry</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+        <field xml.tagName="security-realms" java.setter="false">
+          <name>notused_securityRealms</name>
+          <association>
+            <type>Notused_SecurityRealm</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public void setNotused_securityRealmId( String notused_securityRealmId )
+    {
+    }
+    
+    public void setNotused_securityRealms( java.util.List<Notused_SecurityRealm> notused_securityRealms )
+    {
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+    
+    <class xml.tagName="entry">
+      <name>ProjectCatalogEntry</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.model.IS2ProjectCatalogEntry</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>name</name>
+          <type>String</type>
+        </field>
+        <field xml.transient="true">
+          <name>catalogUrl</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>descriptorUrl</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="security-realm" java.setter="false">
+          <name>notused_securityRealmId</name>
+          <type>String</type>
+          <annotations>
+        	<annotation>@Deprecated</annotation>
+          </annotations>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public void setNotused_securityRealmId( String notused_securityRealmId )
+    {
+    }
+    
+    public String getEffectiveDescriptorUrl()
+    {
+        return getEffectiveUrl( getDescriptorUrl() );
+    }
+
+    public String getEffectiveUrl( String url )
+    {
+        String effectiveUrl;
+
+        if ( url.startsWith( "./" ) && getCatalogUrl() != null )
+        {
+            effectiveUrl = getCatalogUrl();
+            if ( effectiveUrl.endsWith( "/" ) )
+            {
+                effectiveUrl += url.substring( 2 );
+            }
+            else
+            {
+                effectiveUrl += url.substring( 1 );
+            }
+        }
+        else
+        {
+            effectiveUrl = url;
+        }
+
+        return effectiveUrl;
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class>
+      <name>Notused_SecurityRealm</name>
+      <fields>
+        <field>
+          <name>id</name>
+          <type>String</type>
+        </field>
+      </fields>
+      <annotations>
+    	<annotation>@Deprecated</annotation>
+      </annotations>
+    </class>
+  </classes>
+</model>

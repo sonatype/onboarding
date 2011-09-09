@@ -1,0 +1,19 @@
+<project>
+  <name>codebase-with-maven-settings</name>
+  
+  <maven-settings>
+    <url>@baseuri@/resources/maven-settings/settings1.xml</url>
+  </maven-settings>
+  
+  <modules>
+    <module>
+      <name>git-test-maven-settings</name>
+      <scm>
+        <url>scm:git:file:///@basedir@/resources/scm/git/simple-with-maven-settings</url>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

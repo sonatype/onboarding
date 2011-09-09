@@ -1,0 +1,20 @@
+<project>
+  <name>Project-B</name>
+  <security-realms>
+    <security-realm>
+      <id>test</id>
+    </security-realm>
+  </security-realms>
+  <modules>
+    <module>
+      <name>git-branch-a</name>
+      <scm>
+        <url>scm:git:@baseurl@/resources/scm/git/simple</url>
+        <branch>branch-a</branch>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

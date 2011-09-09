@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p2lineup id="nexuspro" groupId="com.sonatype.mse.codebases.dev" version="0.0.1.20110316-1" name="Nexus IDE Lineup">
+  <description>Nexus Integrated Development Environment (IDE)</description>
+  <repositories>
+    <repository url="https://repository.sonatype.org/content/repositories/mse-latest" />
+    <repository url="http://download.eclipse.org/releases/helios" />
+    <repository url="http://beust.com/eclipse" />
+    <repository url="http://www.agpad.com/update" />
+  </repositories>
+  <rootInstallableUnits>
+    <unit id="org.eclipse.m2e.feature.feature.group" version="0.0.0" />
+    <unit id="com.sonatype.s2.project.svn.feature.feature.group" version="0.0.0" />
+    <unit id="org.sonatype.m2e.temporary.mojos.feature.feature.group" version="0.0.0" />
+    <unit id="com.sonatype.buildserver.bridge.feature.feature.group" version="0.0.0" />
+    <unit id="com.sonatype.s2.project.git.feature.feature.group" version="0.0.0" />
+    <unit id="com.sonatype.s2.project.feature.feature.group" version="0.0.0" />
+    <unit id="org.sonatype.tycho.m2e.feature.feature.group" version="0.0.0" />
+    <unit id="org.eclipse.sdk.ide" version="0.0.0" />
+    <unit id="com.spket.ui.feature.group" version="0.0.0" />
+    <unit id="org.testng.eclipse.feature.group" version="0.0.0" name="TestNG" />
+  </rootInstallableUnits>
+  <p2Advice touchpointId="org.eclipse.equinox.p2.osgi" touchpointVersion="1.0.0">
+    <advice>configure=addJvmArg(jvmArg:-Xmx768m)</advice>
+  </p2Advice>
+  <targetEnvironments>
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86" />
+    <environment osgi.os="macosx" osgi.ws="cocoa" osgi.arch="x86" />
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86_64" />
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86" />
+    <environment osgi.os="macosx" osgi.ws="cocoa" osgi.arch="x86_64" />
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86_64" />
+  </targetEnvironments>
+</p2lineup>

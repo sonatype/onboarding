@@ -1,0 +1,10 @@
+<project>
+  <groupId>MECLIPSE-1849</groupId>
+  <artifactId>basic-codebase</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>MECLIPSE-1849</name>
+  
+  <p2Lineup>
+    <url>fake</url>
+  </p2Lineup>
+</project>

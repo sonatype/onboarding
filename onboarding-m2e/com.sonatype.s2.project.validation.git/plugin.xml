@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.sonatype.s2.project.validation.git.GitAccessValidator"
+         name="GIT Access Validator"
+         point="com.sonatype.s2.project.validation.IScmAccessValidator">
+      <validator
+             class="com.sonatype.s2.project.validation.git.GitAccessValidator">
+          <description>
+             Validates access to GIT repositories.
+          </description>
+      </validator>
+   </extension>
+   
+   <extension
+         id="com.sonatype.s2.project.validation.git.GitURINormalizer"
+         name="URI Normalizer for git URIs/URLs"
+         point="org.maven.ide.eclipse.authentication.URINormalizer">
+      <handler
+            class="com.sonatype.s2.project.validation.git.GitURINormalizer">
+      </handler>
+   </extension>
+</plugin>

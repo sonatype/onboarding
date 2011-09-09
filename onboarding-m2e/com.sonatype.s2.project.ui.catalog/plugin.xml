@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.sonatype.s2.project.ui.ProjectViewerExtension" name="S2 Project Overview Contribution" schema="schema/ProjectViewerExtension.exsd"/>
+<!--   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.sonatype.mse.category"
+            name="%mavenStudio">
+      </category>
+      <view
+            category="com.sonatype.mse.category"
+            icon="icons/maven_indexes.gif"
+            name="%catalogView_title"
+            class="com.sonatype.s2.project.ui.catalog.view.ProjectCatalogView"
+            id="com.sonatype.s2.project.ui.catalog.view.projectcatalog">
+      </view>
+   </extension> -->
+
+   <extension
+         point="com.sonatype.s2.project.ui.materialization.update.CodebaseUpdateViewAction">
+      <actionContribution
+            id="com.sonatype.s2.project.ui.catalog.view.CodebaseViewAction"
+            enablesFor="*"
+            label="%codebaseViewAction_titleShort"
+            class="com.sonatype.s2.project.ui.catalog.view.CodebaseViewAction"
+            icon="home.gif"
+            tooltip="%codebaseViewAction_tooltip">
+      </actionContribution>
+   </extension>
+   
+   <!--extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+              id="com.sonatype.s2.project.ui.catalog.view.projectcatalog"
+              minimized="false"
+              relationship="stack"
+              relative="org.eclipse.ui.views.ProblemView">
+         </view>
+      </perspectiveExtension>
+   </extension-->
+
+   <extension point="org.eclipse.ui.editors">
+      <editor 
+         id="com.sonatype.s2.project.ui.catalog.view.ProjectDescriptorViewer" 
+         name="%projectViewer_title" 
+         icon="icons/maven_index.gif"
+         class="com.sonatype.s2.project.ui.catalog.view.ProjectDescriptorViewer"> 
+      </editor> 
+   </extension>
+   <extension
+         point="com.sonatype.s2.project.ui.ProjectViewerExtension">
+      <projectViewerExtension
+            class="com.sonatype.s2.project.ui.catalog.view.ProjectViewerModulesExtension">
+      </projectViewerExtension>
+      <projectViewerExtension
+            class="com.sonatype.s2.project.ui.catalog.view.ProjectViewerMavenSettingsExtension">
+      </projectViewerExtension>
+      <projectViewerExtension
+            class="com.sonatype.s2.project.ui.catalog.view.ProjectViewerEclipsePreferencesExtension">
+      </projectViewerExtension>
+   </extension>
+</plugin>

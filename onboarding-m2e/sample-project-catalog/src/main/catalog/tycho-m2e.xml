@@ -1,0 +1,11 @@
+<project>
+  <name>Tycho M2E Configurator</name>
+  <description>Tycho is a set of Maven plugins and extensions for building Eclipse plugins and OSGI bundles with Maven.</description>
+  <imageUrl>./m2eclipse48.png</imageUrl>
+  <modules>
+    <module>
+      <name>tycho-m2e</name>
+      <scm><url>scm:git:git://github.com/sonatype/m2eclipse-tycho.git</url></scm>
+    </module>
+  </modules>
+</project>

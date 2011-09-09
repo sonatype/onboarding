@@ -1,0 +1,14 @@
+<project>
+  <groupId>MECLIPSE-1113-profiles</groupId>
+  <artifactId>profiles-codebase</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>MECLIPSE-1113-profiles</name>
+  <modules>
+    <module>
+      <name>MECLIPSE-1113-profiles-tree01</name>
+      <scm>
+        <url>scm:testfile:target/codebases/MECLIPSE-1113-codebase-update/profiles/tree01</url>
+      </scm>
+    </module>
+  </modules>
+</project>

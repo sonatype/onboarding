@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nexus P2 Runtime Facade Implementation
+Bundle-SymbolicName: com.sonatype.nexus.p2.impl
+Bundle-Version: 1.5.0
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.equinox.security;bundle-version="1.0.100",
+ org.eclipse.equinox.p2.artifact.repository;bundle-version="[1.0.100,2.0.0)",
+ org.eclipse.equinox.p2.core;bundle-version="[1.0.100,2.0.0)",
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.equinox.p2.updatesite;bundle-version="[1.0.100,2.0.0)",
+ org.eclipse.equinox.p2.metadata.repository;bundle-version="[1.0.100,2.0.0)",
+ org.eclipse.osgi;bundle-version="[3.5.0, 3.6.0)",
+ org.eclipse.core.net;bundle-version="1.2.0",
+ org.eclipse.equinox.p2.publisher;bundle-version="1.0.0",
+ org.eclipse.equinox.p2.repository;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.equinox.p2.metadata;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.ecf.filetransfer;bundle-version="3.0.0",
+ org.eclipse.ecf.identity;bundle-version="3.0.0",
+ org.eclipse.equinox.p2.director;bundle-version="[1.0.100,2.0.0)"
+Import-Package: com.sonatype.nexus.p2.facade.internal;resolution:=optional,
+ org.sonatype.tycho.p2.facade;resolution:=optional,
+ com.sonatype.nexus.p2.rest.model;resolution:=optional
+Bundle-Activator: com.sonatype.nexus.p2.impl.Activator
+Export-Package: com.sonatype.nexus.p2.auth;x-friends:="com.sonatype.nexus.p2.impl.test",
+ com.sonatype.nexus.p2.impl;x-friends:="com.sonatype.nexus.p2.impl.test"
+Bundle-ActivationPolicy: lazy

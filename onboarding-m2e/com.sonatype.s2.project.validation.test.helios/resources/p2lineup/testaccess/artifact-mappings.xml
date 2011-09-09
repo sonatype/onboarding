@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories>
+  <repository nexusRepositoryId="Eclipse_Galileo">
+    <artifact localPath="/testaccess/plugins/org.eclipse.core.boot_3.1.100.v20080218.jar.pack.gz" remotePath="/plugins/org.eclipse.core.boot_3.1.100.v20080218.jar.pack.gz"/>
+    <artifact localPath="/testaccess/plugins/org.eclipse.core.boot_3.1.100.v20080218.jar" remotePath="/plugins/org.eclipse.core.boot_3.1.100.v20080218.jar"/>
+  </repository>
+</repositories>

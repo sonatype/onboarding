@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test Helpers
+Bundle-SymbolicName: com.sonatype.s2.project.tests.common;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Require-Bundle: org.junit,
+ org.eclipse.core.runtime,
+ org.eclipse.core.jobs,
+ com.sonatype.s2.project.core,
+ org.slf4j.api;bundle-version="1.5.11"
+Bundle-ClassPath: .,
+ jars/sshd-core-0.3.0.jar,
+ jars/sshd-pam-0.3.0.jar,
+ jars/mina-core-2.0.0-RC1.jar
+Export-Package: com.sonatype.s2.project.tests.common

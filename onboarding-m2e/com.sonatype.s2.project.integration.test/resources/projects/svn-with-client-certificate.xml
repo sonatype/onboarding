@@ -1,0 +1,17 @@
+<project>
+  <name>svn-with-client-certificate</name>
+  <security-realms>
+    <security-realm>
+      <id>ssltest</id>
+    </security-realm>
+  </security-realms>
+  <modules>
+    <module>
+      <name>svn-with-client-certificate</name>
+      <scm>
+        <url>scm:svn:https://svntest.sonatype.org:444/svn/trunk/svn-with-client-certificate</url>
+        <security-realm>ssltest</security-realm>
+      </scm>
+    </module>
+  </modules>
+</project>

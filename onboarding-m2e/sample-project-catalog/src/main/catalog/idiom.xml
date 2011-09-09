@@ -1,0 +1,27 @@
+<project>
+  <name>Idiom</name>
+  
+  <security-realms>
+    <security-realm>
+      <id>s2demo</id>
+    </security-realm>
+  </security-realms>
+  
+  <security-realm>s2demo</security-realm>
+  
+  <p2Lineup>
+    <url>https://s2demo.sonatype.com/content/repositories/demolineups/s2git</url>
+    <security-realm>s2demo</security-realm>
+  </p2Lineup>
+  
+  <modules>
+    <module>
+      <name>idiom</name>
+      <scm><url>scm:git:git@github.com:sonatype/idiom.git</url></scm>
+      <roots>
+        <relPath>idiom</relPath>
+        <relPath>idiom-editor</relPath>
+      </roots>      
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="teamProviderUIs" name="teamProviderUIs" schema="schema/teamProviderUIs.exsd"/>
+   <extension-point id="com.sonatype.s2.project.ui.materialization.update.CodebaseUpdateViewAction" name="com.sonatype.s2.project.ui.materialization.update.CodebaseUpdateViewAction" schema="schema/com.sonatype.s2.project.ui.materialization.update.CodebaseUpdateViewAction.exsd"/>
+   <extension-point id="com.sonatype.s2.project.ui.materialization.update.spi.CodebaseViewNodeProvider" name="Additional Nodes in the Codebase Update View" schema="schema/com.sonatype.s2.project.ui.materialization.update.spi.CodebaseViewNodeProvider.exsd"/>
+
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="com.sonatype.mse.category"
+            name="%mavenStudio">
+      </category>
+      <wizard
+            class="com.sonatype.s2.project.ui.materialization.wizards.S2ProjectMaterializationWizard"
+            id="com.sonatype.s2.project.ui.materialization.wizards.S2ProjectMaterializationWizard"
+            icon="icons/mse-codebase-import.png"
+            category="com.sonatype.mse.category"
+            name="%materializationWizard_title">
+         <description>%materializationWizard_description</description>
+      </wizard>
+   </extension> 
+   
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <category
+            id="com.sonatype.mse.category"
+            name="%mavenStudio">
+      </category>
+      <wizard
+            class="com.sonatype.s2.project.ui.materialization.wizards.PreferenceExportWizard"
+            id="com.sonatype.s2.project.ui.materialization.wizards.PreferenceExportWizard"
+            icon="icons/preferences-export.gif"
+            category="com.sonatype.mse.category"
+            name="%exportWizard_title">
+         <description>%exportWizard_description</description>
+      </wizard>
+   </extension>
+   <extension
+         point="com.sonatype.s2.project.core.codebaseChangeEventListeners">
+      <listener
+            class="com.sonatype.s2.project.ui.materialization.WorkingSetMaterializationCallback">
+      </listener>
+   </extension>
+   <extension
+         point="com.sonatype.s2.project.core.codebaseChangeEventListeners">
+      <listener
+            class="com.sonatype.s2.project.ui.materialization.update.OpenCodebaseViewCallback">
+      </listener>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.sonatype.mse.category"
+            name="%mavenStudio">
+      </category>
+         
+      <view
+            category="com.sonatype.mse.category"
+            name="%updateView_title"
+            icon="icons/mse-codebase-update.png"
+            class="com.sonatype.s2.project.ui.materialization.update.CodebaseUpdateView"
+            id="com.sonatype.s2.project.ui.materialization.update.CodebaseUpdateView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.sonatype.s2.project.ui.materialization.actionSet1"
+            label="%updateCodebase_actionSet"
+            visible="true">
+         <action
+               class="com.sonatype.s2.project.ui.materialization.update.CodebaseUpdateAction"
+               id="com.sonatype.s2.project.ui.materialization.codebaseUpdate"
+               label="%updateCodebase_label"
+               tooltip="%updateCodebase_tooltip"
+               icon="icons/mse-codebase-update.png"
+               style="push"
+               toolbarPath="/Normal/mse">
+         </action>
+      </actionSet>
+   </extension>
+   
+   <extension
+         point="org.eclipse.help.toc">
+         <toc
+            file="onboarding.xml">
+      </toc>
+   </extension>
+
+</plugin>

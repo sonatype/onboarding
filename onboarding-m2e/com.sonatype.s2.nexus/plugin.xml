@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.sonatype.s2.nexus.securityrealm.persistence.NexusSecurityRealmPersistence"
+         name="Security Realm Persistence Provided by Nexus"
+         point="org.maven.ide.eclipse.authentication.SecurityRealmPersistence">
+      <handler
+            class="com.sonatype.s2.nexus.securityrealm.persistence.NexusSecurityRealmPersistence"
+            priority="10">
+      </handler>
+   </extension>
+</plugin>

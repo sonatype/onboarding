@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CVS Access Validation
+Bundle-SymbolicName: com.sonatype.s2.project.validation.cvs;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: .
+Require-Bundle: com.sonatype.s2.project.validation.api,
+ org.eclipse.team.core,
+ org.eclipse.team.cvs.core,
+ org.eclipse.core.runtime,
+ org.maven.ide.eclipse.authentication,
+ org.slf4j.api;bundle-version="1.5.11"
+Import-Package: org.eclipse.core.resources,
+ org.eclipse.team.core,
+ org.eclipse.team.internal.ccvs.core
+Export-Package: com.sonatype.s2.project.validation.cvs
+

@@ -1,0 +1,31 @@
+<settings>
+  <localRepository>target/localrepo</localRepository>
+
+  <profiles>
+    <profile>
+      <id>test</id>
+        <repositories>
+          <repository>
+            <id>central</id>
+            <url>file:resources/remote-repo</url>
+            <snapshots><enabled>true</enabled></snapshots>
+            <releases><enabled>true</enabled></releases>
+          </repository>
+        </repositories>
+        <pluginRepositories>
+          <pluginRepository>
+            <id>central</id>
+            <url>file:resources/remote-repo</url>
+            <snapshots><enabled>true</enabled></snapshots>
+            <releases><enabled>true</enabled></releases>
+          </pluginRepository>
+        </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>test</activeProfile>
+    <activeProfile>profile-b</activeProfile>
+  </activeProfiles>
+
+</settings>

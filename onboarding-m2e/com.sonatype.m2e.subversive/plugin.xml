@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2e.scm.scmHandlers">
+      <handler
+            class="com.sonatype.m2e.subversive.internal.SubversiveScmHandler"
+            priority="5"
+            type="svn">
+      </handler>
+   </extension>
+   <extension
+         point="com.sonatype.s2.project.core.teamProviders">
+      <provider
+            class="com.sonatype.m2e.subversive.internal.SubversiveTeamProvider"
+            type="svn">
+      </provider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.adapters">
+      <factory adaptableType="org.eclipse.team.svn.ui.repository.model.RepositoryFolder"
+            class="com.sonatype.m2e.subversive.internal.SubversiveUrlAdapterFactory">
+         <adapter type="org.eclipse.m2e.scm.ScmUrl"/>
+      </factory>
+      <factory adaptableType="org.eclipse.team.svn.ui.repository.model.RepositoryLocation"
+            class="com.sonatype.m2e.subversive.internal.SubversiveUrlAdapterFactory">
+         <adapter type="org.eclipse.m2e.scm.ScmUrl"/>
+      </factory>
+   </extension>
+   <extension
+         point="com.sonatype.s2.project.ui.materialization.teamProviderUIs">
+      <provider
+            class="com.sonatype.m2e.subversive.internal.SubversiveTeamProviderUI"
+            type="svn">
+      </provider>
+   </extension>
+
+</plugin>

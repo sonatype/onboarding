@@ -1,0 +1,14 @@
+<project>
+  <name>MECLIPSE-361-userSettings</name>
+  <maven-settings>
+    <url>${baseurl}/resources/projects/MECLIPSE-361-userSettings/settings.xml</url>
+  </maven-settings>
+  <modules>
+    <module>
+      <name>MECLIPSE-361-userSettings</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-361-userSettings</url>
+      </scm>
+    </module>
+  </modules>
+</project>

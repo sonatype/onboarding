@@ -1,0 +1,15 @@
+<project>
+  <name>Project-A</name>
+  <modules>
+    <module>
+      <!-- NOTE: It's the essential part of this test that the module name clashes with the artifact id of a project -->
+      <name>nexus</name>
+      <scm>
+        <url>scm:testfile:@basedir@/resources/projects/MECLIPSE-530-project-name-clash</url>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

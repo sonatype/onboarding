@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.sonatype.mse.codebases</groupId>
+    <artifactId>codebases-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <!--
+    This is the demo project catalogue definition. 
+
+    The primary purpose of this catalogue is to demonstrate SonatypeStudio 
+    workspace materialization in action.
+
+    Keep this catalogue short and make sure all projects can be successfully
+    materialized at any time. try to avoid master/trunk source versions and use
+    tags instead.  
+   -->
+
+  <groupId>com.sonatype.mse.codebases.demo</groupId>
+  <artifactId>demo-catalog</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.groupId.asPath>com/sonatype/mse/codebases/demo</project.groupId.asPath>
+  </properties>
+
+  <modules>
+    <!--
+      "Seed" SonatypeStudio lineup definition. 
+
+      Installation created from this lineup will have demo catalogue preconfigured 
+      and can be used to materialize any of the projects in the catalogue.  
+     -->
+    <module>s2base</module>
+
+    <module>aether-1.6</module>
+    <module>egit</module>
+    <module>maven</module>
+    <module>nexus</module>
+    <module>p2</module>
+  </modules>
+</project>

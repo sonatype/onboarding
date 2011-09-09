@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Validation API
+Bundle-SymbolicName: com.sonatype.s2.project.validation.api;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime,
+ com.sonatype.s2.project.model,
+ org.maven.ide.eclipse.authentication
+Export-Package: com.sonatype.s2.project.validation.api
+Bundle-ActivationPolicy: lazy

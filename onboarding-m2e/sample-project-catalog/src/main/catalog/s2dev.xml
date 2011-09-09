@@ -1,0 +1,58 @@
+<project>
+  <name>Sonatype Studio</name>
+  
+  <imageUrl>./m2eclipse48.png</imageUrl>
+  
+  <security-realms>
+    <security-realm>
+      <id>sonatype.ldap</id>
+    </security-realm>
+    <security-realm>
+      <id>sonatype.org</id>
+    </security-realm>
+  </security-realms>
+  
+  <maven-settings>
+    <url>http://repository.sonatype.org/service/local/templates/settings/sonatype/content</url>
+    <security-realm>sonatype.ldap</security-realm>
+  </maven-settings>
+  
+  <modules>
+    <module>
+      <name>s2</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/sonatype-studio/trunk</url>
+        <security-realm>sonatype.ldap</security-realm>
+      </scm>
+      <homeUrl>http://www.sonatype.com/products/m2eclipse</homeUrl>
+      <docsUrl>http://www.sonatype.com/products/m2eclipse/documentation</docsUrl>
+      <issuesUrl>https://issues.sonatype.org/browse/MECLIPSE</issuesUrl>
+      <profiles>
+        <profile>its</profile>
+        <profile>catalog-its</profile>
+      </profiles>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+    
+    <module>
+      <name>m2e</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.org/m2eclipse/trunk</url>
+        <security-realm>sonatype.org</security-realm>
+      </scm>
+      <homeUrl>http://www.sonatype.com/products/m2eclipse</homeUrl>
+      <docsUrl>http://www.sonatype.com/products/m2eclipse/documentation</docsUrl>
+      <issuesUrl>https://issues.sonatype.org/browse/MNGECLIPSE</issuesUrl>
+      <roots>
+        <relPath>org.maven.ide.eclipse.parent</relPath>
+      </roots>
+    </module>
+    
+    <module>
+      <name>tycho-m2e</name>
+      <scm><url>scm:git:git://github.com/sonatype/m2eclipse-tycho.git</url></scm>
+    </module>
+  </modules>
+</project>

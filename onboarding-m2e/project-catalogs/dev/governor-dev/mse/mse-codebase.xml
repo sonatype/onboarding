@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${codebase.version}</version>
+  <name>Sonatype Studio: Hudson Integration</name>
+  <installerVersion>1.0.6</installerVersion>
+  
+  <requiresMavenSettings>true</requiresMavenSettings>
+  <maven-settings>
+    <url>https://repository.sonatype.org/service/local/templates/settings/sonatype/content</url>
+  </maven-settings>
+    
+  <p2Lineup>
+    <url>${lineup.url}</url>
+  </p2Lineup>
+  <modules>
+    <module>
+      <name>mse-governor</name>
+      <scm>
+        <url>scm:git:git@github.com:sonatype/mse-governor.git</url>
+      </scm>
+      <buildUrl>https://ci.sonatype.com/job/mse-governor/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://ci.sonatype.com</url>
+          <jobs>
+            <job>mse-governor</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+    <module>
+      <name>eclipse-commons</name>
+      <scm>
+        <url>scm:git:git@github.com:sonatype/eclipse-commons.git</url>
+      </scm>
+      <buildUrl>https://ci.sonatype.com/job/eclipse-commons/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://ci.sonatype.com</url>
+          <jobs>
+            <job>eclipse-commons</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+    </module>
+    <module>
+      <name>site</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/sonatype-studio/trunk/com.sonatype.s2.site</url>
+      </scm>
+      <buildUrl>https://ci.sonatype.com/job/mse-site/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://ci.sonatype.com</url>
+          <jobs>
+            <job>mse-site</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+    </module>
+  </modules>
+</project>

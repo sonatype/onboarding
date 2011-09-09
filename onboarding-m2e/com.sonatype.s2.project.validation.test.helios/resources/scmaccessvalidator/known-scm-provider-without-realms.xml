@@ -1,0 +1,11 @@
+<project>
+  <name>fake</name>
+  <modules>
+    <module>
+      <name>fake</name>
+      <scm>
+        <url>scm:testfile:resources/projects/dummy</url>
+      </scm>
+    </module>
+  </modules>
+</project>

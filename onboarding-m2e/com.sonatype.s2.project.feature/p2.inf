@@ -1,0 +1,7 @@
+requires.0.namespace=java.package
+requires.0.name=com.sonatype.s2.project.validator.p2
+requires.0.range=[1.0.0, 2.0.0)
+
+requires.1.namespace=java.package
+requires.1.name=com.sonatype.s2.extractor
+requires.1.range=[1.0.0, 2.0.0)

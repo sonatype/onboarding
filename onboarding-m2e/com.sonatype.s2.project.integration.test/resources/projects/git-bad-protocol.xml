@@ -1,0 +1,11 @@
+<project>
+  <name>Project-A</name>
+  <modules>
+    <module>
+      <name>Test</name>
+      <scm>
+        <url>scm:git:invalid://localhost/scm/git/simple/</url>
+      </scm>
+    </module>
+  </modules>
+</project>

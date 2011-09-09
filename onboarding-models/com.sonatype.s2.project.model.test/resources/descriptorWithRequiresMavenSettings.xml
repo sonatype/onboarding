@@ -1,0 +1,25 @@
+<project>
+  <groupId>group.foo</groupId>
+  <artifactId>Foo</artifactId>
+  <version>1.2.3</version>
+  <name>Project Foo</name>
+  <requiresMavenSettings>true</requiresMavenSettings>
+  <maven-settings>
+    <url>settings.xml</url>
+  </maven-settings>
+  <modules>
+    <module>
+      <name>Bar</name>
+      <scm>
+        <url>munchy</url>
+      </scm>
+      <profiles>
+        <profile>moo</profile>
+      </profiles>
+      <roots>
+        <relPath>.</relPath>
+        <relPath>relpath</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

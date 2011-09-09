@@ -1,0 +1,11 @@
+<project>
+  <name>fake</name>
+  <modules>
+    <module>
+      <name>fake</name>
+      <scm>
+        <url>scm:unknown:https://fake/fake/trunk/</url>
+      </scm>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Subversive
+Bundle-SymbolicName: com.sonatype.m2e.subversive;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.m2e.core;bundle-version="[0.13.0,0.14.0)",
+ org.eclipse.m2e.scm;bundle-version="[0.13.0,0.14.0)",
+ org.sonatype.m2e.subversive,
+ org.eclipse.equinox.registry,
+ org.eclipse.core.resources,
+ org.eclipse.team.svn.core;bundle-version="[0.7.9.I20100917-1700,0.7.9.I20100917-1700]",
+ org.eclipse.team.svn.ui;bundle-version="[0.7.9.I20100917-1700,0.7.9.I20100917-1700]";resolution:=optional,
+ org.eclipse.core.runtime;bundle-version="3.5.0",
+ com.sonatype.s2.project.core;bundle-version="1.0.6",
+ org.maven.ide.eclipse.authentication,
+ org.eclipse.team.core,
+ com.sonatype.s2.project.core;bundle-version="1.0.6",
+ com.sonatype.s2.project.ui.materialization;bundle-version="1.0.6",
+ org.eclipse.ui;bundle-version="3.5.0",
+ org.eclipse.team.ui;bundle-version="3.5.0",
+ org.slf4j.api;bundle-version="1.5.11"
+Export-Package: com.sonatype.m2e.subversive,
+ com.sonatype.m2e.subversive.internal;x-friends:="com.sonatype.s2.project.integration.test,com.sonatype.s2.project.integration.test.helios"

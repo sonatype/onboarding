@@ -1,0 +1,19 @@
+[INFO] Scanning for projects...
+[WARNING] The POM for org.sonatype.plugins:app-lifecycle-maven-plugin:jar:1.4-SNAPSHOT is missing, no dependency information available
+[WARNING] The POM for org.sonatype.plugins:app-lifecycle-nexus:jar:1.4-SNAPSHOT is missing, no dependency information available
+[ERROR] The build could not read 1 project -> [Help 1]
+[ERROR]   
+[ERROR]   The project com.sonatype.nexus.plugin:nexus-p2-plugin:1.9.2-SNAPSHOT (/code/nexus-enterprise/nexus-enterprise-plugins/nexus-p2-plugin/pom.xml) has 5 errors
+[ERROR]     Unresolveable build extension: Plugin org.sonatype.plugins:app-lifecycle-maven-plugin:1.4-SNAPSHOT or one of its dependencies could not be resolved: The following artifacts could not be resolved: org.sonatype.plugins:app-lifecycle-maven-plugin:jar:1.4-SNAPSHOT, org.sonatype.plugins:app-lifecycle-nexus:jar:1.4-SNAPSHOT: Could not find artifact org.sonatype.plugins:app-lifecycle-maven-plugin:jar:1.4-SNAPSHOT -> [Help 2]
+[ERROR]     Unknown packaging: nexus-plugin @ line 24, column 14
+[ERROR]     Non-resolvable import POM: Could not find artifact org.sonatype.nexus:nexus-webapp-dependencies:pom:1.9.2-SNAPSHOT @ line 36, column 19 -> [Help 3]
+[ERROR]     'dependencies.dependency.version' for org.sonatype.nexus:nexus-app:jar is missing. @ line 119, column 17
+[ERROR]     'dependencies.dependency.version' for org.apache.maven.indexer:indexer-artifact:jar is missing. @ line 147, column 17
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/PluginResolutionException
+[ERROR] [Help 3] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException

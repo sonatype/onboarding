@@ -1,0 +1,117 @@
+<project>
+  <groupId>g</groupId>
+  <artifactId>a</artifactId>
+  <version>1.2.3</version>
+  
+  <name>Sonatype Studio</name>
+  <description>Sonatype Studio Integrated Development Environment (IDE)</description>
+  
+  <security-realms>
+    <security-realm>
+      <id>sonatype.crowd</id>
+    </security-realm>
+    <security-realm>
+      <id>sonatype.ldap</id>
+    </security-realm>
+    <security-realm>
+      <id>sonatype.github</id>
+    </security-realm>  
+  </security-realms>
+  
+  <security-realm>sonatype.ldap</security-realm>
+ 
+  <maven-settings>
+    <url>http://repository.sonatype.org/service/local/templates/settings/sonatype/content</url>
+    <security-realm>sonatype.ldap</security-realm>
+  </maven-settings>
+
+  <p2Lineup>
+    <url>http://foo</url>
+    <security-realm>sonatype.ldap</security-realm>
+  </p2Lineup>
+
+  <modules>
+    <module>
+      <name>s2</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/sonatype-studio/trunk</url>
+        <security-realm>sonatype.crowd</security-realm>
+      </scm>
+      <homeUrl>http://www.sonatype.com/products/m2eclipse</homeUrl>
+      <docsUrl>http://www.sonatype.com/products/m2eclipse/documentation</docsUrl>
+      <issuesUrl>https://issues.sonatype.org/browse/MECLIPSE</issuesUrl>
+      <profiles>
+        <profile>its</profile>
+        <profile>catalog-its</profile>
+      </profiles>
+    </module>
+    
+    <module>
+      <name>s2models</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/components/trunk/s2models/</url>
+        <security-realm>sonatype.crowd</security-realm>
+      </scm>
+    </module>
+    
+    <module>
+      <name>m2e-core</name>
+      <scm>
+        <url>scm:git:git@github.com:sonatype/m2eclipse-core.git</url>
+        <security-realm>sonatype.github</security-realm>
+      </scm>
+      
+      <homeUrl>http://www.sonatype.com/products/m2eclipse</homeUrl>
+      <docsUrl>http://www.sonatype.com/products/m2eclipse/documentation</docsUrl>
+      <issuesUrl>https://issues.sonatype.org/browse/MNGECLIPSE</issuesUrl>
+      
+      <profiles>
+        <profile>its</profile>
+      </profiles>
+      
+      <roots>
+        <relPath>org.maven.ide.eclipse.parent</relPath>
+      </roots>
+    </module>
+    <module>
+      <name>m2e-extras</name>
+      <scm>
+        <url>scm:git:git@github.com:sonatype/m2eclipse-extras.git</url>
+        <security-realm>sonatype.github</security-realm>
+      </scm>
+      
+      <homeUrl>http://www.sonatype.com/products/m2eclipse</homeUrl>
+      <docsUrl>http://www.sonatype.com/products/m2eclipse/documentation</docsUrl>
+      <issuesUrl>https://issues.sonatype.org/browse/MNGECLIPSE</issuesUrl>
+      
+      <profiles>
+        <profile>its</profile>
+      </profiles>
+    </module>
+     
+    <module>
+      <name>tycho-m2e</name>
+      <scm>
+        <url>scm:git:git://github.com/sonatype/m2eclipse-tycho.git</url>
+        <branch>0.4.x</branch>
+        <security-realm>sonatype.github</security-realm>
+      </scm>
+    </module>
+    
+    <module>
+      <name>eclipse-commons</name>
+      <scm>
+        <url>scm:git:git@github.com:sonatype/eclipse-commons.git</url>
+        <security-realm>sonatype.github</security-realm>
+      </scm>
+    </module>
+    
+    <module>
+      <name>interactive-interpolation</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.org/spice/trunk/interactive-interpolation</url>
+        <security-realm>sonatype.crowd</security-realm>
+      </scm>
+    </module>
+  </modules>
+</project>

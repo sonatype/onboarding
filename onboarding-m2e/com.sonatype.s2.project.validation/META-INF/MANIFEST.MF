@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Validation
+Bundle-SymbolicName: com.sonatype.s2.project.validation;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Activator: com.sonatype.s2.project.validator.internal.S2ProjectValidationPlugin
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Require-Bundle: org.eclipse.core.resources;bundle-version="3.5.1",
+ org.eclipse.core.runtime;bundle-version="3.5.0",
+ org.eclipse.core.net,
+ org.maven.ide.eclipse.authentication,
+ org.maven.ide.eclipse.io;bundle-version="1.0.0",
+ org.eclipse.m2e.maven.runtime;bundle-version="[0.13.0,0.14.0)",
+ com.sonatype.s2.p2lineup.model;bundle-version="1.0.0",
+ com.sonatype.s2.project.model;bundle-version="1.0.0",
+ com.sonatype.s2.project.validation.api,
+ com.sonatype.s2.project.common;bundle-version="1.0.0",
+ org.slf4j.api;bundle-version="1.5.11"
+Export-Package: com.sonatype.s2.project.validator

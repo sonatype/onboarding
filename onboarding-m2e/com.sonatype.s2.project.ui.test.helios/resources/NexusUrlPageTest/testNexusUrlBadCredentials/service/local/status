@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<status>
+  <data>
+    <appName>Sonatype Nexus Maven Repository Manager</appName>
+    <formattedAppName>Sonatype Nexus&amp;trade; Team Edition, Version: 1.7.1&lt;br&gt;FOR EVALUATION ONLY. NOT FOR PRODUCTIVE PURPOSES. &lt;a href=&quot;http://store.sonatype.com/products/nexus-team&quot; target=&quot;new&quot;&gt;UPGRADE NOW&lt;/a&gt;. 18 days remaining.</formattedAppName>
+    <version>1.7.1</version>
+    <apiVersion>1.7.1</apiVersion>
+    <editionLong>Team</editionLong>
+    <editionShort>TEAM-EVAL</editionShort>
+    <state>STARTED</state>
+    <operationMode>STANDALONE</operationMode>
+    <initializedAt>2010-08-09 13:39:59.921 EDT</initializedAt>
+    <startedAt>2010-08-09 13:40:05.281 EDT</startedAt>
+    <lastConfigChange>2010-08-09 13:40:05.281 EDT</lastConfigChange>
+    <firstStart>false</firstStart>
+    <instanceUpgraded>false</instanceUpgraded>
+    <configurationUpgraded>false</configurationUpgraded>
+    <clientPermissions>
+      <loggedIn>false</loggedIn>
+      <loggedInUsername>testusername</loggedInUsername>
+      <loggedInUserSource>default</loggedInUserSource>
+      <permissions>
+      </permissions>
+    </clientPermissions>
+    <baseUrl>http://localhost:8081/nexus</baseUrl>
+  </data>
+</status>

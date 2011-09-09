@@ -1,0 +1,14 @@
+<project>
+  <name>MECLIPSE-1583-profiles</name>
+  <modules>
+    <module>
+      <name>profiles-parent</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-1583-modules-add-remove/profiles</url>
+      </scm>
+      <profiles>
+        <profile>profile-a</profile>
+      </profiles>
+    </module>
+  </modules>
+</project>

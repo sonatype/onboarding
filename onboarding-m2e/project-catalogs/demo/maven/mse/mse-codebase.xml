@@ -1,0 +1,33 @@
+<project>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${project.version}.${buildQualifier}</version>
+  
+  <name>Maven</name>
+  <description>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</description>
+  
+  <homeUrl>http://maven.apache.org/</homeUrl>
+  <docsUrl>http://maven.apache.org/project-info.html</docsUrl>
+
+  <security-realms>
+    <security-realm>
+      <id>s2demo</id>
+    </security-realm>
+  </security-realms>
+  
+  <p2Lineup>
+    <url>${lineup.url}</url>
+    <security-realm>s2demo</security-realm>
+  </p2Lineup>
+
+  <security-realm>s2demo</security-realm>
+  
+  <modules>
+    <module>
+      <name>maven</name>
+      <scm>
+        <url>scm:svn:http://svn.apache.org/repos/asf/maven/maven-3/tags/maven-3.0-alpha-7/</url>
+      </scm>
+    </module>
+  </modules>
+</project>

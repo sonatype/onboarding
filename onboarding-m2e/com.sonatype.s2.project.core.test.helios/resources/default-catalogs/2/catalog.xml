@@ -1,0 +1,15 @@
+<catalog>
+  <name>Foo1</name>
+  
+  <security-realms>
+    <security-realm>
+      <id>test.realm</id>
+    </security-realm>
+  </security-realms>
+  
+  <entry>
+    <name>Bar1</name>
+    <descriptorUrl>bar</descriptorUrl>
+    <security-realm>test.realm</security-realm>
+  </entry>
+</catalog>

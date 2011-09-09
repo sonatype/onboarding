@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nexus P2 Runtime Facade
+Bundle-SymbolicName: com.sonatype.nexus.nexus_p2_facade;singleton:=true
+Bundle-Version: 1.5.0
+Bundle-Vendor: Sonatype, Inc
+Fragment-Host: system.bundle
+Export-Package: com.sonatype.nexus.p2.facade.internal
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,JavaSE-1.6

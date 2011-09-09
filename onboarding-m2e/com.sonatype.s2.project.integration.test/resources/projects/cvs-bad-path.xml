@@ -1,0 +1,11 @@
+<project>
+  <name>Project-A</name>
+  <modules>
+    <module>
+      <name>Test</name>
+      <scm>
+        <url>scm:cvs:cvs://:pserver:scmtest.grid.sonatype.com:/cvs#bad/path</url>
+      </scm>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,14 @@
+<project>
+  <groupId>MECLIPSE-1592</groupId>
+  <artifactId>svn-codebase-update</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>svn-codebase-update</name>
+  <modules>
+    <module>
+      <name>svn-codebase-update</name>
+      <scm>
+        <url>scm:svn:file:///${basedir}/target/svn/simple/simple/trunk</url>
+      </scm>
+    </module>
+  </modules>
+</project>

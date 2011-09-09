@@ -1,0 +1,12 @@
+<project>
+  <name>S2ProjectWithAuthenticatedMavenSettings</name>
+  <security-realms>
+    <security-realm>
+      <id>test.mavensettings.access.realmId</id>
+    </security-realm>
+  </security-realms>
+  <maven-settings>
+    <url>http://localhost:@port.http@/mavensettings/settings.xml</url>
+    <security-realm>test.mavensettings.access.realmId</security-realm>
+  </maven-settings>
+</project>

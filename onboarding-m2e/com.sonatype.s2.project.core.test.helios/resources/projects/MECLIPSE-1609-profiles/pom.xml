@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>MECLIPSE-1609-profiles</groupId>
+  <artifactId>MECLIPSE-1609-profiles</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <profiles>
+    <profile>
+      <id>profile-a</id>
+    </profile>
+  </profiles>
+</project>

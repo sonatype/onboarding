@@ -1,0 +1,169 @@
+SVN-fs-dump-format-version: 2
+
+UUID: 6c45a257-064d-8646-806e-0aa86402ad34
+
+Revision-number: 0
+Prop-content-length: 56
+Content-length: 56
+
+K 8
+svn:date
+V 27
+2010-09-03T15:15:57.313134Z
+PROPS-END
+
+Revision-number: 1
+Prop-content-length: 148
+Content-length: 148
+
+K 7
+svn:log
+V 46
+Share project "svn-test" into "file:///e:/svn"
+K 10
+svn:author
+V 7
+Matthew
+K 8
+svn:date
+V 27
+2010-09-03T15:16:52.378000Z
+PROPS-END
+
+Node-path: svn-test
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Revision-number: 2
+Prop-content-length: 101
+Content-length: 101
+
+K 7
+svn:log
+V 0
+
+K 10
+svn:author
+V 7
+Matthew
+K 8
+svn:date
+V 27
+2010-09-03T15:17:10.403000Z
+PROPS-END
+
+Node-path: svn-test/pom.xml
+Node-kind: file
+Node-action: add
+Prop-content-length: 45
+Text-content-length: 653
+Text-content-md5: 247015e12c9a7a8e107a341cff39baa2
+Text-content-sha1: 0ecc700eea3aec205ec6a20e8911fcd747f646d8
+Content-length: 698
+
+K 13
+svn:mime-type
+V 10
+text/plain
+PROPS-END
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>test</groupId>
+  <artifactId>svn-test</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>SVN Repo Materialization Test</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
+
+Node-path: svn-test/src
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: svn-test/src/ConflictFile.java
+Node-kind: file
+Node-action: add
+Prop-content-length: 45
+Text-content-length: 55
+Text-content-md5: 2b8398d90e8b17877ab82c54d92cd063
+Text-content-sha1: b203af3f7b871c2f516819170f93798dba49d812
+Content-length: 100
+
+K 13
+svn:mime-type
+V 10
+text/plain
+PROPS-END
+public class ConflictFile
+{
+    int version = 1;
+}
+
+
+Node-path: svn-test/src/FileWithIncomingChanges.java
+Node-kind: file
+Node-action: add
+Prop-content-length: 45
+Text-content-length: 44
+Text-content-md5: 564b12c084c3a93494a313557dc642ed
+Text-content-sha1: 5bf9d150f944fbf6dd9c1753605e0baa9002d9d3
+Content-length: 89
+
+K 13
+svn:mime-type
+V 10
+text/plain
+PROPS-END
+public class FileWithIncomingChanges
+{
+}
+
+
+Node-path: svn-test/src/FileWithOutGoingChanges.java
+Node-kind: file
+Node-action: add
+Prop-content-length: 45
+Text-content-length: 44
+Text-content-md5: 7330c7cdde116cdda9fd0cbe233ddaea
+Text-content-sha1: fb251ab7c67993432e7c42f110a031ffe9045a90
+Content-length: 89
+
+K 13
+svn:mime-type
+V 10
+text/plain
+PROPS-END
+public class FileWithOutGoingChanges
+{
+}
+
+

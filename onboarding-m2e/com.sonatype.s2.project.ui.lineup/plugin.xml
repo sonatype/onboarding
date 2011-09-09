@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.sonatype.s2.project.ui.lineup.editor.LineupEditorAction" name="P2 Lineup Editor Action Contribution" schema="schema/com.sonatype.s2.project.ui.lineup.editor.LineupEditorAction.exsd"/>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor 
+         id="com.sonatype.s2.project.ui.lineup.editor.LineupEditor" 
+         name="%lineupEditor_title" 
+         icon="icons/mse-lineup.gif"
+         class="com.sonatype.s2.project.ui.lineup.editor.LineupEditor"
+         filenames="p2lineup.xml"
+         default="true"> 
+      </editor> 
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+         id="com.sonatype.mse.category"
+         name="%mavenStudio">
+      </category>
+      <wizard
+         category="com.sonatype.mse.category"
+            class="com.sonatype.s2.project.ui.lineup.wizard.ImportLineupProjectWizard"
+            id="com.sonatype.s2.project.ui.lineup.wizard.ImportLineupWizard"
+            icon="icons/mse-lineup-import.gif"
+            name="%importLineupWizard_title">
+      </wizard>
+   </extension>
+
+   <extension
+         point="com.sonatype.s2.project.ui.lineup.editor.LineupEditorAction">
+      <actionContribution
+            id="com.sonatype.s2.project.ui.lineup.editor.LineupValidateAction"
+            enablesFor="*"
+            label="%validate_lineup_action_titleShort"
+            class="com.sonatype.s2.project.ui.lineup.editor.LineupValidateAction"
+            icon="validate.png"
+            tooltip="%validate_lineup_action_tooltip">
+      </actionContribution>
+   </extension>
+
+   <extension
+         point="com.sonatype.s2.project.ui.lineup.editor.LineupEditorAction">
+      <actionContribution
+            id="com.sonatype.s2.project.ui.lineup.LineupPublishAction"
+            enablesFor="*"
+            label="%publish_lineup_action_titleShort"
+            class="com.sonatype.s2.project.ui.lineup.LineupPublishAction"
+            icon="publish.png"
+            tooltip="%publish_lineup_action_tooltip">
+      </actionContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="com.sonatype.s2.publisher.contribution2"
+            objectClass="org.eclipse.core.resources.IResource">
+         <menu
+               id="com.sonatype.s2.publisher.menu2"
+               label="%mavenStudio"
+               path="additions">
+            <separator
+                  name="group2">
+            </separator>
+         </menu>
+		<visibility>
+			<and> 
+			  <objectClass name="org.eclipse.core.resources.IResource"/> 
+			  <objectState name="name" value="p2lineup.xml"/>
+			</and> 
+		</visibility>
+         <action
+               class="com.sonatype.s2.project.ui.lineup.LineupPublishAction"
+               enablesFor="+"
+               id="com.sonatype.s2.project.ui.lineup.LineupPublishAction"
+               label="%publish_lineup_action_title"
+               icon="icons/publish.png"
+               menubarPath="com.sonatype.s2.publisher.menu2/group2">
+	         <selection 
+	         	class="org.eclipse.core.resources.IResource" 
+	         	name="p2lineup.xml"/>        
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

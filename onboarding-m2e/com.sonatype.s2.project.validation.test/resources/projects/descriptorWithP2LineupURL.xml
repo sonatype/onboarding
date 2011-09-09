@@ -1,0 +1,8 @@
+<project>
+  <name>Foo</name>
+
+  <p2Lineup>
+    <url>file:fake_url</url>
+    <security-realm>blah</security-realm>
+  </p2Lineup>
+</project>

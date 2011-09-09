@@ -1,0 +1,20 @@
+<plexus>
+  <components>
+    
+    <component>
+      <role>com.sonatype.nexus.p2.lineup.resolver.P2LineupResolver</role>
+      <implementation>com.sonatype.nexus.p2.lineup.persist.MockP2LineupResolver</implementation>
+    </component>
+    
+    <component>
+      <role>org.sonatype.nexus.configuration.application.GlobalRestApiSettings</role>
+      <implementation>com.sonatype.nexus.p2.lineup.persist.MockGlobalRestApiSettings</implementation>
+    </component>
+    
+    <component>
+      <role>org.sonatype.nexus.proxy.access.NexusItemAuthorizer</role>
+      <implementation>com.sonatype.nexus.p2.lineup.persist.MockNexusItemAuthorizer</implementation>
+    </component>
+    
+  </components>
+</plexus>

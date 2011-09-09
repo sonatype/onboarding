@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: M2Eclipse Preferences
+Bundle-SymbolicName: com.sonatype.m2e.preferences;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Fragment-Host: org.eclipse.m2e.core.ui;bundle-version="[0.13.0,0.14.0)"
+Require-Bundle: org.eclipse.jface;bundle-version="3.6.1"

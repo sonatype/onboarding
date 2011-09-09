@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.sonatype.s2.project.validation.IS2ProjectValidator" name="S2 Project Validator" schema="schema/S2ProjectValidator.exsd"/>
+   <extension-point id="com.sonatype.s2.project.validation.IS2AccessValidator" name="S2 Access Validator" schema="schema/S2AccessValidator.exsd"/>
+</plugin>

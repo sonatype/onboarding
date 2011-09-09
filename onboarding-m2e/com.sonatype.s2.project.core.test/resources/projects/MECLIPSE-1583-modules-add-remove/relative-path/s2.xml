@@ -1,0 +1,14 @@
+<project>
+  <name>MECLIPSE-1583-relative-path</name>
+  <modules>
+    <module>
+      <name>relative-path</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-1583-modules-add-remove/relative-path</url>
+      </scm>
+      <roots>
+        <relPath>aggregator</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

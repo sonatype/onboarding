@@ -1,0 +1,20 @@
+<project>
+  <groupId>MECLIPSE-1793-bad-tree</groupId>
+  <artifactId>bad-tree</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>MECLIPSE-1793-bad-tree</name>
+  <modules>
+    <module>
+      <name>no-pom</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-1793-bad-tree/no-pom</url>
+      </scm>
+    </module>
+    <module>
+      <name>bad-pom</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-1793-bad-tree/bad-pom</url>
+      </scm>
+    </module>
+  </modules>
+</project>

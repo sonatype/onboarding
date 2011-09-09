@@ -1,0 +1,15 @@
+<project>
+  <name>MECLIPSE-258detachedModules</name>
+  <modules>
+    <module>
+      <name>MECLIPSE-258detachedModules</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-258detachedModules</url>
+      </scm>
+      <roots>
+        <relPath>detached</relPath>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

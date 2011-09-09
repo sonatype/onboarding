@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2008 Sonatype, Inc. All rights reserved. This program
+  and the accompanying materials are made available under the terms of
+  the Eclipse Public License v1.0 which accompanies this distribution,
+  and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <prerequisites>
+    <maven>3.0</maven>
+  </prerequisites>
+
+  <parent>
+    <groupId>org.sonatype.forge</groupId>
+    <artifactId>forge-parent</artifactId>
+    <version>10</version>
+  </parent>
+
+  <artifactId>onboarding-parent</artifactId>
+  <groupId>com.sonatype.s2.project</groupId>
+  <version>1.0.8-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <tycho-version>0.10.0</tycho-version>
+    <m2eclipse-core.version>0.13.0/N/0.13.0.201103151108</m2eclipse-core.version>
+    <m2eclipse-extras.version>0.13.0/N/0.13.0.201103161122</m2eclipse-extras.version>
+    <m2eclipse-tycho.version>0.5.0/N/0.5.0.201103161335</m2eclipse-tycho.version>
+    <m2eclipse-subversive.version>0.13.0/N/0.13.0.201103161157</m2eclipse-subversive.version>
+    <m2eclipse-egit.version>0.13.0/N/0.13.0.201103161151</m2eclipse-egit.version>
+    <s2models.version>1.0.9/N/1.0.9.201103161811</s2models.version>
+
+    <eclipse-commons.version>1.1.7/N/1.1.7.201105092301</eclipse-commons.version>
+
+    <modello-version>1.5</modello-version>
+
+    <java-runtime>${java.home}/lib/rt.jar</java-runtime>
+
+    <s2.site-compressed>http://repository.sonatype.org/service/local/repositories/com-sites/content-compressed/</s2.site-compressed>
+
+    <eclipse-platform.version>helios</eclipse-platform.version>
+    
+    <orbit.version>S20110304120314</orbit.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.sonatype.spice</groupId>
+      <artifactId>interactive-interpolation</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>eclipse</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/${eclipse-platform.version}</url>
+    </repository>
+    <!-- Required for org.slf4j -->
+    <repository>
+      <id>orbit</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/tools/orbit/downloads/drops/${orbit.version}/repository</url>
+    </repository>
+    <repository>
+      <id>m2e</id>
+      <layout>p2</layout>
+      <url>http://repository.sonatype.org/content/sites/forge-sites/m2e/${m2eclipse-core.version}</url>
+    </repository>
+    <repository>
+      <id>m2e-extras</id>
+      <layout>p2</layout>
+      <url>http://repository.sonatype.org/content/sites/forge-sites/m2e-extras/${m2eclipse-extras.version}</url>
+    </repository>
+    <repository>
+      <id>m2e-tycho</id>
+      <layout>p2</layout>
+      <url>http://repository.sonatype.org/content/sites/forge-sites/m2eclipse-tycho/${m2eclipse-tycho.version}</url>
+    </repository>
+    <repository>
+      <id>m2e-subversive</id>
+      <layout>p2</layout>
+      <url>http://repository.sonatype.org/content/sites/forge-sites/m2eclipse-subversive/${m2eclipse-subversive.version}</url>
+    </repository>
+    <repository>
+      <id>m2e-egit</id>
+      <layout>p2</layout>
+      <url>http://repository.sonatype.org/content/sites/forge-sites/m2eclipse-egit/${m2eclipse-egit.version}</url>
+    </repository>
+    <repository>
+      <id>eclipse-commons</id>
+      <layout>p2</layout>
+      <url>https://repository.sonatype.org/content/repositories/forge-sites/eclipse-commons/${eclipse-commons.version}</url>
+    </repository>
+    <repository>
+      <id>jetty</id>
+      <layout>p2</layout>
+      <!-- 
+         All available jetty downloads http://download.eclipse.org/jetty/ (followed Download link on http://eclipse.org/jetty/)  
+      -->
+      <url>http://archive.eclipse.org/jetty/7.0.0.v20091005/repository/</url>
+    </repository>
+    <repository>
+      <id>subversive-weekly</id>
+      <layout>p2</layout>
+      <!--
+      <url>http://download.eclipse.org/technology/subversive/0.7/weekly-site/</url>
+       -->
+      <url>file:///var/tmp/subversive/subversive</url>
+    </repository>
+    <repository>
+      <id>subversive-connectors</id>
+      <layout>p2</layout>
+      <!--
+      <url>http://community.polarion.com/projects/subversive/download/eclipse/2.0/weekly-site/</url>
+      -->
+      <url>file:///var/tmp/subversive/subversive-connectors</url>
+    </repository>
+    <repository>
+      <id>egit</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/egit/updates-0.11</url>
+    </repository>
+    <repository>
+      <id>swtbot-dev</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/technology/swtbot/galileo/dev-build/update-site/</url>
+    </repository>
+
+    <repository>
+      <id>s2models</id>
+      <layout>p2</layout>
+      <url>http://repository.sonatype.org/content/sites/com-sites/s2models/${s2models.version}</url>
+    </repository>
+
+  </repositories>
+
+  <modules>
+    <module>com.sonatype.s2.doc</module>
+    <module>com.sonatype.s2.ssh</module>
+    <module>com.sonatype.s2.project.common</module>
+    <module>com.sonatype.s2.project.core</module>
+    <module>com.sonatype.s2.project.ui</module>
+    <module>com.sonatype.s2.project.ui.catalog</module>
+    <module>com.sonatype.s2.project.ui.codebase</module>
+    <module>com.sonatype.s2.project.ui.lineup</module>
+    <module>com.sonatype.s2.project.ui.materialization</module>
+    <module>com.sonatype.s2.project.feature</module>
+    <module>com.sonatype.s2.project.materializer</module>
+    <module>com.sonatype.s2.project.cvs.feature</module>
+    <module>com.sonatype.s2.project.git.feature</module>
+    <module>com.sonatype.s2.project.svn.feature</module>
+    <module>com.sonatype.s2.project.validation.api</module>
+    <module>com.sonatype.s2.project.validation</module>
+    <module>com.sonatype.s2.project.validation.cvs</module>
+    <module>com.sonatype.s2.project.validation.svn</module>
+    <module>com.sonatype.s2.project.validation.git</module>
+    <module>com.sonatype.s2.publisher</module>
+    <module>com.sonatype.m2e.preferences</module>
+    <module>com.sonatype.s2.nexus</module>
+    <module>com.sonatype.s2.nexus.test</module>
+
+    <module>com.sonatype.s2.project.p2.feature</module>
+    <module>com.sonatype.s2.project.validation.p2</module>
+    <module>com.sonatype.s2.project.validation.p2.helios</module>
+    <module>com.sonatype.s2.extractor.helios</module>
+    <module>com.sonatype.s2.extractor.galileo</module>
+
+    <module>com.sonatype.m2e.subversive</module>
+    <module>com.sonatype.m2e.egit</module>
+    <module>com.sonatype.m2e.cvs</module>
+
+    <module>installer</module>
+
+    <module>com.sonatype.s2.project.tests.common</module>
+    <module>com.sonatype.s2.project.core.test</module>
+    <module>com.sonatype.s2.project.core.test.helios</module>
+    <module>com.sonatype.s2.project.validation.test</module>
+    <module>com.sonatype.s2.project.validation.test.helios</module>
+    <module>com.sonatype.s2.project.validation.p2.test</module>
+    <module>com.sonatype.s2.project.validation.p2.test.helios</module>
+    <module>com.sonatype.s2.publisher.test</module>
+    <module>com.sonatype.s2.publisher.test.helios</module>
+    <module>com.sonatype.s2.project.ui.test</module>
+    <module>com.sonatype.s2.project.ui.test.helios</module>
+
+    <module>onboarding-site</module>
+  </modules>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <pomDependencies>consider</pomDependencies>
+          <ignoreTychoRepositories>true</ignoreTychoRepositories>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.google.code.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <version>1.4.0</version>
+        <configuration>
+          <header>${basedir}/header.txt</header>
+          <includes>
+            <include>**/*.java</include>
+            <include>**/pom.xml</include>
+          </includes>
+          <!-- this is important for muti-module project -->
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+    </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.modello</groupId>
+          <artifactId>modello-maven-plugin</artifactId>
+          <version>${modello-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.sonatype.tycho</groupId>
+          <artifactId>maven-osgi-packaging-plugin</artifactId>
+          <version>${tycho-version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>sun-jvm</id>
+      <activation>
+        <property>
+          <name>java.vendor.url</name>
+          <value>http://java.sun.com/</value>
+        </property>
+      </activation>
+      <properties>
+        <tycho.test.jvmArgs>-Xmx800m -XX:MaxPermSize=256m</tycho.test.jvmArgs>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>osx</id>
+      <activation>
+        <property>
+          <name>java.vendor.url</name>
+          <value>http://www.apple.com/</value>
+        </property>
+      </activation>
+      <properties>
+        <tycho.test.jvmArgs>-Xmx800m -XX:MaxPermSize=256m -Dosgi.ws=cocoa -XstartOnFirstThread</tycho.test.jvmArgs>
+        <osgi.ws>cocoa</osgi.ws>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>its</id>
+      <modules>
+        <module>com.sonatype.s2.project.integration.test</module>
+        <module>com.sonatype.s2.project.integration.test.helios</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>catalog-its</id>
+      <modules>
+        <module>com.sonatype.s2.project.sample-catalog.test</module>
+      </modules>
+    </profile>
+
+  </profiles>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>rso-snapshots</id>
+      <url>https://repository.sonatype.org/content/repositories/snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
+

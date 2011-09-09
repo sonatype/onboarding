@@ -1,0 +1,11 @@
+<project>
+  <name>fail-always</name>
+  <modules>
+    <module>
+      <name>module1</name>
+      <scm>
+        <url>scm:testfile:resources/projects/simple</url>
+      </scm>
+    </module>
+  </modules>
+</project>

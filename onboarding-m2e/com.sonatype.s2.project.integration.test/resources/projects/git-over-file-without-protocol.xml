@@ -1,0 +1,14 @@
+<project>
+  <name>git-over-file-without-protocol</name>
+  <modules>
+    <module>
+      <name>git-test</name>
+      <scm>
+        <url>scm:git:/@basedir@/resources/scm/git/simple</url>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2008-2011 Sonatype, Inc.
+
+    All rights reserved. Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions.
+    Sonatype and Sonatype Nexus are trademarks of Sonatype, Inc. Apache Maven is a trademark of the Apache Foundation.
+    M2Eclipse is a trademark of the Eclipse Foundation. All other trademarks are the property of their respective owners.
+
+-->
+<p2lineup id="maven-git" groupId="org.sonatype.s2.catalogs.demo" version="0.0.1.20100421-1239" name="Sonatype Studio Base IDE Lineup">
+  <description>Sonatype Studio Base Integrated Development Environment (IDE)</description>
+  <repositories>
+    <repository url="http://download.eclipse.org/releases/galileo" layout="p2" />
+    <repository url="https://dist.sonatype.com/mse" layout="p2" />
+  </repositories>
+  <rootInstallableUnits>
+    <unit id="org.eclipse.sdk.ide" version="0.0.0" />
+    <unit id="org.maven.ide.eclipse.feature.feature.group" version="0.0.0" />
+    <unit id="org.maven.ide.eclipse.temporary.mojos.feature.feature.group" version="0.0.0" />
+    <unit id="com.sonatype.s2.project.feature.feature.group" version="[1.0.0,2.0.0)" />
+    <unit id="com.sonatype.s2.project.svn.feature.feature.group" version="0.0.0" />
+    <unit id="com.sonatype.s2.project.git.feature.feature.group" version="0.0.0" />
+  </rootInstallableUnits>
+  <p2Advice touchpointId="org.eclipse.equinox.p2.osgi" touchpointVersion="1.0.0">
+    <advice>configure=addJvmArg(jvmArg:-Xmx768m)</advice>
+  </p2Advice>
+  <targetEnvironments>
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86" />
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86_64" />
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86" />
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86_64" />
+    <environment osgi.os="macosx" osgi.ws="cocoa" osgi.arch="x86" />
+    <environment osgi.os="macosx" osgi.ws="cocoa" osgi.arch="x86_64" />
+  </targetEnvironments>
+</p2lineup>

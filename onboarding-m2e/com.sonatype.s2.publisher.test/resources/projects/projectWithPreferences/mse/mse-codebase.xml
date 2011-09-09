@@ -1,0 +1,6 @@
+<project>
+  <groupId>test</groupId>
+  <artifactId>projectWithPreferences</artifactId>
+  <version>1.0.0</version>
+  <name>projectWithPreferences</name>
+</project>

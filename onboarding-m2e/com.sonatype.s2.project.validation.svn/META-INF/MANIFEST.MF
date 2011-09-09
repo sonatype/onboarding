@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SVN Access Validation
+Bundle-SymbolicName: com.sonatype.s2.project.validation.svn;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: .,
+ jars/svnkit.jar,
+ jars/trilead.jar
+Require-Bundle: com.sonatype.s2.project.validation.api;bundle-version="1.0.0",
+ org.eclipse.core.runtime;bundle-version="3.5.0",
+ org.eclipse.core.runtime.compatibility.auth;bundle-version="3.2.100",
+ org.maven.ide.eclipse.authentication,
+ org.slf4j.api;bundle-version="1.5.11"
+Export-Package: com.sonatype.s2.project.validation.svn
+

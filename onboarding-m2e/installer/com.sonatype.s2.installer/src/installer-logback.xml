@@ -1,0 +1,23 @@
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%date [%thread] %-5level %logger{35} - %msg%n</Pattern>
+    </layout>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <File>${com.sonatype.mse.installer.log.file}</File>
+
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%date %-4relative [%thread] %-5level %logger{35} - %msg%n
+      </Pattern>
+    </layout>
+  </appender>
+
+  <root level="debug">
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+
+  <logger name="org.eclipse.jetty.http.ssl" level="INFO" />
+</configuration>

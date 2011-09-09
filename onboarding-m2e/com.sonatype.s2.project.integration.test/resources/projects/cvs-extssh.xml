@@ -1,0 +1,11 @@
+<project>
+  <name>Project-A</name>
+  <modules>
+    <module>
+      <name>Test</name>
+      <scm>
+        <url>scm:cvs:cvs://:extssh:hudson:S0natyp3@scmtest.grid.sonatype.com:/opt/repos/cvs/cvs#</url>
+      </scm>
+    </module>
+  </modules>
+</project>

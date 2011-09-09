@@ -1,0 +1,39 @@
+<project>
+  <name>Test Project</name>
+  <homeUrl>http://home/url</homeUrl>
+  <docsUrl>http://docs/url</docsUrl>
+  <security-realms>
+    <security-realm>
+      <id>security.realm</id>
+    </security-realm>
+  </security-realms>
+  <prerequisites>
+    <requiredMemory>2560m</requiredMemory>
+  </prerequisites>
+  <eclipse-preferences>
+    <url>http://localhost:8089/catalog/preferences.jar</url>
+  </eclipse-preferences>
+  <modules>
+    <module>
+      <name>module1</name>
+      <scm>
+        <url>http://scm/module1</url>
+        <security-realm>security.realm</security-realm>
+      </scm>
+      <homeUrl>http://home/module1</homeUrl>
+      <docsUrl>http://docs/module1</docsUrl>
+      <issuesUrl>http://issues/module1</issuesUrl>
+      <buildUrl>http://build/module1</buildUrl>
+    </module>
+    <module>
+      <name>module2</name>
+      <scm>
+        <url>http://scm/module2</url>
+      </scm>
+      <homeUrl>http://home/module2</homeUrl>
+      <docsUrl>http://docs/module2</docsUrl>
+      <issuesUrl>http://issues/module2</issuesUrl>
+      <buildUrl>http://build/module2</buildUrl>
+    </module>
+  </modules>
+</project>

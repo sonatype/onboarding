@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<project>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${codebase.version}</version>
+
+  <name>Nexus Onboarding</name>
+  <description>Development environment for nexus onboarding related plugins.</description>
+
+  <installerVersion>1.0.6</installerVersion>
+
+  <p2Lineup>
+    <url>${lineup.url}</url>
+  </p2Lineup>
+  <modules>
+    <module>
+      <name>nexus-p2</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/components/trunk/nexus-p2</url>
+      </scm>
+      <buildUrl>https://ci.sonatype.com/job/components-nexus-p2/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://ci.sonatype.com</url>
+          <jobs>
+            <job>components-nexus-p2</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+    </module>
+    
+    <module>
+      <name>nexus-p2-plugin</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/nexus-enterprise/trunk/nexus-enterprise-plugins/nexus-p2-plugin</url>
+      </scm>
+      <buildUrl>https://ci.sonatype.com/job/NexusEnterprisePlugin-P2/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://ci.sonatype.com</url>
+          <jobs>
+            <job>NexusEnterprisePlugin-P2</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+    </module>
+    
+    <module>
+      <name>nexus-onboarding-plugin</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/nexus-enterprise/trunk/nexus-enterprise-plugins/nexus-onboarding-plugin</url>
+      </scm>
+      <buildUrl>https://ci.sonatype.com/view/Nexus/job/NexusEnterprisePlugin-onboarding/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://ci.sonatype.com</url>
+          <jobs>
+            <job>NexusEnterprisePlugin-onboarding</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+    </module>
+    
+    <module>
+      <name>s2models</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/components/trunk/s2models/</url>
+      </scm>
+      <buildUrl>https://ci.sonatype.com/job/s2-models/</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://ci.sonatype.com</url>
+          <jobs>
+            <job>s2-models</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+    </module>
+  </modules>
+  <requiresMavenSettings>true</requiresMavenSettings>
+  <prerequisites>
+    <requiredMemory>768M</requiredMemory>
+  </prerequisites>
+</project>

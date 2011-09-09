@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p2lineup id="testLineup" version="1.2.3" name="Test Lineup Name">
+  <description>Test Lineup Description</description>
+  
+  <repositories>
+  	<repository url="http://sourcerepo1" layout="p2"/>
+  	<repository url="http://sourcerepo2" layout="m2"/>
+  </repositories>
+  
+  <rootInstallableUnits>
+    <unit id="rootIU1" version="0.0.1"/>
+    <unit id="rootIU2" version="0.0.2">
+      <targetEnvironments>
+        <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86"/>
+      </targetEnvironments>
+    </unit>
+  </rootInstallableUnits>
+
+  <p2Advice touchpointId="org.eclipse.equinox.p2.osgi" touchpointVersion="1.0.0">
+    <advice>
+      advice1
+    </advice>
+    <advice>
+      advice2
+    </advice>
+  </p2Advice>
+
+  <targetEnvironments>
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86"/>
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86_64"/>
+  </targetEnvironments>
+</p2lineup>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nexusConfiguration>
+  <version>1.4.5</version>
+  <globalConnectionSettings>
+    <connectionTimeout>20000</connectionTimeout>
+    <retrievalRetryCount>3</retrievalRetryCount>
+    <queryString></queryString>
+  </globalConnectionSettings>
+  <restApi>
+    <baseUrl>http://localhost:12345/nexus</baseUrl>
+  </restApi>
+  <httpProxy>
+    <enabled>true</enabled>
+    <port>8082</port>
+    <proxyPolicy>strict</proxyPolicy>
+  </httpProxy>
+  <routing>
+    <resolveLinks>true</resolveLinks>
+  </routing>
+  <repositories>
+    <repository>
+      <id>mse-installer-repo</id>
+      <name>Test</name>
+      <providerRole>org.sonatype.nexus.proxy.repository.Repository</providerRole>
+      <providerHint>p2</providerHint>
+      <localStatus>IN_SERVICE</localStatus>
+      <notFoundCacheActive>true</notFoundCacheActive>
+      <notFoundCacheTTL>0</notFoundCacheTTL>
+      <userManaged>true</userManaged>
+      <exposed>true</exposed>
+      <browseable>true</browseable>
+      <writePolicy>ALLOW_WRITE</writePolicy>
+      <searchable>true</searchable>
+      <localStorage>
+        <provider>file</provider>
+      </localStorage>
+      <remoteStorage>
+        <provider>apacheHttpClient3x</provider>
+        <url>https://foo</url>
+        <authentication>
+          <username>sonatype-dist-user</username>
+          <password>{qY7YQQUv5JYH4n56HqX/eTPCZnMX7Z5BOgZcsssflqA=}</password>
+        </authentication>
+      </remoteStorage>
+      <externalConfiguration>
+        <artifactMaxAge>-1</artifactMaxAge>
+        <metadataMaxAge>-1</metadataMaxAge>
+      </externalConfiguration>
+    </repository>
+  </repositories>
+    
+  <repositoryGrouping/>
+  
+  <repositoryTargets/>
+  
+  <smtpConfiguration>
+    <hostname>smtp-host</hostname>
+    <port>25</port>
+    <username>smtp-username</username>
+    <password>smtp-password</password>
+    <systemEmailAddress>system@nexus.org</systemEmailAddress>
+  </smtpConfiguration>
+  <errorReporting>
+    <enabled>false</enabled>
+    <jiraUrl>https://issues.sonatype.org</jiraUrl>
+    <jiraProject>PR</jiraProject>
+  </errorReporting>
+  <notification />
+</nexusConfiguration>

@@ -1,0 +1,11 @@
+<project>
+  <name>MECLIPSE-1583-badmodule</name>
+  <modules>
+    <module>
+      <name>badmodule</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-1583-modules-add-remove/badmodule</url>
+      </scm>
+    </module>
+  </modules>
+</project>

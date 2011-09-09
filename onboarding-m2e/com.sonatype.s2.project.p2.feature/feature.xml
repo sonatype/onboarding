@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.sonatype.s2.project.p2.feature"
+      version="1.0.8.qualifier"
+      provider-name="%providerName" label="%label">
+      
+   <description url="%descriptionURL">%description</description>
+
+   <copyright url="%copyrightURL">%copyright</copyright>
+
+   <license url="%licenseURL">%license</license>
+
+   <plugin
+         id="com.sonatype.s2.project.validation.p2.helios"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sonatype.s2.extractor.helios"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sonatype.s2.project.validation.p2"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sonatype.s2.extractor.galileo"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

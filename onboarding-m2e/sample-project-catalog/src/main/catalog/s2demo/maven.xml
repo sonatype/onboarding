@@ -1,0 +1,29 @@
+<project>
+  <name>Maven</name>
+  
+  <homeUrl>http://maven.apache.org/</homeUrl>
+  <docsUrl>http://maven.apache.org/project-info.html</docsUrl>
+
+  <security-realms>
+    <security-realm>
+      <id>s2demo</id>
+    </security-realm>
+  </security-realms>
+  
+  <security-realm>s2demo</security-realm>
+  
+  <modules>
+    <module>
+      <name>maven</name>
+      <scm>
+        <url>scm:svn:http://svn.apache.org/repos/asf/maven/maven-3/trunk/</url>
+      </scm>
+    </module>
+    <module>
+      <name>plexus-containers</name>
+      <scm>
+        <url>scm:svn:https://svn.codehaus.org/plexus/plexus-containers/trunk/</url>
+      </scm>
+    </module>
+  </modules>
+</project>

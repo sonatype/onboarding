@@ -1,0 +1,29 @@
+<plexus>
+  <components>
+    
+    <component>
+      <role>com.sonatype.nexus.p2.lineup.resolver.P2LineupResolver</role>
+      <implementation>com.sonatype.nexus.p2.lineup.persist.MockP2LineupResolver</implementation>
+    </component>
+    
+    <component>
+      <role>org.sonatype.nexus.configuration.application.GlobalRestApiSettings</role>
+      <implementation>com.sonatype.nexus.p2.lineup.persist.MockGlobalRestApiSettings</implementation>
+    </component>
+    
+    <component>
+      <role>org.sonatype.security.PlexusSecurityManager</role>
+      <role-hint>web</role-hint>
+      <implementation>org.sonatype.security.DefaultPlexusSecurityManager</implementation>
+      <isolated-realm>false</isolated-realm>
+      <requirements>
+        <requirement>
+          <role>org.sonatype.plexus.components.ehcache.PlexusEhCacheWrapper</role>
+          <role-hint>default</role-hint>
+          <field-name>cacheWrapper</field-name>
+        </requirement>
+      </requirements>
+    </component>
+    
+  </components>
+</plexus>

@@ -1,0 +1,55 @@
+<project>
+  <groupId>group.foo</groupId>
+  <artifactId>FooNoInstallerVersion</artifactId>
+  <version>1.2.3</version>
+
+  <name>Project FooNoInstallerVersion</name>
+
+  <security-realms>
+    <security-realm>
+      <id>blah</id>
+    </security-realm>
+    <security-realm>
+      <id>sonatype</id>
+    </security-realm>
+  </security-realms>
+  
+  <maven-settings>
+    <url>settings.xml</url>
+  </maven-settings>
+  
+  <eclipse-preferences>
+    <url>eclipse.prefs</url>
+    <security-realm>sonatype</security-realm>
+  </eclipse-preferences>
+  
+  <eclipse-installation>
+    <directory>install</directory>
+  </eclipse-installation>
+  <eclipse-workspace>
+    <directory>workspace</directory>
+    <customizable>false</customizable>
+  </eclipse-workspace>
+  
+  <prerequisites>
+    <requiredMemory>32m</requiredMemory>
+  </prerequisites>
+  
+  <modules>
+    <module>
+      <name>Bar</name>
+      <scm>
+        <url>munchy</url>
+        <branch>git</branch>
+        <security-realm>blah</security-realm>
+      </scm>
+      <profiles>
+        <profile>moo</profile>
+      </profiles>
+      <roots>
+        <relPath>.</relPath>
+        <relPath>relpath</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

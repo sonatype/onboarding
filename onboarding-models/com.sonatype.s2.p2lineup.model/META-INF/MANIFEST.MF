@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.sonatype.s2.p2lineup.model
+Bundle-SymbolicName: com.sonatype.s2.p2lineup.model
+Bundle-Version: 1.0.9.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5, JavaSE-1.6
+Export-Package: com.sonatype.nexus.p2.rest.model,
+ com.sonatype.s2.p2lineup.model,
+ com.sonatype.s2.p2lineup.model.io.xpp3,
+ com.sonatype.s2.p2lineup.model.io.xstream
+Import-Package: com.thoughtworks.xstream;version="1.3.1",
+ com.thoughtworks.xstream.annotations;version="1.3.1",
+ javax.xml.bind.annotation;version="2.1.0",
+ org.codehaus.plexus.util,
+ org.codehaus.plexus.util.xml,
+ org.codehaus.plexus.util.xml.pull
+Require-Bundle: org.slf4j.api;bundle-version="1.5.11"
+

@@ -1,0 +1,11 @@
+<project>
+  <name>Polyglot Maven</name>
+  <description>This is not your father's Maven. If you're looking to leverage the power of Maven through modern JVM language implementations like Groovy, Scala, Clojure and JRuby then you've come to the right place.</description>
+  <imageUrl>./maven48.png</imageUrl>
+  <modules>
+    <module>
+      <name>pmaven</name>
+      <scm><url>scm:git:git://github.com/sonatype/polyglot-maven.git</url></scm>
+    </module>
+  </modules>
+</project>

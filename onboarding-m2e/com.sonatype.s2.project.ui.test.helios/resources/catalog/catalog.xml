@@ -1,0 +1,11 @@
+<catalog>
+  <name>Test Catalog</name>
+  <entry>
+    <name>Test Project</name>
+    <descriptorUrl>./project.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Test Project 2</name>
+    <descriptorUrl>./project2.xml</descriptorUrl>
+  </entry>
+</catalog>

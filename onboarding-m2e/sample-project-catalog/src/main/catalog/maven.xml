@@ -1,0 +1,24 @@
+<project>
+  <name>Maven</name>
+  
+  <description>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</description>
+  <imageUrl>./maven48.png</imageUrl>
+  
+  <homeUrl>http://maven.apache.org/</homeUrl>
+  <docsUrl>http://maven.apache.org/project-info.html</docsUrl>
+  
+  <modules>
+    <module>
+      <name>maven</name>
+      <scm>
+        <url>scm:svn:http://svn.apache.org/repos/asf/maven/maven-3/trunk/</url>
+      </scm>
+    </module>
+    <module>
+      <name>plexus-containers</name>
+      <scm>
+        <url>scm:svn:https://svn.codehaus.org/plexus/plexus-containers/trunk/</url>
+      </scm>
+    </module>
+  </modules>
+</project>

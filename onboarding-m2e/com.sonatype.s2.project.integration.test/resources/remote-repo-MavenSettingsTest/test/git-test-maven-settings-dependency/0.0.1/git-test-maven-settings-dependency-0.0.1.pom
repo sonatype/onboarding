@@ -1,0 +1,6 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>test</groupId>
+  <artifactId>git-test-maven-settings-dependency</artifactId>
+  <version>0.0.1</version>
+</project>

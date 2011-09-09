@@ -1,0 +1,9 @@
+<catalog>
+  <name>Foo</name>
+  
+  <security-realms>
+    <security-realm>
+      <id>test.realm</id>
+    </security-realm>
+  </security-realms>
+</catalog>

@@ -1,0 +1,23 @@
+<project>
+  <name>Project-File</name>
+  <eclipse-preferences>
+    <url>@baseuri@/resources/preferences/test.spa</url>
+    <security-realm>test</security-realm>
+  </eclipse-preferences>
+  <security-realms>
+    <security-realm>
+      <id>test</id>
+    </security-realm>
+  </security-realms>
+  <modules>
+    <module>
+      <name>Test</name>
+      <scm>
+        <url>scm:git:@baseurl@/resources/scm/git/simple</url>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

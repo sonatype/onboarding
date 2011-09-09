@@ -1,0 +1,14 @@
+<project>
+  <groupId>MECLIPSE-1593</groupId>
+  <artifactId>git-codebase-update</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>git-codebase-update</name>
+  <modules>
+    <module>
+      <name>git-test</name>
+      <scm>
+        <url>scm:git:${basedir}/target/git/simple</url>
+      </scm>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.sonatype.s2.project.git.feature"
+      label="%label"
+      version="1.0.8.qualifier"
+      provider-name="%providerName">
+
+   <description url="%descriptionURL">%description</description>
+
+   <copyright url="%copyrightURL">%copyright</copyright>
+
+   <license url="%licenseURL">%license</license>
+
+   <requires>
+      <import feature="org.eclipse.egit" version="0.11.3" match="equivalent"/>
+      <import feature="org.eclipse.jgit" version="0.11.3" match="equivalent"/>
+   </requires>
+
+   <plugin
+         id="com.sonatype.m2e.egit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sonatype.s2.project.validation.git"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+
+<model>
+  <id>securityRealm</id>
+  <name>S2SecurityRealm</name>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.s2.securityrealm.model</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class rootElement="true">
+      <name>S2SecurityRealm</name>
+      <interfaces>
+        <interface>com.sonatype.s2.securityrealm.model.IS2SecurityRealm</interface>
+      </interfaces>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "S2SecurityRealm" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "S2SecurityRealm" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>id</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+        </field>
+        <field>
+          <name>name</name>
+          <type>String</type>
+          <required>true</required>
+        </field>
+        <field>
+          <name>description</name>
+          <type>String</type>
+          <required>true</required>
+        </field>
+        <field java.getter="false" java.setter="false">
+          <name>authenticationType</name>
+          <type>String</type>
+          <required>true</required>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public S2SecurityRealm()
+    {
+        authenticationType = S2SecurityRealmAuthenticationType.USERNAME_PASSWORD.toString();
+    }
+
+    public void setAuthenticationType( S2SecurityRealmAuthenticationType authType )
+    {
+        authenticationType = authType.toString();
+    }
+
+    public void setAuthenticationType( String authType )
+    {
+        setAuthenticationType( S2SecurityRealmAuthenticationType.valueOf( authType ) );
+    }
+
+    public S2SecurityRealmAuthenticationType getAuthenticationType()
+    {
+        return S2SecurityRealmAuthenticationType.valueOf( authenticationType );
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+    
+    <class rootElement="true">
+      <name>S2SecurityRealmURLAssoc</name>
+      <interfaces>
+        <interface>com.sonatype.s2.securityrealm.model.IS2SecurityRealmURLAssoc</interface>
+      </interfaces>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "S2SecurityRealmURLAssoc" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "S2SecurityRealmURLAssoc" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>id</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+        </field>
+        <field>
+          <name>realmId</name>
+          <type>String</type>
+          <required>true</required>
+        </field>
+        <field>
+          <name>url</name>
+          <type>String</type>
+          <required>true</required>
+        </field>
+        <field java.getter="false" java.setter="false">
+          <name>anonymousAccess</name>
+          <type>String</type>
+          <required>true</required>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public S2SecurityRealmURLAssoc()
+    {
+        anonymousAccess = S2AnonymousAccessType.NOT_ALLOWED.toString();
+    }
+
+    public void setAnonymousAccess( S2AnonymousAccessType anonymousAccess )
+    {
+        this.anonymousAccess = anonymousAccess.toString();
+    }
+
+    public void setAnonymousAccess( String anonymousAccess )
+    {
+        setAnonymousAccess( S2AnonymousAccessType.valueOf( anonymousAccess ) );
+    }
+
+    public S2AnonymousAccessType getAnonymousAccess()
+    {
+        return S2AnonymousAccessType.valueOf( anonymousAccess );
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+  </classes>
+</model>

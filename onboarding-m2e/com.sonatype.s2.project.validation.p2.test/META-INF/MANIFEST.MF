@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.sonatype.s2.project.validation.p2.test
+Bundle-SymbolicName: com.sonatype.s2.project.validation.p2.test
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.5.0";visibility:=reexport,
+ org.junit;visibility:=reexport,
+ org.eclipse.equinox.p2.engine;bundle-version="1.0.100";visibility:=reexport,
+ org.eclipse.equinox.p2.core;bundle-version="1.0.100";visibility:=reexport,
+ org.eclipse.equinox.p2.director.app;bundle-version="1.0.100";visibility:=reexport,
+ org.eclipse.equinox.p2.metadata;bundle-version="1.0.100";visibility:=reexport,
+ org.eclipse.equinox.app;bundle-version="1.2.0";visibility:=reexport,
+ org.eclipse.equinox.p2.touchpoint.eclipse;bundle-version="1.0.100";visibility:=reexport,
+ org.maven.ide.eclipse.authentication;visibility:=reexport,
+ com.sonatype.s2.project.core;bundle-version="1.0.0";visibility:=reexport,
+ com.sonatype.s2.project.model;bundle-version="1.0.0";visibility:=reexport,
+ com.sonatype.s2.project.validation;bundle-version="1.0.0";visibility:=reexport,
+ com.sonatype.s2.project.core.test;bundle-version="1.0.0";visibility:=reexport,
+ com.sonatype.s2.project.validation.api;visibility:=reexport,
+ com.sonatype.s2.project.validation.p2;bundle-version="1.0.3";resolution:=optional,
+ com.sonatype.s2.project.validation.p2.helios;bundle-version="1.0.3";resolution:=optional,
+ com.sonatype.s2.project.validation.test;bundle-version="1.0.5"

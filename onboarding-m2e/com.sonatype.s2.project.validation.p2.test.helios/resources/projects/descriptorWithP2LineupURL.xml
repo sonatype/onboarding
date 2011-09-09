@@ -1,0 +1,14 @@
+<project>
+  <name>Foo</name>
+  
+  <security-realms>
+    <security-realm>
+      <id>blah</id>
+    </security-realm>
+  </security-realms>
+
+  <p2Lineup>
+    <url>file:fake_url</url>
+    <security-realm>blah</security-realm>
+  </p2Lineup>
+</project>

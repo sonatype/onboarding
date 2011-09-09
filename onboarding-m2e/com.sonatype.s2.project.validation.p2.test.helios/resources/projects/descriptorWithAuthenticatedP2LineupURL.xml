@@ -1,0 +1,14 @@
+<project>
+  <name>S2ProjectWithAuthenticatedP2Lineup</name>
+  
+  <security-realms>
+    <security-realm>
+      <id>test.p2lineup.access.realmId</id>
+    </security-realm>
+  </security-realms>
+  
+  <p2Lineup>
+    <url>http://localhost:@port.http@/p2lineup/testaccess</url>
+    <security-realm>test.p2lineup.access.realmId</security-realm>
+  </p2Lineup>
+</project>

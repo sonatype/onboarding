@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.sonatype.s2.project</groupId>
+		<artifactId>onboarding-parent</artifactId>
+		<version>1.0.8-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>com.sonatype.s2.project.validation.p2.test.helios</artifactId>
+	<packaging>eclipse-test-plugin</packaging>
+	<version>1.0.8-SNAPSHOT</version>
+
+	<properties>
+		<eclipse-platform.version>helios</eclipse-platform.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.sonatype.s2.project</groupId>
+			<artifactId>com.sonatype.s2.project.validation.p2.test</artifactId>
+			<version>1.0.8-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.tycho</groupId>
+				<artifactId>maven-osgi-test-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+				    <testSuite>com.sonatype.s2.project.validation.p2.test.helios</testSuite>
+					<testClass>com.sonatype.s2.project.validator.p2.P2TestSuite</testClass>
+					<useUIHarness>true</useUIHarness>
+					<argLine>-Xmx800m -XX:MaxPermSize=256m</argLine>
+					<appArgLine>-eclipse.keyring target/keyring -eclipse.password resources/secure-storage-password.txt</appArgLine>
+					<forkedProcessTimeoutInSeconds>180</forkedProcessTimeoutInSeconds>
+				</configuration>
+			</plugin>
+
+			<!-- Copy the jar and resources from the com.sonatype.s2.project.core.test -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-classes</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.sonatype.s2.project</groupId>
+									<artifactId>com.sonatype.s2.project.validation.p2.test</artifactId>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/classes</outputDirectory>
+									<includes>**/*.class</includes>
+								</artifactItem>
+
+							</artifactItems>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>unpack-resources</id>
+						<phase>process-test-resources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.sonatype.s2.project</groupId>
+									<artifactId>com.sonatype.s2.project.validation.p2.test</artifactId>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.basedir}</outputDirectory>
+									<includes>resources/**</includes>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		
+			<!-- Remove the resources folder copied from the s2.project.core.test -->
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${project.basedir}/resources</directory>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

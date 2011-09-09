@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Helios
+Bundle-SymbolicName: com.sonatype.s2.project.core.test.helios
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: com.sonatype.s2.project.core.test;bundle-version="1.0.3",
+ org.eclipse.sdk;bundle-version="3.6.0",
+ org.junit,
+ org.eclipse.core.runtime;bundle-version="3.6.0"

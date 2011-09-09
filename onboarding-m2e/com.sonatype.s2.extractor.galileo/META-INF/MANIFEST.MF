@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse installation extractor for Galileo
+Bundle-SymbolicName: com.sonatype.s2.extractor.galileo;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Export-Package: com.sonatype.s2.extractor;version="1.0.0";
+  uses:="org.eclipse.core.runtime,
+   org.eclipse.swt.custom,
+   org.eclipse.equinox.internal.provisional.p2.ui.policy,
+   org.eclipse.equinox.internal.provisional.p2.ui.dialogs,
+   org.eclipse.equinox.internal.p2.ui.dialogs,
+   org.eclipse.equinox.internal.provisional.p2.ui.viewers,
+   org.eclipse.jface.action,
+   org.eclipse.swt.widgets,
+   org.eclipse.equinox.internal.provisional.p2.metadata"
+Require-Bundle: org.eclipse.equinox.p2.engine;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.equinox.p2.metadata;bundle-version="[1.0.0,2.0.0)",
+ org.eclipse.equinox.p2.repository;bundle-version="[1.0.0,2.0.0)",
+ com.sonatype.s2.p2lineup.model;bundle-version="1.0.1",
+ org.eclipse.equinox.common;bundle-version="3.5.1",
+ org.eclipse.equinox.p2.metadata.repository;bundle-version="[1.0.101,1.1.0)",
+ org.eclipse.equinox.p2.artifact.repository;bundle-version="[1.0.101,1.1.0)",
+ org.eclipse.equinox.p2.core;bundle-version="[1.0.101,2.0.0)",
+ org.eclipse.equinox.p2.ui;bundle-version="[1.0.101,2.0.0)",
+ org.eclipse.jface;bundle-version="3.5.1",
+ org.eclipse.swt;bundle-version="3.5.1",
+ org.eclipse.ui;bundle-version="3.5.1",
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: com.sonatype.s2.internal.extractor.Activator
+Bundle-ClassPath: .
+Import-Package: org.osgi.framework;version="1.5.0",
+ org.eclipse.equinox.internal.provisional.p2.ui.dialogs;resolution:=optional,
+ org.eclipse.equinox.internal.provisional.p2.ui.policy;resolution:=optional,
+ org.eclipse.equinox.internal.provisional.p2.ui.operations;resolution:=optional
+ 

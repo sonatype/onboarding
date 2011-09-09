@@ -1,0 +1,150 @@
+<!--
+
+    Copyright (c) 2008-2011 Sonatype, Inc.
+
+    All rights reserved. Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions.
+    Sonatype and Sonatype Nexus are trademarks of Sonatype, Inc. Apache Maven is a trademark of the Apache Foundation.
+    M2Eclipse is a trademark of the Eclipse Foundation. All other trademarks are the property of their respective owners.
+
+-->
+<model xsd.namespace="http://www.sonatype.com/xsd/nexus-configuration-1.0.1" xsd.target-namespace="http://www.sonatype.com/xsd/nexus-configuration-1.0.1">
+
+  <id>onboarding-catalogs</id>
+
+  <name>NexusOnboardingCatalogs</name>
+
+  <description>
+	<![CDATA[
+		<p>Nexus Onboarding Catalogs Configuration.</p>
+	]]>
+  </description>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.nexus.onboarding.persist.model</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class rootElement="true" xml.tagName="onboardingCatalogsConfiguration">
+      <name>CCatalogConfiguration</name>
+      <version>1.0.0+</version>
+      <interfaces>
+        <interface>org.sonatype.configuration.Configuration</interface>
+      </interfaces>
+      <description>The root element of Nexus Onboarding Catalogs configuration.</description>
+      <fields>
+        <field>
+          <name>version</name>
+          <version>1.0.0+</version>
+          <description>The version of the persisted model.</description>
+          <type>String</type>
+          <required>true</required>
+        </field>
+        <field>
+          <name>catalogs</name>
+          <version>1.0.0+</version>
+          <description>The list of defined catalogs.</description>
+          <association>
+            <type>CCatalog</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <required>false</required>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <version>1.0.0</version>
+          <code>
+<![CDATA[
+  public static final String MODEL_VERSION = "1.0.0";
+]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class>
+      <name>CCatalog</name>
+      <version>1.0.0+</version>
+      <description>A catalog used on onboarding.</description>
+      <fields>
+        <field>
+          <name>id</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog ID. Uniquely identifies a catalog.</description>
+        </field>
+        <field>
+          <name>name</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog Name. Name displayed throughout UI for the catalog.</description>
+        </field>
+        <field>
+          <name>realm</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>false</required>
+          <description>Realm which the catalog is associated to.</description>
+        </field>
+        <field>
+          <name>entries</name>
+          <version>1.0.0+</version>
+          <description>Catalog entries</description>
+          <association>
+            <type>CCatalogEntry</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <required>false</required>
+        </field>
+      </fields>
+    </class>
+
+    <class>
+      <name>CCatalogEntry</name>
+      <version>1.0.0+</version>
+      <description>A Catalog Entry.</description>
+      <fields>
+        <field>
+          <name>id</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Uniquely identifies a catalog entry.</description>
+        </field>
+        <field>
+          <name>name</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog entry name</description>
+        </field>
+        <field>
+          <name>type</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>false</required>
+          <description>Catalog entry type. Can be Project or Lineup Only.</description>
+        </field>
+        <field>
+          <name>url</name>
+          <version>1.0.0+</version>
+          <description>The catalog entry url.</description>
+          <required>false</required>
+          <type>String</type>
+        </field>
+        <field>
+          <name>realm</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>false</required>
+          <description>Realm which the catalog entry is associated to.</description>
+        </field>
+      </fields>
+    </class>
+  </classes>
+</model>

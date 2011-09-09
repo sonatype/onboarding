@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.sonatype.s2.project.cvs.feature"
+      label="%label"
+      version="1.0.8.qualifier"
+      provider-name="%providerName">
+
+   <description url="%descriptionURL">%description</description>
+
+   <copyright url="%copyrightURL">%copyright</copyright>
+
+   <license url="%licenseURL">%license</license>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.team.core"/>
+      <import plugin="org.eclipse.team.cvs.core" version="3.3.200" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.team.cvs.ui"/>
+      <import plugin="org.eclipse.cvs"/>
+      <import plugin="org.eclipse.m2e.maven.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.team.cvs.ui"/>
+      <import plugin="org.eclipse.team.ui"/>
+      <import feature="org.eclipse.m2e.feature" version="0.13.0" match="equivalent"/>
+      <import feature="org.sonatype.m2e.temporary.mojos.feature" version="0.13.0" match="equivalent"/>
+      <import plugin="org.eclipse.ui.ide"/>
+   </requires>
+
+   <plugin
+         id="com.sonatype.s2.project.validation.cvs"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sonatype.m2e.cvs"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

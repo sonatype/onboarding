@@ -1,0 +1,17 @@
+<project>
+  <name>Project-A</name>
+  <maven-settings>
+    <url>http://localhost:@port.http@/projects/MECLIPSE-544-metadata-cache/settings.xml</url>
+  </maven-settings>
+  <modules>
+    <module>
+      <name>test</name>
+      <scm>
+        <url>scm:testfile:@basedir@/resources/projects/MECLIPSE-544-metadata-cache</url>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,12 @@
+<project>
+  <name>Test</name>
+  <security-realms>
+    <security-realm>
+      <id>s2.test.eclipse-preferences</id>
+    </security-realm>
+  </security-realms>
+  <eclipse-preferences>
+    <url>http://localhost:@port.http@/bad/s2-preferences.spa</url>
+    <security-realm>s2.test.eclipse-preferences</security-realm>
+  </eclipse-preferences>
+</project>

@@ -1,0 +1,34 @@
+<project>
+  <name>Project-A</name>
+  
+  <security-realm>test-sso</security-realm>
+  
+  <security-realms>
+    <security-realm>
+      <id>test-sso</id>
+    </security-realm>
+  </security-realms>
+  
+  <maven-settings>
+    <url>https://localhost:@port.https@/settings/settings.xml</url>
+    <security-realm>test-sso</security-realm>
+  </maven-settings>
+  
+  <eclipse-preferences>
+    <url>http://localhost:@port.http@/prefs/test.spa</url>
+    <security-realm>test-sso</security-realm>
+  </eclipse-preferences>
+  
+  <modules>
+    <module>
+      <name>Test</name>
+      <scm>
+        <url>scm:testfile:@basedir@/resources/scm/testfile/auth</url>
+        <security-realm>test-sso</security-realm>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.sonatype.s2.project.validator.p2.EclipseInstallationValidator"
+         name="Eclipse Installation Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+            class="com.sonatype.s2.project.validator.p2.EclipseInstallationValidator">
+         <description>
+            Validates that the current eclipse installation has all the installable units required by the p2 lineup associated with the s2 project.
+         </description>
+      </validator>
+   </extension>
+   
+   <extension
+   		point="com.sonatype.s2.project.core.ideUpdater"
+   		id="com.sonatype.s2.project.core.p2Updater">
+   		<updater
+   			class="com.sonatype.s2.project.validator.p2.EclipseInstallationValidator"/>
+   	</extension>
+</plugin>

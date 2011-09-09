@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project>
+  <groupId>test</groupId>
+  <artifactId>projectHeadVersion</artifactId>
+  <version>1.0.0-HEAD</version>
+  <name>projectHeadVersion</name>
+  <installerVersion>1.0.5</installerVersion>
+</project>

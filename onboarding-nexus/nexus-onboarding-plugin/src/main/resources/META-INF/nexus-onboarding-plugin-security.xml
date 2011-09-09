@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2008-2011 Sonatype, Inc.
+
+    All rights reserved. Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions.
+    Sonatype and Sonatype Nexus are trademarks of Sonatype, Inc. Apache Maven is a trademark of the Apache Foundation.
+    M2Eclipse is a trademark of the Eclipse Foundation. All other trademarks are the property of their respective owners.
+
+-->
+<security>
+  <version>2.0.2</version>
+  <roles>
+    <role>
+      <id>mse-codebase-all-read</id>
+      <name>Repo: All Codebase Repositories (Read)</name>
+      <description>Gives access to read ALL content of ALL Codebase Repositories in Nexus.</description>
+      <sessionTimeout>60</sessionTimeout>
+      <privileges>
+        <privilege>mse-codebase-read</privilege>
+      </privileges>
+      <roles>
+        <role>Onboarding-all-view</role>
+      </roles>
+    </role>
+    <role>
+      <id>mse-codebase-all-full</id>
+      <name>Repo: All Codebase Repositories (Full Control)</name>
+      <description>Gives access to create/read/update/delete ALL content of ALL Codebase Repositories in Nexus.</description>
+      <sessionTimeout>60</sessionTimeout>
+      <privileges>
+        <privilege>mse-codebase-create</privilege>
+        <privilege>mse-codebase-read</privilege>
+        <privilege>mse-codebase-delete</privilege>
+        <privilege>mse-codebase-update</privilege>
+      </privileges>
+      <roles>
+        <role>Onboarding-all-view</role>
+      </roles>
+    </role>
+    
+    <!-- Security realm roles -->
+    <role>
+      <id>onboarding-security-realm-developer</id>
+      <name>Onboarding Developer: All Security Realms - (Read)</name>
+      <description>Gives access to read ALL Onboarding Security Realms in Nexus.</description>
+      <sessionTimeout>60</sessionTimeout>
+      <privileges>
+        <privilege>onboarding-security-realm-read</privilege>
+        <privilege>onboarding-security-realm-url-read</privilege>
+      </privileges>
+    </role>
+    <role>
+      <id>onboarding-security-realm-administrator</id>
+      <name>Onboarding Administrator: All Security Realms - (Full Control)</name>
+      <description>Gives access to create/read/update/delete ALL Onboarding Security Realms in Nexus.</description>
+      <sessionTimeout>60</sessionTimeout>
+      <privileges>
+        <privilege>onboarding-security-realm-read</privilege>
+        <privilege>onboarding-security-realm-url-read</privilege>
+        <privilege>onboarding-security-realm-create-update</privilege>
+        <privilege>onboarding-security-realm-delete</privilege>
+        <privilege>onboarding-security-realm-url-create</privilege>
+        <privilege>onboarding-security-realm-url-update</privilege>
+        <privilege>onboarding-security-realm-url-delete</privilege>
+      </privileges>
+    </role>
+    <role>
+      <!-- this role is contributing to the existing anonymous role -->
+      <id>anonymous</id>
+      <roles>
+        <role>onboarding-security-realm-developer</role>
+      </roles>
+    </role>
+  </roles>
+  <privileges>
+    <privilege>
+      <id>mse-codebase-create</id>
+      <name>All Codebase Repositories - (create)</name>
+      <description>Give permission to create any content in any Codebase repository.</description>
+      <type>target</type>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>create,read</value>
+        </property>
+        <property>
+          <key>repositoryTargetId</key>
+          <value>Onboarding</value>
+        </property>
+        <property>
+          <key>repositoryId</key>
+          <value></value>
+        </property>
+        <property>
+          <key>repositoryGroupId</key>
+          <value></value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>mse-codebase-read</id>
+      <name>All Codebase Repositories - (read)</name>
+      <description>Give permission to read any content in any Codebase Repository.</description>
+      <type>target</type>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>read</value>
+        </property>
+        <property>
+          <key>repositoryTargetId</key>
+          <value>Onboarding</value>
+        </property>
+        <property>
+          <key>repositoryId</key>
+          <value></value>
+        </property>
+        <property>
+          <key>repositoryGroupId</key>
+          <value></value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>mse-codebase-update</id>
+      <name>All Codebase Repositories - (update)</name>
+      <description>Give permission to update any content in any Codebase Repository.</description>
+      <type>target</type>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>update,read</value>
+        </property>
+        <property>
+          <key>repositoryTargetId</key>
+          <value>Onboarding</value>
+        </property>
+        <property>
+          <key>repositoryId</key>
+          <value></value>
+        </property>
+        <property>
+          <key>repositoryGroupId</key>
+          <value></value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>mse-codebase-delete</id>
+      <name>All Codebase Repositories - (delete)</name>
+      <description>Give permission to delete any content in any Codebase Repository.</description>
+      <type>target</type>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>delete,read</value>
+        </property>
+        <property>
+          <key>repositoryTargetId</key>
+          <value>Onboarding</value>
+        </property>
+        <property>
+          <key>repositoryId</key>
+          <value></value>
+        </property>
+        <property>
+          <key>repositoryGroupId</key>
+          <value></value>
+        </property>
+      </properties>
+    </privilege>
+    
+    <!-- Privileges for MSE catalogs -->
+    <privilege>
+      <id>catalog-create-update</id>
+      <type>method</type>
+      <name>Codebase Catalogs - (create,update)</name>
+      <description>Give permission to create or update an Codebase catalog.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>create,update</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:catalog</value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>catalog-read</id>
+      <type>method</type>
+      <name>Codebase Catalogs - (read)</name>
+      <description>Give permission to read an Codebase catalog.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>read</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:catalog</value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>catalog-delete</id>
+      <type>method</type>
+      <name>Codebase Catalogs - (delete)</name>
+      <description>Give permission to delete an Codebase catalog.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>delete</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:catalog</value>
+        </property>
+      </properties>
+    </privilege>
+    
+    <!-- Privileges for onboarding-security-realm -->
+    <privilege>
+      <id>onboarding-security-realm-create-update</id>
+      <type>method</type>
+      <name>Onboarding Security Realms - (create,update)</name>
+      <description>Give permission to create or update an Onboarding Security Realm.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>create,update</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:onboarding-security-realm</value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>onboarding-security-realm-read</id>
+      <type>method</type>
+      <name>Onboarding Security Realms - (read)</name>
+      <description>Give permission to read an Onboarding Security Realm.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>read</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:onboarding-security-realm</value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>onboarding-security-realm-delete</id>
+      <type>method</type>
+      <name>Onboarding Security Realms - (delete)</name>
+      <description>Give permission to delete an Onboarding Security Realm.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>delete</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:onboarding-security-realm</value>
+        </property>
+      </properties>
+    </privilege>
+    
+    <!-- Privileges for onboarding-security-realm-url -->
+    <privilege>
+      <id>onboarding-security-realm-url-create</id>
+      <type>method</type>
+      <name>Onboarding Security Realm URLs - (create)</name>
+      <description>Give permission to create an Onboarding Security Realm URL.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>create</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:onboarding-security-realm-url</value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>onboarding-security-realm-url-read</id>
+      <type>method</type>
+      <name>Onboarding Security Realms URLs - (read)</name>
+      <description>Give permission to read an Onboarding Security Realm URL.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>read</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:onboarding-security-realm-url</value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>onboarding-security-realm-url-update</id>
+      <type>method</type>
+      <name>Onboarding Security Realm URLs - (update)</name>
+      <description>Give permission to update an Onboarding Security Realm URL.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>update</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:onboarding-security-realm-url</value>
+        </property>
+      </properties>
+    </privilege>
+    <privilege>
+      <id>onboarding-security-realm-url-delete</id>
+      <type>method</type>
+      <name>Onboarding Security Realms URLs - (delete)</name>
+      <description>Give permission to delete an Onboarding Security Realm URL.</description>
+      <properties>
+        <property>
+          <key>method</key>
+          <value>delete</value>
+        </property>
+        <property>
+          <key>permission</key>
+          <value>nexus:onboarding-security-realm-url</value>
+        </property>
+      </properties>
+    </privilege>
+  </privileges>
+</security>

@@ -1,0 +1,15 @@
+<project>
+  <name>Project-B</name>
+  <modules>
+    <module>
+      <name>svn-test</name>
+      <scm>
+        <!-- anonymous auth with the username already given in the URL -->
+        <url>scm:svn:svn://guest@localhost:@port.svn@/simple/trunk</url>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

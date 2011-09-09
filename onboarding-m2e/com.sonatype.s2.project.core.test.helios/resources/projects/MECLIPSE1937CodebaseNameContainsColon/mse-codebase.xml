@@ -1,0 +1,9 @@
+<project>
+  <groupId>MECLIPSE1937Group</groupId>
+  <artifactId>MECLIPSE1937Artifact</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>Test \/:"&lt;&gt;|?*</name>
+  <maven-settings>
+    <url>${baseurl}/resources/projects/MECLIPSE1937CodebaseNameContainsColon/settings.xml</url>
+  </maven-settings>
+</project>

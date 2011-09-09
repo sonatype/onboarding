@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2e.scm.scmHandlers">
+      <handler
+            class="com.sonatype.s2.project.core.test.scm.FileScmHandler"
+            priority="10"
+            type="testfile">
+      </handler>
+   </extension>
+
+   <extension
+         id="com.sonatype.s2.project.core.test.FileScmAccessValidator"
+         name="Test File Access Validator"
+         point="com.sonatype.s2.project.validation.IScmAccessValidator">
+      <validator
+             class="com.sonatype.s2.project.core.test.scm.FileScmAccessValidator">
+          <description>
+             Validates access to testfile repositories.
+          </description>
+      </validator>
+   </extension>
+
+   <extension
+         id="com.sonatype.s2.project.core.test.DummySecurityRealmPersistence"
+         name="Dummy Security Realm Persistence for unit tests"
+         point="org.maven.ide.eclipse.authentication.SecurityRealmPersistence">
+      <handler
+            class="com.sonatype.s2.project.core.test.DummySecurityRealmPersistence"
+            priority="0">
+      </handler>
+   </extension>
+   <extension
+         point="com.sonatype.s2.project.core.teamProviders">
+      <provider
+            class="com.sonatype.s2.project.core.test.scm.FileTeamProvider"
+            type="testfile">
+      </provider>
+   </extension>
+</plugin>

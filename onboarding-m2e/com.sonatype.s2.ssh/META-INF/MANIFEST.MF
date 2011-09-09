@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SSH Integration
+Bundle-SymbolicName: com.sonatype.s2.ssh
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5, JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.sonatype.s2.ssh
+Require-Bundle: org.slf4j.api;bundle-version="1.5.11"
+

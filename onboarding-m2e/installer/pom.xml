@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.sonatype.s2.project</groupId>
+    <artifactId>onboarding-parent</artifactId>
+    <version>1.0.8-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.sonatype.s2.installer</groupId>
+  <artifactId>s2-installer-aggregator</artifactId>
+  <packaging>pom</packaging>
+
+  <properties>
+    <jarsigner.skip>false</jarsigner.skip>
+    <eclipse-platform.version>helios</eclipse-platform.version>
+
+    <!-- See IS2Project.CURRENT_INSTALLER_VERSION -->
+    <mse.installer.compatible.versions>1.0.4,1.0.5,1.0.6</mse.installer.compatible.versions>
+  </properties>
+
+  <modules>
+    <module>com.sonatype.s2.installer</module>
+    <module>com.sonatype.s2.installer.jnlp</module>
+    <module>com.sonatype.s2.installer.feature</module>
+    
+    <module>com.sonatype.s2.installer.test</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <environments>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

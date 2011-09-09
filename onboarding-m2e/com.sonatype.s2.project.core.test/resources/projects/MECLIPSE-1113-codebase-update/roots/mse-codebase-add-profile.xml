@@ -1,0 +1,18 @@
+<project>
+  <groupId>MECLIPSE-1113-roots</groupId>
+  <artifactId>roots-codebase</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>MECLIPSE-1113-roots</name>
+  <modules>
+    <module>
+      <name>MECLIPSE-1113-roots-tree01</name>
+      <scm>
+        <url>scm:testfile:target/codebases/MECLIPSE-1113-codebase-update/roots/tree01</url>
+      </scm>
+      <roots>
+        <relPath>project01</relPath>
+        <relPath>project02</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

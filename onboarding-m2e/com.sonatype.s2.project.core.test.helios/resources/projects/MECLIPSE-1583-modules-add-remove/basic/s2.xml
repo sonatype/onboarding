@@ -1,0 +1,11 @@
+<project>
+  <name>MECLIPSE-1583-basic</name>
+  <modules>
+    <module>
+      <name>basic</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-1583-modules-add-remove/basic</url>
+      </scm>
+    </module>
+  </modules>
+</project>

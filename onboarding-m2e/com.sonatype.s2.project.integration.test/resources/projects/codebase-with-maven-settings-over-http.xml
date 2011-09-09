@@ -1,0 +1,19 @@
+<project>
+  <name>codebase-with-maven-settings-over-http</name>
+  
+  <maven-settings>
+    <url>http://localhost:@port.http@/maven-settings/settings-authenticated.xml</url>
+  </maven-settings>
+  
+  <modules>
+    <module>
+      <name>git-test-maven-settings</name>
+      <scm>
+        <url>scm:git:file:///@basedir@/resources/scm/git/simple-with-maven-settings</url>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

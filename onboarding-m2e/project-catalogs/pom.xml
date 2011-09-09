@@ -1,0 +1,162 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sonatype.mse.codebases</groupId>
+  <artifactId>codebases-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <!--
+      Nexus server repositories base url. This is where catalogues will be published.
+      Uses local nexus installation by default. Use -Premote to
+      publish catalogues to rso production catalogue repositories.
+      
+      See <catalog>/pom.xml for description of each catalogue and catalogue
+      specific urls.
+      
+      WARNING: Be very careful with -Premote, this immediately goes live for all internal and 
+      external users. 
+      
+      Please note that the nexus.baseURL is a different variable used in some files,
+      which is filtered on the nexus server, not by maven.
+     -->
+    <nexus.baseurl>http://localhost:8081/nexus</nexus.baseurl>
+
+    <!--
+      Onboarding repository upload url
+     -->
+    <codebase.version>1.0-HEAD</codebase.version>
+    <project.url>${nexus.baseurl}/content/repositories/nx-codebase-repo/${project.groupId.asPath}/${project.artifactId}/${codebase.version}</project.url>
+
+    <!--
+      Project lineup url. Individual projects can provide custom value, if, for example,
+      multiple projects share the same lineup.
+     -->
+    <lineup.url>${nexus.baseURL}/content/repositories/nx-p2lineup/${project.groupId.asPath}/${project.artifactId}/${project.version}.${buildQualifier}</lineup.url>
+
+    <maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+    <buildQualifier>${maven.build.timestamp}</buildQualifier>
+    
+    <!--
+      The id of the server as specified in settings.xml - used to find the credentials used for the upload. 
+     -->
+    <server.id>sonatype-commercial</server.id>
+  </properties>
+
+  <profiles>
+    <profile>
+      <!--
+        This profile defines location of REAL LIVE catalogue and lineup repositories
+        directly visible to all internal and external users. 
+
+        Be sure you know what you are doing. 
+
+        If you screw up, the only way to go back is to republish previous version of the
+        affected projects.
+        
+        YOU HAVE BEEN WARNED. 
+       -->
+      <id>remote</id>
+      <properties>
+        <nexus.baseurl>https://repository.sonatype.org</nexus.baseurl>
+      </properties>
+    </profile>
+    
+    <profile>
+      <id>s2test</id>
+      <properties>
+        <nexus.baseurl>https://s2test.sonatype.com</nexus.baseurl>
+      </properties>
+    </profile>
+  </profiles>
+
+  <modules>
+    <module>demo</module>
+    <module>dev</module>
+  </modules>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>${basedir}/mse</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>maven-tinkerbell-plugin</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <extensions>true</extensions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.1</version>
+        <executions>
+          <execution>
+            <id>process-resources</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>resources</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>maven-upload-plugin</artifactId>
+        <version>0.0.1</version>
+        <executions>
+          <execution>
+            <id>publish-lineup</id>
+            <goals>
+              <goal>upload-file</goal>
+            </goals>
+            <phase>install</phase>
+            <configuration>
+              <file>${project.build.outputDirectory}/lineup.xml</file>
+              <repositoryUrl>${nexus.baseurl}/service/local/p2/lineups</repositoryUrl>
+              <repositoryPath>${project.groupId.asPath}/${project.artifactId}/${project.version}.${buildQualifier}</repositoryPath>
+            </configuration>
+          </execution>
+          
+          <execution>
+            <id>publish-pmd</id>
+            <goals>
+              <goal>upload-file</goal>
+            </goals>
+            <phase>install</phase>
+            <configuration>
+              <file>${project.build.outputDirectory}/mse-codebase.xml</file>
+              <repositoryUrl>${project.url}</repositoryUrl>
+              <repositoryPath>mse-codebase.xml</repositoryPath>
+            </configuration>
+          </execution>
+          <execution>
+            <id>publish-pmd-icon</id>
+            <goals>
+              <goal>upload-file</goal>
+            </goals>
+            <phase>install</phase>
+            <configuration>
+              <file>${project.build.outputDirectory}/mse-codebase-icon.png</file>
+              <repositoryUrl>${project.url}</repositoryUrl>
+              <repositoryPath>mse-codebase-icon.png</repositoryPath>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <serverId>${server.id}</serverId>
+          <ignoreMissingFile>true</ignoreMissingFile>
+        </configuration>
+      </plugin>
+    
+    </plugins>
+  </build>
+
+</project>

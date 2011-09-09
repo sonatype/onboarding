@@ -1,0 +1,14 @@
+<project>
+  <name>Simple Project</name>
+  <maven-settings>
+    <url>no-protocol-invalid-url</url>
+  </maven-settings>
+  <modules>
+    <module>
+      <name>simpleproject1</name>
+      <scm>
+        <url>scm:testfile:resources/projects/simple</url>
+      </scm>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,14 @@
+<project>
+  <groupId>MECLIPSE-1591</groupId>
+  <artifactId>cvs-codebase-update</artifactId>
+  <version>0.0.1-HEAD</version>
+  <name>cvs-codebase-update</name>
+  <modules>
+    <module>
+      <name>cvs-update-project</name>
+      <scm>
+        <url>scm:cvs:cvs://:pserver:scmtest.grid.sonatype.com:/cvs#mse/s2/automated-tests/@user.name@</url>
+      </scm>
+    </module>
+  </modules>
+</project>

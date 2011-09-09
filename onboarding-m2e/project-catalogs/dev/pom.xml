@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.sonatype.mse.codebases</groupId>
+    <artifactId>codebases-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <!--
+    Sonatype internal development project catalogue. This is where we keep 
+    definition of the projects we work on (nexus/pro, sonatype studio, etc).
+   -->
+
+  <groupId>com.sonatype.mse.codebases.dev</groupId>
+  <artifactId>dev-catalog</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.groupId.asPath>com/sonatype/mse/codebases/dev</project.groupId.asPath>
+  </properties>
+
+  <modules>
+    <module>m2e</module>
+    <module>s2dev</module>
+    <module>nexus-onboarding</module>
+    <module>nexuspro</module>
+    <module>tycho</module>
+    <module>governor-dev</module>
+    <module>benson-dev</module>
+  </modules>
+</project>

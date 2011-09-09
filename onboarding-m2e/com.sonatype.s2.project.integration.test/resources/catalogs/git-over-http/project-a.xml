@@ -1,0 +1,23 @@
+<project>
+  <name>Project-A</name>
+  <maven-settings>
+    <url>@baseuri@/settings.xml</url>
+  </maven-settings>
+  <security-realms>
+    <security-realm>
+      <id>test</id>
+    </security-realm>
+  </security-realms>
+  <modules>
+    <module>
+      <name>git-test</name>
+      <scm>
+        <url>scm:git:http://localhost:@port.http@/scm/git/simple/</url>
+        <security-realm>test</security-realm>
+      </scm>
+      <roots>
+        <relPath>.</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

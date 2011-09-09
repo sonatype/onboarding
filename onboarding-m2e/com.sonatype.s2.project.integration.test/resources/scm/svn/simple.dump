@@ -1,0 +1,212 @@
+SVN-fs-dump-format-version: 2
+
+UUID: 0e771c94-8313-5a47-9775-a773a9db7e87
+
+Revision-number: 0
+Prop-content-length: 56
+Content-length: 56
+
+K 8
+svn:date
+V 27
+2010-03-04T19:53:25.906250Z
+PROPS-END
+
+Revision-number: 1
+Prop-content-length: 91
+Content-length: 91
+
+K 7
+svn:log
+V 17
+o Initial checkin
+K 8
+svn:date
+V 27
+2010-03-04T19:54:46.343750Z
+PROPS-END
+
+Node-path: simple
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: simple/branches
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: simple/tags
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: simple/trunk
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: simple/trunk/pom.xml
+Node-kind: file
+Node-action: add
+Prop-content-length: 87
+Text-content-length: 626
+Text-content-md5: 313837029363768ea8330b0587fabe32
+Text-content-sha1: fab14d4b558d40651d7d8b6307096e9316f51a78
+Content-length: 713
+
+K 12
+svn:keywords
+V 23
+Author Date Id Revision
+K 13
+svn:eol-style
+V 6
+native
+PROPS-END
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>test</groupId>
+  <artifactId>svn-test</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>SVN Repo Materialization Test</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
+
+Node-path: simple/trunk/src
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: simple/trunk/src/main
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: simple/trunk/src/main/java
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: simple/trunk/src/main/java/Main.java
+Node-kind: file
+Node-action: add
+Prop-content-length: 87
+Text-content-length: 22
+Text-content-md5: 377928165423aaf45d36f43b58a25f14
+Text-content-sha1: 20c136f06d5efdd4a352cbc19baad1eac15f9f07
+Content-length: 109
+
+K 12
+svn:keywords
+V 23
+Author Date Id Revision
+K 13
+svn:eol-style
+V 6
+native
+PROPS-END
+public class Main
+{
+}
+
+
+Node-path: simple/trunk/src/main/resources
+Node-kind: dir
+Node-action: add
+Prop-content-length: 10
+Content-length: 10
+
+PROPS-END
+
+
+Node-path: simple/trunk/src/main/resources/main.properties
+Node-kind: file
+Node-action: add
+Prop-content-length: 87
+Text-content-length: 12
+Text-content-md5: 17e8f0e3fbfdea3b933ff85e2ecd75f0
+Text-content-sha1: 26253d144927a04202323f5aa271c9ad6c44e4e0
+Content-length: 99
+
+K 12
+svn:keywords
+V 23
+Author Date Id Revision
+K 13
+svn:eol-style
+V 6
+native
+PROPS-END
+key = value
+
+
+Revision-number: 2
+Prop-content-length: 99
+Content-length: 99
+
+K 7
+svn:log
+V 25
+o Tagged initial revision
+K 8
+svn:date
+V 27
+2010-03-04T19:55:08.671875Z
+PROPS-END
+
+Node-path: simple/tags/1.0
+Node-kind: dir
+Node-action: add
+Node-copyfrom-rev: 1
+Node-copyfrom-path: simple/trunk
+
+

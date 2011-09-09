@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p2lineup id="s2" version="0.0.1" name="Sonatype Studio IDE Lineup">
+  <description>Sonatype Studio Integrated Development Environment (IDE)</description>
+  
+  <repositories>
+    <!--
+  	<repository url="http://repository.sonatype.org/content/repositories/eclipse/" layout="maven"/>
+  	<repository url="http://repository.sonatype.org/content/repositories/eclipse-snapshots/" layout="maven"/>
+  	<repository url="http://repository.sonatype.org/content/repositories/sonatype-internal-snapshots/" layout="maven"/>
+  	-->
+  	<repository url="http://download.eclipse.org/releases/galileo" layout="p2"/>
+  	<repository url="http://repository.sonatype.org/content/sites/com-sites/s2/1.0.0/N/201002031232/" layout="p2"/>
+  	
+  	<!--
+  	<repository url="http://download.eclipse.org/releases/ganymede" layout="p2"/>
+  	<repository url="http://download.eclipse.org/eclipse/updates/3.4" layout="p2"/>
+  	-->
+  	<repository url="http://download.eclipse.org/jetty/7.0.0.v20091005/update/" layout="p2"/>
+  	<repository url="http://community.polarion.com/projects/subversive/download/eclipse/2.0/weekly-site/" layout="p2"/>
+  	<repository url="http://download.eclipse.org/technology/subversive/0.7/weekly-site/" layout="p2"/>
+  </repositories>
+  
+  <rootInstallableUnits>
+    <!-- Eclipse SDK IDE -->
+    <unit id="org.eclipse.sdk.ide" version="0.0.0"/>
+    
+    <!-- s2 -->
+    <unit id="com.sonatype.s2.project.feature.feature.group" version="[1.0.0,2.0.0)"/>
+    
+    <!-- m2e -->
+    <unit id="org.maven.ide.eclipse.feature.feature.group" version="0.0.0"/>
+    <unit id="org.maven.ide.components.maven_embedder.feature.feature.group" version="0.0.0"/>
+    <unit id="org.maven.ide.eclipse.editor.xml.feature.feature.group" version="0.0.0"/>
+    <unit id="org.maven.ide.eclipse.editor.feature.feature.group" version="0.0.0"/>
+    <unit id="org.maven.ide.eclipse.temporary.mojos.feature.feature.group" version="0.0.0"/>
+    
+    <!-- Tycho Project Configurators -->
+    <unit id="org.sonatype.tycho.m2e.feature.feature.group" version="0.4.0"/>
+  </rootInstallableUnits>
+  
+  <p2Advice touchpointId="org.eclipse.equinox.p2.osgi" touchpointVersion="1.0.0">
+    <advice>
+      # Set the default s2 project catalog(s). For multiple catalogs, separate the URLs by commas. 
+      configure=addJvmArg(jvmArg:-Ds2.catalogs=https://s2demo.sonatype.com/content/repositories/democatalog/)
+    </advice>
+    <advice>
+      configure=addJvmArg(jvmArg:-Xmx768m)
+    </advice>
+  </p2Advice>
+  
+  <targetEnvironments>
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86"/>
+    <environment osgi.os="win32" osgi.ws="win32" osgi.arch="x86_64"/>
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86"/>
+    <environment osgi.os="linux" osgi.ws="gtk" osgi.arch="x86_64"/>
+    <environment osgi.os="macosx" osgi.ws="cocoa" osgi.arch="x86"/>
+    <environment osgi.os="macosx" osgi.ws="cocoa" osgi.arch="x86_64"/>
+  </targetEnvironments>
+<!--  
+  <dependencyManagement>
+    <installableUnit id="org.eclipse.equinox.app" version="[1.0.0,1.0.1)"/>
+  </dependencyManagement>
+  -->
+</p2lineup>

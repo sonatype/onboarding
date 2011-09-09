@@ -1,0 +1,12 @@
+<project>
+  <name>nexuspro</name>
+  <modules>
+    <module>
+      <name>nexuspro</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/nexus-enterprise/trunk
+        </url>
+      </scm>
+    </module>
+  </modules>
+</project>

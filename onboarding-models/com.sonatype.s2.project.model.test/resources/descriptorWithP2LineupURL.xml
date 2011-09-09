@@ -1,0 +1,34 @@
+<project>
+  <groupId>group.foo</groupId>
+  <artifactId>Foo</artifactId>
+  <version>1.2.3</version>
+  <name>Project Foo</name>
+  <security-realms>
+    <security-realm>
+      <id>blah</id>
+    </security-realm>
+  </security-realms>
+  <p2Lineup>
+    <url>file:fake_url</url>
+    <security-realm>blah</security-realm>
+  </p2Lineup>
+  <maven-settings>
+    <url>settings.xml</url>
+  </maven-settings>
+  <modules>
+    <module>
+      <name>Bar</name>
+      <scm>
+        <url>munchy</url>
+        <security-realm>blah</security-realm>
+      </scm>
+      <profiles>
+        <profile>moo</profile>
+      </profiles>
+      <roots>
+        <relPath>.</relPath>
+        <relPath>relpath</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

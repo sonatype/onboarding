@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<model>
+
+  <id>descriptor</id>
+  <name>S2WorkspaceCodebases</name>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.s2.project.core.internal</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class rootElement="true" xml.tagName="workspace">
+      <name>Workspace</name>
+      <fields>
+        <field>
+          <name>codebases</name>
+          <association java.useInterface="com.sonatype.s2.project.core.IWorkspaceCodebase">
+            <type>WorkspaceCodebase</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+      </fields>
+    </class>
+
+    <class xml.tagName="codebase" java.clone="deep">
+      <name>WorkspaceCodebase</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.core.IWorkspaceCodebase</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>descriptorUrl</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>groupId</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>artifactId</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>version</name>
+          <type>String</type>
+        </field>
+        <field>
+           <name>isP2LineupUpToDate</name>
+           <type>String</type>
+        </field>
+        <field>
+          <name>p2LineupLocation</name>
+          <type>String</type>
+        </field>
+        <field xml.tagName="source-trees">
+          <name>sourceTrees</name>
+          <association java.useInterface="com.sonatype.s2.project.core.IWorkspaceSourceTree">
+            <type>WorkspaceSourceTree</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+        <field>
+          <name>pending</name>
+          <association java.useInterface="com.sonatype.s2.project.core.IWorkspaceCodebase">
+            <type>WorkspaceCodebase</type>
+            <multiplicity>1</multiplicity>
+          </association>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    private com.sonatype.s2.project.model.IS2Project s2project;
+    public com.sonatype.s2.project.model.IS2Project getS2Project()
+    {
+        return s2project;
+    }
+    public void setS2Project( com.sonatype.s2.project.model.IS2Project s2project )
+    {
+        this.s2project = s2project;
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class xml.tagName="tree" java.clone="deep">
+      <name>WorkspaceSourceTree</name>
+      <interfaces>
+        <interface>com.sonatype.s2.project.core.IWorkspaceSourceTree</interface>
+      </interfaces>
+      <fields>
+        <field>
+          <name>name</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>location</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>profiles</name>
+          <association>
+            <type>String</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+        <field>
+          <name>roots</name>
+          <association>
+            <type>String</type>
+            <multiplicity>*</multiplicity>
+          </association>
+        </field>
+        <field>
+          <name>scmUrl</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>scmBranch</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>status</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>statusMessage</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>statusHelp</name>
+          <type>String</type>
+        </field>
+      </fields>
+    </class>
+  </classes>
+</model>

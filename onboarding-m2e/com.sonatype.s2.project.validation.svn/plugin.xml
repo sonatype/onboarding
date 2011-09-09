@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.sonatype.s2.project.validation.svn.SvnAccessValidator"
+         name="SVN Access Validator"
+         point="com.sonatype.s2.project.validation.IScmAccessValidator">
+      <validator
+             class="com.sonatype.s2.project.validation.svn.SvnAccessValidator">
+          <description>
+             Validates access to SVN repositories.
+          </description>
+      </validator>
+   </extension>
+</plugin>

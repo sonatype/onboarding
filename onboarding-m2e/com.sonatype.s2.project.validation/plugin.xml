@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.sonatype.s2.project.validation.IScmAccessValidator" name="SCM Access Validator" schema="schema/ScmAccessValidator.exsd"/>
+
+   <extension
+         id="com.sonatype.s2.project.validator.ScmAccessValidator"
+         name="SCM Access Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+             class="com.sonatype.s2.project.validator.ScmAccessValidator">
+          <description>
+             Validates access to SCMs for all project modules.
+          </description>
+      </validator>
+   </extension>
+   <extension
+         id="com.sonatype.s2.project.validator.ScmAccessValidator"
+         name="SCM Access Validator"
+         point="com.sonatype.s2.project.validation.IS2AccessValidator">
+      <validator
+             class="com.sonatype.s2.project.validator.ScmAccessValidator">
+          <description>
+             Validates access to an SCM location.
+          </description>
+      </validator>
+   </extension>
+   <extension
+         id="com.sonatype.s2.project.validator.MavenSettingsAccessValidator"
+         name="Maven Settings Access Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+             class="com.sonatype.s2.project.validator.MavenSettingsAccessValidator">
+          <description>
+             Validates access to maven settings.
+          </description>
+      </validator>
+   </extension>
+   <extension
+         id="com.sonatype.s2.project.validator.MavenSettingsAccessValidator"
+         name="Maven Settings Access Validator"
+         point="com.sonatype.s2.project.validation.IS2AccessValidator">
+      <validator
+             class="com.sonatype.s2.project.validator.MavenSettingsAccessValidator">
+          <description>
+             Validates access to maven settings.
+          </description>
+      </validator>
+   </extension>
+
+   <extension
+         id="com.sonatype.s2.project.validator.P2LineupAccessValidator"
+         name="P2 Lineup Access Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+            class="com.sonatype.s2.project.validator.P2LineupAccessValidator">
+         <description>
+            Validates access to the p2 lineup associated with the s2 project.
+         </description>
+      </validator>
+   </extension>
+
+   <extension
+         id="com.sonatype.s2.project.validator.P2LineupAccessValidator"
+         name="P2 Lineup Access Validator"
+         point="com.sonatype.s2.project.validation.IS2AccessValidator">
+      <validator
+            class="com.sonatype.s2.project.validator.P2LineupAccessValidator">
+         <description>
+            Validates access to the p2 lineup associated with an s2 project.
+         </description>
+      </validator>
+   </extension>
+   
+   <extension
+         id="com.sonatype.s2.project.validator.PrerequisitesValidator"
+         name="Prerequisites Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+            class="com.sonatype.s2.project.validator.PrerequisitesValidator">
+         <description>
+            Validates if the project prerequisites are met.
+         </description>
+      </validator>
+   </extension>
+   
+   <extension
+         id="com.sonatype.s2.project.validator.EmptyWorkspaceValidator"
+         name="Empty Workspace Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+            class="com.sonatype.s2.project.validator.EmptyWorkspaceValidator">
+         <description>
+            Validates if the target workspace contains any projects.
+         </description>
+      </validator>
+   </extension>
+   
+   <extension
+         id="com.sonatype.s2.project.validator.TargetEnvironmentValidator"
+         name="Target Environment Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+            class="com.sonatype.s2.project.validator.TargetEnvironmentValidator">
+         <description>
+            Validates that the target environment matches a target environment specified in the P2 lineup associated with codebase.
+         </description>
+      </validator>
+   </extension>
+
+   <extension
+         id="com.sonatype.s2.project.validator.EclipsePreferencesAccessValidator"
+         name="Eclipse Preferences Access Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+             class="com.sonatype.s2.project.validator.EclipsePreferencesAccessValidator">
+          <description>
+             Validates access to Eclipse preferences.
+          </description>
+      </validator>
+   </extension>
+   <extension
+         id="com.sonatype.s2.project.validator.EclipsePreferencesAccessValidator"
+         name="Eclipse Preferences Access Validator"
+         point="com.sonatype.s2.project.validation.IS2AccessValidator">
+      <validator
+             class="com.sonatype.s2.project.validator.EclipsePreferencesAccessValidator">
+          <description>
+             Validates access to Eclipse preferences.
+          </description>
+      </validator>
+   </extension>
+</plugin>

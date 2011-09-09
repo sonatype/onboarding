@@ -1,0 +1,44 @@
+<catalog>
+  <name>Sample Catalogue</name>
+  
+  <entry>
+    <name>Plexus</name>
+    <descriptorUrl>./plexus.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Maven</name>
+    <descriptorUrl>./maven.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>M2Eclipse</name>
+    <descriptorUrl>./m2e.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Nexus</name>
+    <descriptorUrl>./nexus.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Nexus Pro</name>
+    <descriptorUrl>./nexus-pro.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Tycho M2E Configurator</name>
+    <descriptorUrl>./tycho-m2e.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Tycho</name>
+    <descriptorUrl>./tycho.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Sonatype Studio</name>
+    <descriptorUrl>./s2dev.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>JGit</name>
+    <descriptorUrl>./jgit.xml</descriptorUrl>
+  </entry>
+  <entry>
+    <name>Polyglot Maven</name>
+    <descriptorUrl>./pmaven.xml</descriptorUrl>
+  </entry>
+</catalog>

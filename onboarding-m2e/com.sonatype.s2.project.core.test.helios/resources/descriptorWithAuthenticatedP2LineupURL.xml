@@ -1,0 +1,31 @@
+<project>
+  <name>S2ProjectWithAuthenticatedP2Lineup</name>
+  <security-realms>
+    <security-realm>
+      <id>test.p2lineup.access.realmId</id>
+    </security-realm>
+  </security-realms>
+  <p2Lineup>
+    <url>http://sonatype02.managed.contegix.com:8089/nexus/content/repositories/p2lineupsForTests/testaccess</url>
+    <security-realm>test.p2lineup.access.realmId</security-realm>
+  </p2Lineup>
+  <maven-settings>
+    <url>settings.xml</url>
+  </maven-settings>
+  <modules>
+    <module>
+      <name>Bar</name>
+      <scm>
+        <url>munchy</url>
+        <security-realm>blah</security-realm>
+      </scm>
+      <profiles>
+        <profile>moo</profile>
+      </profiles>
+      <roots>
+        <relPath>.</relPath>
+        <relPath>relpath</relPath>
+      </roots>
+    </module>
+  </modules>
+</project>

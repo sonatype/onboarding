@@ -1,0 +1,11 @@
+<project>
+  <name>Project-A</name>
+  <modules>
+    <module>
+      <name>Test</name>
+      <scm>
+        <url>scm:svn:svn://badhost.void.void/simple</url>
+      </scm>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p2lineup id="TargetEnvironmentValidatorTest" version="1.0.0">
+  <repositories>
+  	<repository url="http://fake" layout="p2"/>
+  </repositories>
+  <rootInstallableUnits>
+    <unit id="fake" version="0.0.0"/>
+  </rootInstallableUnits>
+</p2lineup>

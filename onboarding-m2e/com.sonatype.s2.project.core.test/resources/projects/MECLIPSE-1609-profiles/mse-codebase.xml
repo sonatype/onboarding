@@ -1,0 +1,14 @@
+<project>
+  <name>MECLIPSE-1609-profiles</name>
+  <modules>
+    <module>
+      <name>MECLIPSE-1609-profiles</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-1609-profiles</url>
+      </scm>
+      <profiles>
+        <profile>profile-a</profile>
+      </profiles>
+    </module>
+  </modules>
+</project>

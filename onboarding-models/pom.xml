@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2008 Sonatype, Inc. All rights reserved. This program
+  and the accompanying materials are made available under the terms of
+  the Eclipse Public License v1.0 which accompanies this distribution,
+  and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <prerequisites>
+    <maven>3.0</maven>
+  </prerequisites>
+
+  <parent>
+    <groupId>org.sonatype.forge</groupId>
+    <artifactId>forge-parent</artifactId>
+    <version>10</version>
+  </parent>
+
+  <groupId>com.sonatype.s2.models</groupId>
+  <artifactId>s2models</artifactId>
+  <version>1.0.9-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <properties>
+    <tycho-version>0.10.0</tycho-version>
+
+    <m2eclipse-core.version>0.13.0/N/0.13.0.201103151108</m2eclipse-core.version>
+    <modello.version>1.5</modello.version>
+    <orbit.version>S20110304120314</orbit.version>
+
+    <s2.site-compressed>http://localhost/</s2.site-compressed>
+  </properties>
+
+  <organization>
+    <name>Sonatype, Inc</name>
+    <url>http://www.sonatype.com</url>
+  </organization>
+
+  <repositories>
+    <repository>
+      <id>galileo</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/galileo</url>
+    </repository>
+    <!-- Required for org.slf4j -->
+    <repository>
+      <id>orbit</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/tools/orbit/downloads/drops/${orbit.version}/repository</url>
+    </repository>
+    <repository>
+      <id>m2e</id>
+      <layout>p2</layout>
+      <url>http://repository.sonatype.org/content/sites/forge-sites/m2e/${m2eclipse-core.version}</url>
+    </repository>
+  </repositories>
+
+  <modules>
+    <module>com.sonatype.s2.project.model</module>
+    <module>com.sonatype.s2.project.model.test</module>
+    <module>com.sonatype.s2.p2lineup.model</module>
+    <module>com.sonatype.s2.p2lineup.model.test</module>
+    <module>com.sonatype.xstream</module>
+    <module>com.sonatype.jaxb-api</module>
+    <module>com.sonatype.s2.models.feature</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.sonatype.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <pomDependencies>consider</pomDependencies>
+          <ignoreTychoRepositories>true</ignoreTychoRepositories>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.google.code.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <version>1.4.0</version>
+        <configuration>
+          <header>${basedir}/header.txt</header>
+          <includes>
+            <include>**/*.java</include>
+            <include>**/pom.xml</include>
+          </includes>
+          <!-- this is important for muti-module project -->
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+    </plugins>
+    
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.sonatype.tycho</groupId>
+          <artifactId>maven-osgi-test-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <configuration>
+            <useUIHarness>false</useUIHarness>
+            <argLine>-Xmx800m -XX:MaxPermSize=256m</argLine>
+            <forkedProcessTimeoutInSeconds>300</forkedProcessTimeoutInSeconds>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
+

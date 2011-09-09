@@ -1,0 +1,86 @@
+<project>
+  <name>Nexus Pro</name>
+  
+  <description>Nexus Repository Manager manages software "artifacts" required for development, deployment, and provisioning. If you develop software, Nexus can help you share those artifacts with other developers and end-users.</description>
+  <imageUrl>./nexus48.png</imageUrl>
+  <homeUrl>http://www.sonatype.com/products/nexus</homeUrl>
+  <docsUrl>http://www.sonatype.com/products/nexus/documentation</docsUrl>
+  
+  <p2Lineup>
+    <url>https://s2demo.sonatype.com/content/repositories/devlineups/nexusdev/</url>
+    <security-realm>sonatype.ldap</security-realm>
+  </p2Lineup>
+  
+  <security-realms>
+    <security-realm>
+      <id>sonatype.ldap</id>
+    </security-realm>
+    <security-realm>
+      <id>sonatype.org</id>
+    </security-realm>
+  </security-realms>
+  
+  <maven-settings>
+    <url>http://repository.sonatype.org/service/local/templates/settings/sonatype/content</url>
+    <security-realm>sonatype.ldap</security-realm>
+  </maven-settings>
+  
+  <prerequisites>
+    <requiredMemory>768m</requiredMemory>
+  </prerequisites>
+  
+  <modules>
+    <module>
+      <name>nexus-pro</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/nexus-enterprise/trunk</url>
+        <security-realm>sonatype.ldap</security-realm>
+      </scm>
+      <homeUrl>http://www.sonatype.com/products/nexus</homeUrl>
+      <docsUrl>http://www.sonatype.com/products/nexus/documentation</docsUrl>
+      <issuesUrl>http://issues.sonatype.org/browse/NXCM</issuesUrl>
+      <buildUrl>http://grid.sonatype.org/ci/view/Nexus</buildUrl>
+      <profiles>
+        <profile>modules</profile>
+      </profiles>
+      <roots>
+        <relPath>.</relPath>
+        <relPath>nexus-enterprise-plugins/nexus-p2/</relPath>
+      </roots>
+      <feeds>
+        <feed>http://twitter.com/statuses/user_timeline/15928023.rss</feed>
+        <feed>http://twitter.com/statuses/user_timeline/19060807.rss</feed>
+        <feed>https://grid.sonatype.org/ci/view/Nexus/rssAll</feed>
+        <feed>https://issues.sonatype.org/plugins/servlet/streams?key=10001</feed>
+      </feeds>
+    </module>
+    <module>
+      <name>components</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/components/trunk/</url>
+        <security-realm>sonatype.ldap</security-realm>
+      </scm>
+      <homeUrl>http://nexus.sonatype.org/</homeUrl>
+      <docsUrl>http://docs.sonatype.com/display/Nexus</docsUrl>
+      <issuesUrl>http://issues.sonatype.org/browse/SPICE</issuesUrl>
+      <buildUrl>http://grid.sonatype.org/ci/view/Spice</buildUrl>
+    </module>
+    <module>
+      <name>nexus</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.org/nexus/trunk</url>
+        <security-realm>sonatype.org</security-realm>
+      </scm>
+      <homeUrl>http://nexus.sonatype.org/</homeUrl>
+      <docsUrl>http://docs.sonatype.com/display/Nexus</docsUrl>
+      <issuesUrl>http://issues.sonatype.org/browse/NEXUS</issuesUrl>
+      <buildUrl>http://grid.sonatype.org/ci/view/Nexus</buildUrl>
+      <feeds>
+        <feed>http://twitter.com/statuses/user_timeline/15928023.rss</feed>
+        <feed>http://twitter.com/statuses/user_timeline/19060807.rss</feed>
+        <feed>https://grid.sonatype.org/ci/view/Nexus/rssAll</feed>
+        <feed>https://issues.sonatype.org/plugins/servlet/streams?key=10001</feed>
+      </feeds>
+    </module>
+  </modules>
+</project>

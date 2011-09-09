@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Materialization
+Bundle-SymbolicName: com.sonatype.s2.project.ui.materialization;singleton:=true
+Bundle-Version: 1.0.8.qualifier
+Bundle-Activator: com.sonatype.s2.project.ui.materialization.Activator
+Bundle-Vendor: Sonatype, Inc.
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui,
+ com.sonatype.s2.project.model,
+ com.sonatype.s2.project.core,
+ org.maven.ide.eclipse.io,
+ org.maven.ide.eclipse.swtvalidation,
+ org.maven.ide.eclipse.ui.common,
+ com.sonatype.s2.project.ui,
+ com.sonatype.s2.project.validation.api,
+ com.sonatype.s2.project.validation,
+ org.slf4j.api;bundle-version="1.5.11"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.sonatype.s2.project.ui.materialization,
+ com.sonatype.s2.project.ui.materialization.update.spi,
+ com.sonatype.s2.project.ui.materialization.actions,
+ com.sonatype.s2.project.ui.materialization.update

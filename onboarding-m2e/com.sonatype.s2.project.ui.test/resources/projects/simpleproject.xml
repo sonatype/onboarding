@@ -1,0 +1,11 @@
+<project>
+  <name>Simple Project</name>
+  <modules>
+    <module>
+      <name>simpleproject1</name>
+      <scm>
+        <url>scm:testfile:resources/projects/simple</url>
+      </scm>
+    </module>
+  </modules>
+</project>

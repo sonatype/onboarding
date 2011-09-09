@@ -1,0 +1,36 @@
+<project>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${project.version}.${buildQualifier}</version>
+  
+  <name>git (jgit+egit)</name>
+  <description>JGit is an EDL (new-style BSD) licensed, lightweight, pure Java library implementing the Git version control system.</description>
+  
+  <security-realms>
+    <security-realm>
+      <id>s2demo</id>
+    </security-realm>
+  </security-realms>
+  
+  <security-realm>s2demo</security-realm>
+
+  <p2Lineup>
+    <url>${lineup.url}</url>
+    <security-realm>s2demo</security-realm>
+  </p2Lineup>
+
+  <modules>
+    <module>
+      <name>jgit</name>
+      <scm><url>scm:git:git://egit.eclipse.org/jgit.git</url></scm>
+      <roots>
+        <relPath>.</relPath>
+        <relPath>org.eclipse.jgit.packaging</relPath>
+      </roots>
+    </module>
+    <module>
+      <name>egit</name>
+      <scm><url>scm:git:git://egit.eclipse.org/egit.git</url></scm>
+    </module>
+  </modules>
+</project>

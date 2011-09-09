@@ -1,0 +1,17 @@
+<project>
+  <name>Project-A</name>
+  <modules>
+    <module>
+      <name>good</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-984-unresolvable-parent/goodtree</url>
+      </scm>
+    </module>
+    <module>
+      <name>bad</name>
+      <scm>
+        <url>scm:testfile:resources/projects/MECLIPSE-984-unresolvable-parent/badtree</url>
+      </scm>
+    </module>
+  </modules>
+</project>

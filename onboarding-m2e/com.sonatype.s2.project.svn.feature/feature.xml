@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.sonatype.s2.project.svn.feature"
+      label="%label"
+      version="1.0.8.qualifier"
+      provider-name="%providerName">
+      
+    <description url="%descriptionURL">%description</description>
+
+   <copyright url="%copyrightURL">%copyright</copyright>
+
+   <license url="%licenseURL">%license</license>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import feature="org.eclipse.m2e.feature" version="0.13.0" match="equivalent"/>
+      <import feature="org.sonatype.m2e.temporary.mojos.feature" version="0.13.0" match="equivalent"/>
+      <import feature="org.eclipse.team.svn" version="0.7.9.I20100917-1700" match="perfect"/>
+      <import feature="org.polarion.eclipse.team.svn.connector" version="2.2.2.I20100917-1700" match="perfect"/>
+      <import feature="org.polarion.eclipse.team.svn.connector.svnkit16" version="2.2.2.I20100917-1700" match="perfect"/>
+   </requires>
+
+   <plugin
+         id="com.sonatype.m2e.subversive"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.sonatype.s2.project.validation.svn"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

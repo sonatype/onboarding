@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="codebaseChangeEventListeners" name="codebaseChangeEventListeners" schema="schema/codebaseChangeEventListeners.exsd"/>
+   <extension-point id="teamProviders" name="teamProviders" schema="schema/teamProviders.exsd"/>
+   <extension-point id="ideUpdater" name="ideUpdater"/>
+   <extension
+         point="org.eclipse.m2e.core.mavenProjectChangedListeners">
+      <listener
+            class="com.sonatype.s2.project.core.internal.ModulesAddRemoveMavenProjectChangedListener">
+      </listener>
+   </extension>
+</plugin>

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jaxb-api
+Bundle-SymbolicName: com.sonatype.jaxb-api
+Bundle-Version: 1.0.9.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ClassPath: jars/jaxb-api-2.1.jar
+Export-Package: javax.xml.bind;version="2.1.0",
+ javax.xml.bind.annotation;version="2.1.0",
+ javax.xml.bind.annotation.adapters;version="2.1.0",
+ javax.xml.bind.attachment;version="2.1.0",
+ javax.xml.bind.helpers;version="2.1.0",
+ javax.xml.bind.util;version="2.1.0"

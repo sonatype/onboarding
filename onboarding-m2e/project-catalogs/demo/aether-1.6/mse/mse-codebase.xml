@@ -1,0 +1,24 @@
+<project>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${project.version}.${buildQualifier}</version>
+  
+  <name>aether</name>
+  
+  <homeUrl>http://aether.sonatype.org/</homeUrl>
+  <docsUrl>http://aether.sonatype.org/project-information.html</docsUrl>
+  
+  <p2Lineup>
+    <url>${lineup.url}</url>
+  </p2Lineup>
+
+  <modules>
+    <module>
+      <name>aether</name>
+      <scm>
+        <url>scm:git:git://github.com/sonatype/sonatype-aether.git</url>
+        <branch>refs/tags/aether-1.6</branch>
+      </scm>
+    </module>
+  </modules>
+</project>

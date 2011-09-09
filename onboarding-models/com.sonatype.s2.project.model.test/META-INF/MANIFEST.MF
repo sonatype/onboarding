@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: com.sonatype.s2.project.model.test
+Bundle-Version: 1.0.9.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5, JavaSE-1.6
+Require-Bundle: org.junit;bundle-version="3.8.2",
+ com.sonatype.s2.project.model;bundle-version="1.0.1"
+Import-Package: com.thoughtworks.xstream;version="1.3.1",
+ org.codehaus.plexus.util

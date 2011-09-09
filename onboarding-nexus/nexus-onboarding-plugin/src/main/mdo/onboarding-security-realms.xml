@@ -1,0 +1,191 @@
+<!--
+
+    Copyright (c) 2008-2011 Sonatype, Inc.
+
+    All rights reserved. Includes the third-party code listed at http://www.sonatype.com/products/nexus/attributions.
+    Sonatype and Sonatype Nexus are trademarks of Sonatype, Inc. Apache Maven is a trademark of the Apache Foundation.
+    M2Eclipse is a trademark of the Eclipse Foundation. All other trademarks are the property of their respective owners.
+
+-->
+<model xsd.namespace="http://www.sonatype.com/xsd/nexus-configuration-1.0.1" xsd.target-namespace="http://www.sonatype.com/xsd/nexus-configuration-1.0.1">
+
+  <id>onboarding-security-realms</id>
+
+  <name>NexusOnboardingSecurityRealms</name>
+
+  <description>
+	<![CDATA[
+		<p>Nexus Onboarding Security Realms Configuration.</p>
+	]]>
+  </description>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.nexus.onboarding.persist.model</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class rootElement="true" xml.tagName="onboardingSecurityRealmsConfiguration">
+      <name>CSecurityRealmsConfiguration</name>
+      <version>1.0.0+</version>
+      <interfaces>
+        <interface>org.sonatype.configuration.Configuration</interface>
+      </interfaces>
+      <description>The root element of Nexus Onboarding Security Realms configuration.</description>
+      <fields>
+        <field>
+          <name>version</name>
+          <version>1.0.0+</version>
+          <description>The version of the persisted model.</description>
+          <type>String</type>
+          <required>true</required>
+        </field>
+        <field>
+          <name>realms</name>
+          <version>1.0.0+</version>
+          <description>The list of defined security realms.</description>
+          <association>
+            <type>CSecurityRealm</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <required>false</required>
+        </field>
+        <field>
+          <name>urls</name>
+          <version>1.0.0+</version>
+          <description>The list of defined urls.</description>
+          <association>
+            <type>CSecurityRealmURLAssoc</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <required>false</required>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <version>1.0.0</version>
+          <code>
+<![CDATA[
+    public static final String MODEL_VERSION = "1.0.0";
+]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class>
+      <name>CSecurityRealm</name>
+      <version>1.0.0+</version>
+      <description>A security realm used on onboarding.</description>
+      <fields>
+        <field>
+          <name>id</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <identifier>true</identifier>
+          <required>true</required>
+          <description>Security Realm ID. Uniquely identifies a security realm.</description>
+        </field>
+        <field>
+          <name>name</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Security Realm Name. Name displayed throughout UI for the security realm.</description>
+        </field>
+        <field>
+          <name>description</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>false</required>
+        </field>
+        <field java.setter="false">
+          <name>authenticationType</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public CSecurityRealm()
+    {
+        authenticationType = com.sonatype.s2.securityrealm.model.S2SecurityRealmAuthenticationType.USERNAME_PASSWORD.toString();
+    }
+
+    public void setAuthenticationType( com.sonatype.s2.securityrealm.model.S2SecurityRealmAuthenticationType authType )
+    {
+        authenticationType = authType.toString();
+    }
+
+    public void setAuthenticationType( String authType )
+    {
+        setAuthenticationType( com.sonatype.s2.securityrealm.model.S2SecurityRealmAuthenticationType.valueOf( authType ) );
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+
+    <class>
+      <name>CSecurityRealmURLAssoc</name>
+      <version>1.0.0+</version>
+      <description>An association of a URL and a security realm.</description>
+      <fields>
+        <field>
+          <name>id</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <identifier>true</identifier>
+          <required>true</required>
+          <description>The unique id of this URL to realm association</description>
+        </field>
+        <field>
+          <name>url</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>The URL</description>
+        </field>
+        <field>
+          <name>realmId</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>The id of realm the URL is associated with</description>
+        </field>
+        <field java.setter="false">
+          <name>anonymousAccess</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public CSecurityRealmURLAssoc()
+    {
+        anonymousAccess = com.sonatype.s2.securityrealm.model.S2AnonymousAccessType.NOT_ALLOWED.toString();
+    }
+
+    public void setAnonymousAccess( com.sonatype.s2.securityrealm.model.S2AnonymousAccessType anonymousAccess )
+    {
+        this.anonymousAccess = anonymousAccess.toString();
+    }
+
+    public void setAnonymousAccess( String anonymousAccess )
+    {
+        setAnonymousAccess( com.sonatype.s2.securityrealm.model.S2AnonymousAccessType.valueOf( anonymousAccess ) );
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+  </classes>
+</model>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<project>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${codebase.version}</version>
+
+  <name>Nexus Pro</name>
+  <description>Nexus Repository Manager manages software "artifacts" required for development, deployment, and provisioning. If you develop software, Nexus can help you share those artifacts with other developers and end-users.</description>
+
+  <installerVersion>1.0.6</installerVersion>
+  
+  <homeUrl>http://www.sonatype.com/products/nexus</homeUrl>
+  <docsUrl>http://www.sonatype.com/products/nexus/documentation</docsUrl>
+
+  <p2Lineup>
+    <url>${lineup.url}</url>
+  </p2Lineup>
+  <modules>
+    <module>
+      <name>nexus-pro</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/nexus-enterprise/trunk</url>
+      </scm>
+      <homeUrl>http://www.sonatype.com/products/nexus</homeUrl>
+      <docsUrl>http://www.sonatype.com/products/nexus/documentation</docsUrl>
+      <issuesUrl>http://issues.sonatype.org/browse/NXCM</issuesUrl>
+      <buildUrl>http://grid.sonatype.org/ci/view/Nexus</buildUrl>
+      <profiles>
+        <profile>modules</profile>
+      </profiles>
+      <roots>
+        <relPath>.</relPath>
+        <relPath>nexus-enterprise-plugins/nexus-p2/</relPath>
+      </roots>
+      <feeds>
+        <feed>http://twitter.com/statuses/user_timeline/15928023.rss</feed>
+        <feed>http://twitter.com/statuses/user_timeline/19060807.rss</feed>
+        <feed>https://grid.sonatype.org/ci/view/Nexus/rssAll</feed>
+        <feed>https://issues.sonatype.org/plugins/servlet/streams?key=10001</feed>
+      </feeds>
+    </module>
+
+    <module>
+      <name>components</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.com/repos/code/products/components/trunk/</url>
+      </scm>
+      <homeUrl>http://nexus.sonatype.org/</homeUrl>
+      <docsUrl>http://docs.sonatype.com/display/Nexus</docsUrl>
+      <issuesUrl>http://issues.sonatype.org/browse/SPICE</issuesUrl>
+      <buildUrl>http://grid.sonatype.org/ci/view/Spice</buildUrl>
+    </module>
+
+    <module>
+      <name>nexus</name>
+      <scm>
+        <url>scm:svn:https://svn.sonatype.org/nexus/trunk</url>
+      </scm>
+      <homeUrl>http://nexus.sonatype.org/</homeUrl>
+      <docsUrl>http://docs.sonatype.com/display/Nexus</docsUrl>
+      <issuesUrl>http://issues.sonatype.org/browse/NEXUS</issuesUrl>
+      <buildUrl>https://grid.sonatype.org/ci/view/Nexus</buildUrl>
+      <ciServers>
+        <ciServer>
+          <url>https://grid.sonatype.org/ci</url>
+          <jobs>
+            <job>Nexus</job>
+          </jobs>
+        </ciServer>
+      </ciServers>
+      <feeds>
+        <feed>http://twitter.com/statuses/user_timeline/15928023.rss</feed>
+        <feed>http://twitter.com/statuses/user_timeline/19060807.rss</feed>
+        <feed>https://grid.sonatype.org/ci/view/Nexus/rssAll</feed>
+        <feed>https://issues.sonatype.org/plugins/servlet/streams?key=10001</feed>
+      </feeds>
+    </module>
+  </modules>
+  <requiresMavenSettings>true</requiresMavenSettings>
+  <maven-settings>
+    <url>https://repository.sonatype.org/service/local/templates/settings/sonatype/content</url>
+  </maven-settings>
+  <prerequisites>
+    <requiredMemory>768M</requiredMemory>
+  </prerequisites>
+</project>

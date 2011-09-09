@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.sonatype.s2.project.ui.codebase.editor.CodebaseDescriptorEditorAction" name="Codebase Descriptor Editor Action Contribution" schema="schema/com.sonatype.s2.project.ui.codebase.editor.CodebaseDescriptorEditorAction.exsd"/>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor 
+         id="com.sonatype.s2.project.ui.codebase.editor.CodebaseDescriptorEditor" 
+         name="%codebaseEditor_title" 
+         icon="icons/mse-codebase.png"
+         class="com.sonatype.s2.project.ui.codebase.editor.CodebaseDescriptorEditor"
+         filenames="mse-codebase.xml"
+         default="true"> 
+      </editor> 
+   </extension>
+
+   <extension
+      point="org.eclipse.ui.newWizards">
+
+      <category
+         id="com.sonatype.mse.category"
+         name="%mavenStudio">
+      </category>
+
+      <wizard
+         category="com.sonatype.mse.category"
+         class="com.sonatype.s2.project.ui.codebase.wizard.NewCodebaseWizard"
+         icon="icons/mse-codebase-new.png"
+         id="com.sonatype.s2.project.ui.codebase.wizard.NewCodebaseWizard"
+         name="%newCodebaseWizard_title"
+         project="true">
+      </wizard>
+
+      <wizard
+         category="com.sonatype.mse.category"
+         class="com.sonatype.s2.project.ui.codebase.wizard.NewLineupWizard"
+         icon="icons/mse-lineup-new.gif"
+         id="com.sonatype.s2.project.ui.codebase.wizard.NewLineupWizard"
+         name="%newLineupWizard_title"
+         project="true">
+      </wizard>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+         id="com.sonatype.mse.category"
+         name="%mavenStudio">
+      </category>
+      <wizard
+         category="com.sonatype.mse.category"
+            class="com.sonatype.s2.project.ui.codebase.wizard.ImportCodebaseProjectWizard"
+            id="com.sonatype.s2.project.ui.codebase.wizard.ImportCodebaseWizard"
+            icon="icons/mse-codebase-import.png"
+            name="%importCodebaseWizard_title">
+      </wizard>
+   </extension>
+
+   <extension
+         point="com.sonatype.s2.project.ui.codebase.editor.CodebaseDescriptorEditorAction">
+      <actionContribution
+            id="com.sonatype.s2.project.ui.codebase.editor.RealmManagementAction"
+            enablesFor="*"
+            label="%manageRealms_title"
+            class="com.sonatype.s2.project.ui.codebase.editor.RealmManagementAction"
+            icon="authrealm.png"
+            tooltip="%manageRealms_tooltip">
+      </actionContribution>
+   </extension>
+
+   <extension
+         point="com.sonatype.s2.project.ui.codebase.editor.CodebaseDescriptorEditorAction">
+      <actionContribution
+            id="com.sonatype.s2.project.ui.codebase.CodebasePublishAction"
+            enablesFor="*"
+            label="%publish_codebase_action_titleShort"
+            class="com.sonatype.s2.project.ui.codebase.CodebasePublishAction"
+            icon="publish.png"
+            tooltip="%publish_codebase_action_tooltip">
+      </actionContribution>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="com.sonatype.s2.publisher.contribution1"
+            objectClass="org.eclipse.core.resources.IResource">
+         <menu
+               id="com.sonatype.s2.publisher.menu1"
+               label="%mavenStudio"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+		<visibility>
+			<and> 
+			  <objectClass name="org.eclipse.core.resources.IResource"/> 
+			  <objectState name="name" value="mse-codebase.xml"/>
+			</and> 
+		</visibility>
+         <action
+               class="com.sonatype.s2.project.ui.codebase.CodebasePublishAction"
+               enablesFor="+"
+               id="com.sonatype.s2.publisher.codebasePublishAction"
+               label="%publish_codebase_action_title"
+               icon="icons/publish.png"
+               menubarPath="com.sonatype.s2.publisher.menu1/group1">
+	         <selection 
+	         	class="org.eclipse.core.resources.IResource" 
+	         	name="mse-codebase.xml"/>        
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

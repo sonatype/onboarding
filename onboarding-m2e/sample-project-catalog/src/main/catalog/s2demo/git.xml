@@ -1,0 +1,31 @@
+<project>
+  <name>git (jgit+egit)</name>
+  
+  <security-realms>
+    <security-realm>
+      <id>s2demo</id>
+    </security-realm>
+  </security-realms>
+  
+  <security-realm>s2demo</security-realm>
+  
+  <p2Lineup>
+    <url>https://s2demo.sonatype.com/content/repositories/demolineups/s2git</url>
+    <security-realm>s2demo</security-realm>
+  </p2Lineup>
+  
+  <modules>
+    <module>
+      <name>jgit</name>
+      <scm><url>scm:git:git://egit.eclipse.org/jgit.git</url></scm>
+      <roots>
+        <relPath>.</relPath>
+        <relPath>org.eclipse.jgit.packaging</relPath>
+      </roots>
+    </module>
+    <module>
+      <name>egit</name>
+      <scm><url>scm:git:git://egit.eclipse.org/egit.git</url></scm>
+    </module>
+  </modules>
+</project>

@@ -1,0 +1,17 @@
+<catalog>
+  <name>Test</name>
+  
+  <security-realm>test-sso</security-realm>
+  
+  <security-realms>
+    <security-realm>
+      <id>test-sso</id>
+    </security-realm>
+  </security-realms>
+  
+  <entry>
+    <name>Project-A</name>
+    <descriptorUrl>https://localhost:@port.https@/catalogs/auth-single-sign-on/project-a.xml</descriptorUrl>
+    <security-realm>test-sso</security-realm>
+  </entry>
+</catalog>

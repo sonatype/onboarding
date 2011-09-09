@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<model xmlns="http://modello.codehaus.org/MODELLO/1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://modello.codehaus.org/MODELLO/1.3.0 http://modello.codehaus.org/xsd/modello-1.3.0.xsd">
+
+  <!-- It is really easy to make the xstream format look like the modello one, I even had some simple tests in XStreamAliasTest.java
+       they are commented out, the modello driver nexus uses the LookAheadXppReader has problems dealing with attributes, so if we fix
+       that, this will work, without a problem. -->
+
+  <id>p2Lineup</id>
+  <name>P2Lineup</name>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.s2.p2lineup.model</value>
+    </default>
+    <default>
+      <key>java.util.Set</key>
+      <value>new java.util.LinkedHashSet&lt;?&gt;()</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class rootElement="true" xml.tagName="p2lineup">
+      <name>P2Lineup</name>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "p2lineup" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>        
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "p2lineup" )</annotation>
+      </annotations>
+      <interfaces>
+        <interface>com.sonatype.s2.p2lineup.model.IP2Lineup</interface>
+      </interfaces>
+      <fields>
+        <field xml.attribute="true">
+          <name>id</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true">
+          <name>groupId</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true">
+          <name>version</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true">
+          <name>name</name>
+          <type>String</type>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field>
+          <name>description</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>repositories</name>
+          <required>true</required>
+          <type>Set</type>
+          <association java.useInterface="com.sonatype.s2.p2lineup.model.IP2LineupSourceRepository" java.init="field">
+            <type>P2LineupSourceRepository</type>
+            <multiplicity>*</multiplicity>
+            <annotations>
+              <annotation>@javax.xml.bind.annotation.XmlElementWrapper( name = "repositories" )</annotation>
+              <annotation>@javax.xml.bind.annotation.XmlElement( name = "repository" )</annotation>
+            </annotations>
+          </association>
+        </field>
+        <field>
+          <name>rootInstallableUnits</name>
+          <required>true</required>
+          <type>Set</type>
+          <association xml.tagName="unit" java.useInterface="com.sonatype.s2.p2lineup.model.IP2LineupInstallableUnit" java.init="field">
+            <type>P2LineupInstallableUnit</type>
+            <multiplicity>*</multiplicity>
+            <annotations>
+              <annotation>@javax.xml.bind.annotation.XmlElementWrapper( name = "rootInstallableUnits" )</annotation>
+              <annotation>@javax.xml.bind.annotation.XmlElement( name = "unit" )</annotation>
+            </annotations>
+          </association>
+        </field>
+        <field>
+          <name>p2Advice</name>
+          <association java.useInterface="com.sonatype.s2.p2lineup.model.IP2LineupP2Advice">
+            <type>P2LineupP2Advice</type>
+            <multiplicity>1</multiplicity>
+            <annotations>
+              <annotation>@javax.xml.bind.annotation.XmlElementWrapper( name = "p2Advice" )</annotation>
+              <annotation>@javax.xml.bind.annotation.XmlElement( name = "advice" )</annotation>
+            </annotations>
+          </association>
+        </field>
+        <field>
+          <name>targetEnvironments</name>
+          <type>Set</type>
+          <association xml.tagName="environment" java.useInterface="com.sonatype.s2.p2lineup.model.IP2LineupTargetEnvironment">
+            <type>P2LineupTargetEnvironment</type>
+            <multiplicity>*</multiplicity>
+            <annotations>
+              <annotation>@javax.xml.bind.annotation.XmlElementWrapper( name = "targetEnvironments" )</annotation>
+              <annotation>@javax.xml.bind.annotation.XmlElement( name = "environment" )</annotation>
+            </annotations>
+          </association>
+        </field>
+      </fields>
+    </class>
+    
+    <class>
+      <name>P2LineupSourceRepository</name>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "repository" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>        
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "repository" )</annotation>
+      </annotations>
+      <interfaces>
+        <interface>com.sonatype.s2.p2lineup.model.IP2LineupSourceRepository</interface>
+      </interfaces>
+      <fields>
+        <field xml.attribute="true">
+          <name>url</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true">
+          <name>layout</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <defaultValue>p2</defaultValue>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public P2LineupSourceRepository()
+    {
+    }
+
+    public P2LineupSourceRepository( String url )
+    {
+        this.url = url;
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+    
+    <class>
+      <name>P2LineupInstallableUnit</name>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "unit" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>        
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "unit" )</annotation>
+      </annotations>
+      <interfaces>
+        <interface>com.sonatype.s2.p2lineup.model.IP2LineupInstallableUnit</interface>
+      </interfaces>
+      <fields>
+        <field xml.attribute="true">
+          <name>id</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true">
+          <name>version</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true">
+          <name>name</name>
+          <type>String</type>
+        </field>
+        <field>
+          <name>targetEnvironments</name>
+          <type>Set</type>
+          <association xml.tagName="environment" java.useInterface="com.sonatype.s2.p2lineup.model.IP2LineupTargetEnvironment">
+            <type>P2LineupTargetEnvironment</type>
+            <multiplicity>*</multiplicity>
+            <annotations>
+              <annotation>@javax.xml.bind.annotation.XmlElementWrapper( name = "targetEnvironments" )</annotation>
+              <annotation>@javax.xml.bind.annotation.XmlElement( name = "environment" )</annotation>
+            </annotations>
+          </association>
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public P2LineupInstallableUnit()
+    {
+    }
+
+    public P2LineupInstallableUnit( String id, String version )
+    {
+        this.id = id;
+        this.version = version;
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+    
+    <class>
+      <name>P2LineupTargetEnvironment</name>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "environment" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>        
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "environment" )</annotation>
+      </annotations>
+      <interfaces>
+        <interface>com.sonatype.s2.p2lineup.model.IP2LineupTargetEnvironment</interface>
+      </interfaces>
+      <fields>
+        <field xml.attribute="true" xml.tagName="osgi.os">
+          <name>osgiOS</name>
+          <type>String</type>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "osgi.os" )</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true" xml.tagName="osgi.ws">
+          <name>osgiWS</name>
+          <type>String</type>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "osgi.ws" )</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true" xml.tagName="osgi.arch">
+          <name>osgiArch</name>
+          <type>String</type>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "osgi.arch" )</annotation>
+          </annotations>-->
+        </field>
+      </fields>
+      <codeSegments>
+        <codeSegment>
+          <code><![CDATA[
+    public P2LineupTargetEnvironment()
+    {
+    }
+
+    public P2LineupTargetEnvironment( String osgiOS, String osgiWS, String osgiArch )
+    {
+        this.osgiOS = osgiOS;
+        this.osgiWS = osgiWS;
+        this.osgiArch = osgiArch;
+    }
+            ]]>
+          </code>
+        </codeSegment>
+      </codeSegments>
+    </class>
+    
+    <class>
+      <name>P2LineupP2Advice</name>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "advice" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>        
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "advice" )</annotation>
+      </annotations>
+      <interfaces>
+        <interface>com.sonatype.s2.p2lineup.model.IP2LineupP2Advice</interface>
+      </interfaces>
+      <fields>
+        <field xml.attribute="true">
+          <name>touchpointId</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field xml.attribute="true">
+          <name>touchpointVersion</name>
+          <type>String</type>
+          <required>true</required>
+          <identifier>true</identifier>
+          <!--<annotations>
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamAsAttribute</annotation>
+          </annotations>-->
+        </field>
+        <field>
+          <name>advices</name>
+          <required>true</required>
+          <identifier>true</identifier>
+          <association xml.tagName="advice" xml.itemsStyle="flat">
+            <type>String</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <annotations>        
+            <annotation>@com.thoughtworks.xstream.annotations.XStreamImplicit( itemFieldName = "advice" )</annotation>
+          </annotations>
+        </field>
+      </fields>
+    </class>
+  </classes>
+</model>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p2lineup groupId="mygroupid" id="testaccess" version="1.0.1">
+  <repositories>
+  	<repository url="http://download.eclipse.org/releases/galileo" layout="p2"/>
+  </repositories>
+  <rootInstallableUnits>
+    <unit id="org.eclipse.core.boot" version="0.0.0"/>
+  </rootInstallableUnits>
+</p2lineup>

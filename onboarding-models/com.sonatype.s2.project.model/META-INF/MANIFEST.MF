@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.sonatype.s2.project.model
+Bundle-SymbolicName: com.sonatype.s2.project.model
+Bundle-Version: 1.0.9.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5, JavaSE-1.6
+Export-Package: com.sonatype.nexus.onboarding.rest.dto,
+ com.sonatype.nexus.onboarding.rest.dto.xstream,
+ com.sonatype.s2.project.model,
+ com.sonatype.s2.project.model.catalog;x-friends:="com.sonatype.s2.project.core,com.sonatype.s2.project.core.test",
+ com.sonatype.s2.project.model.catalog.io.xpp3;x-friends:="com.sonatype.s2.project.model.test",
+ com.sonatype.s2.project.model.descriptor;x-friends:="com.sonatype.s2.project.core,com.sonatype.s2.project.core.test",
+ com.sonatype.s2.project.model.descriptor.io.xpp3;x-friends:="com.sonatype.s2.project.model.test",
+ com.sonatype.s2.securityrealm.model,
+ com.sonatype.s2.securityrealm.model.io.xstream
+Import-Package: com.thoughtworks.xstream;version="1.3.1",
+ com.thoughtworks.xstream.annotations;version="1.3.1",
+ javax.xml.bind.annotation;version="2.1.0",
+ org.codehaus.plexus.util,
+ org.codehaus.plexus.util.xml,
+ org.codehaus.plexus.util.xml.pull
+Require-Bundle: org.slf4j.api;bundle-version="1.5.11"

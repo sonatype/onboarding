@@ -1,0 +1,11 @@
+<project>
+  <name>anonymous-not-allowed</name>
+  <modules>
+    <module>
+      <name>anonymous-not-allowed-module</name>
+      <scm>
+        <url>scm:testfile:file://anonymous-not-allowed-module/x</url>
+      </scm>
+    </module>
+  </modules>
+</project>

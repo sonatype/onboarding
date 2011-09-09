@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Helios
+Bundle-SymbolicName: com.sonatype.s2.project.ui.test.helios
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Require-Bundle: org.junit4;bundle-version="4.8.1",
+ org.maven.ide.eclipse.io,
+ org.maven.ide.eclipse.ui.common,
+ org.maven.ide.eclipse.ui.tests.common,
+ com.sonatype.s2.nexus,
+ com.sonatype.s2.project.ui.test

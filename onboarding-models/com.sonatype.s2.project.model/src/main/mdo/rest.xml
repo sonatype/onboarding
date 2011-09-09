@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<model xmlns="http://modello.codehaus.org/MODELLO/1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://modello.codehaus.org/MODELLO/1.3.0 http://modello.codehaus.org/xsd/modello-1.3.0.xsd">
+
+  <id>p2Lineup</id>
+
+  <name>P2Lineup</name>
+
+  <description>
+    <![CDATA[
+      <p>Nexus P2 Lineup DTOs used in REST API</p>
+      ]]>
+  </description>
+
+  <defaults>
+    <default>
+      <key>package</key>
+      <value>com.sonatype.nexus.onboarding.rest.dto</value>
+    </default>
+  </defaults>
+
+  <classes>
+    <class>
+      <name>CatalogEntryDTO</name>
+      <version>1.0.0+</version>
+      <description>Base class for all catalog entries.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "catalog-entry-dto" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "catalog-entry-dto" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>groupId</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog entry group id.</description>
+        </field>
+        <field>
+          <name>id</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog entry artifct id.</description>
+        </field>
+        <field>
+          <name>version</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog entry version.</description>
+        </field>
+        <field>
+          <name>name</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog entry name</description>
+        </field>
+        <field>
+          <name>type</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>false</required>
+          <description>Catalog entry type. Can be Project or Lineup Only.</description>
+        </field>
+        <field>
+          <name>url</name>
+          <version>1.0.0+</version>
+          <description>The catalog entry url.</description>
+          <required>false</required>
+          <type>String</type>
+        </field>
+        <field>
+          <name>realm</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>false</required>
+          <description>Realm which the catalog entry is associated to.</description>
+        </field>
+      </fields>
+    </class>
+
+    <class>
+      <name>CatalogDTO</name>
+      <version>1.0.0+</version>
+      <description>Base class for all catalog.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "catalog-dto" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "catalog-dto" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>id</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog ID. Uniquely identifies a catalog.</description>
+        </field>
+        <field>
+          <name>name</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>true</required>
+          <description>Catalog Name. Name displayed throughout UI for the catalog.</description>
+        </field>
+        <field>
+          <name>realm</name>
+          <version>1.0.0+</version>
+          <type>String</type>
+          <required>false</required>
+          <description>Realm which the catalog is associated to.</description>
+        </field>
+        <field>
+          <name>entries</name>
+          <version>1.0.0+</version>
+          <description>Catalog entries</description>
+          <association>
+            <type>CatalogEntryDTO</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <required>false</required>
+        </field>
+      </fields>
+    </class>
+
+    <class>
+      <name>CatalogRequest</name>
+      <version>1.0.0+</version>
+      <description>Request message to add, update catalogs.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "catalog-request" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "catalog-request" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>data</name>
+          <version>1.0.0+</version>
+          <association>
+            <type>CatalogDTO</type>
+          </association>
+          <required>false</required>
+        </field>
+      </fields>
+    </class>
+
+    <class>
+      <name>CatalogResponse</name>
+      <version>1.0.0+</version>
+      <description>Message returned when listing catalogs.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "catalog-response" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "catalog-response" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>data</name>
+          <version>1.0.0+</version>
+          <description>The list of defined catalogs.</description>
+          <association>
+            <type>CatalogDTO</type>
+            <multiplicity>*</multiplicity>
+          </association>
+          <required>false</required>
+        </field>
+      </fields>
+    </class>
+
+    <class>
+      <name>CatalogEntryRequest</name>
+      <version>1.0.0+</version>
+      <description>Request message to add, update catalogs entries.</description>
+      <annotations>
+        <annotation>@javax.xml.bind.annotation.XmlType( name = "catalog-entry-request" )</annotation>
+        <annotation>@javax.xml.bind.annotation.XmlAccessorType(javax.xml.bind.annotation.XmlAccessType.FIELD)</annotation>
+        <annotation>@com.thoughtworks.xstream.annotations.XStreamAlias( value = "catalog-entry-request" )</annotation>
+      </annotations>
+      <fields>
+        <field>
+          <name>data</name>
+          <version>1.0.0+</version>
+          <association>
+            <type>CatalogEntryDTO</type>
+          </association>
+          <description>Catalog entry.</description>
+        </field>
+      </fields>
+    </class>
+    
+  </classes>
+</model>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.m2e.scm.scmHandlers">
+      <handler
+            class="com.sonatype.m2e.egit.internal.EgitScmHandler"
+            priority="5"
+            type="git">
+      </handler>
+   </extension>
+   <extension
+         point="com.sonatype.s2.project.core.teamProviders">
+      <provider
+            class="com.sonatype.m2e.egit.internal.EgitTeamProvider"
+            type="git">
+      </provider>
+   </extension>
+
+</plugin>

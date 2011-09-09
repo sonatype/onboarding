@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.sonatype.s2.project.ui.test.FailingValidator"
+         name="Failing Validator"
+         point="com.sonatype.s2.project.validation.IS2ProjectValidator">
+      <validator
+            class="com.sonatype.s2.project.ui.test.FailingValidator">
+         <description>
+            Auto-failing validator, handy for testing.
+            Always fails a project if the project name is "fail-always".
+            Fails a project but allows remediation if the name is "fail-first".
+            Passes otherwise.
+         </description>
+      </validator>
+   </extension>
+</plugin>

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Common
+Bundle-SymbolicName: com.sonatype.s2.project.common
+Bundle-Version: 1.0.8.qualifier
+Bundle-Vendor: Sonatype, Inc.
+Bundle-RequiredExecutionEnvironment: J2SE-1.5,
+ JavaSE-1.6
+Require-Bundle: com.sonatype.s2.project.model;bundle-version="1.0.1",
+ org.eclipse.equinox.common;bundle-version="3.5.1",
+ org.maven.ide.eclipse.authentication;bundle-version="1.0.0",
+ org.slf4j.api;bundle-version="1.5.11"
+Export-Package: com.sonatype.s2.project.common
