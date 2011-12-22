@@ -9,9 +9,11 @@
    <license url="%licenseURL">%license</license>
 
    <includes id="com.sonatype.s2.project.feature" version="0.0.0"/>
+   <includes id="com.sonatype.s2.models.feature" version="0.0.0"/>
    <includes id="com.sonatype.s2.project.p2.feature" version="0.0.0"/>
    <includes id="com.sonatype.s2.project.cvs.feature" version="0.0.0"/>
    <includes id="com.sonatype.s2.project.git.feature" version="0.0.0"/>
    <includes id="com.sonatype.s2.project.svn.feature" version="0.0.0"/>
 
+   
 </feature>
